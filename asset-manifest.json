@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.073c9b0a.css",
-    "main.js": "/static/js/main.a9cc49aa.js",
-    "static/js/787.7033ac77.chunk.js": "/static/js/787.7033ac77.chunk.js",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/index.html",
-    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
-    "main.a9cc49aa.js.map": "/static/js/main.a9cc49aa.js.map",
-    "787.7033ac77.chunk.js.map": "/static/js/787.7033ac77.chunk.js.map"
+    "main.css": "/fe-sep-22-ooh-team/phone-catalog/static/css/main.073c9b0a.css",
+    "main.js": "/fe-sep-22-ooh-team/phone-catalog/static/js/main.95a2244a.js",
+    "static/js/787.7033ac77.chunk.js": "/fe-sep-22-ooh-team/phone-catalog/static/js/787.7033ac77.chunk.js",
+    "static/media/logo.svg": "/fe-sep-22-ooh-team/phone-catalog/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/fe-sep-22-ooh-team/phone-catalog/index.html",
+    "main.073c9b0a.css.map": "/fe-sep-22-ooh-team/phone-catalog/static/css/main.073c9b0a.css.map",
+    "main.95a2244a.js.map": "/fe-sep-22-ooh-team/phone-catalog/static/js/main.95a2244a.js.map",
+    "787.7033ac77.chunk.js.map": "/fe-sep-22-ooh-team/phone-catalog/static/js/787.7033ac77.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.a9cc49aa.js"
+    "static/js/main.95a2244a.js"
   ]
 }

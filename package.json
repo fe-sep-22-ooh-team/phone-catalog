@@ -1,6 +1,6 @@
 {
   "name": "phone-catalog",
-  "homepage": "https://github.com/fe-sep-22-ooh-team/phone-catalog",
+  "homepage": "https://fe-sep-22-ooh-team.github.io/phone-catalog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

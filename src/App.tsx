@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import './App.css';
+import { Header } from './components/Header';
 
 import { HomePage } from './components/HomePage';
 import { NotFoundPage } from './components/NotFoundPage';
@@ -8,6 +8,7 @@ import { PhonesPage } from './components/PhonesPage';
 
 export const App: React.FC = () => (
   <div data-cy="app">
+    <Header />
     <main className="section">
       <div className="container">
         <Routes>

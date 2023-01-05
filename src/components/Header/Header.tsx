@@ -1,5 +1,5 @@
 /* eslint-disable react/button-has-type */
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import React, { useState } from 'react';
 import classNames from 'classnames';
 import styles from './Header.module.scss';
@@ -24,7 +24,7 @@ export const Header: React.FC = () => {
   };
 
   const onOpenMenu = () => {
-    setActiveMenu(active => !active);
+    setActiveMenu((active) => !active);
     document.body.style.overflow = 'hidden';
 
     if (activeMenu) {
@@ -35,16 +35,9 @@ export const Header: React.FC = () => {
   return (
     <header>
       <nav className={styles.nav}>
-        <Link
-          to="/"
-          onClick={onCloseMenu}
-        >
-          <img
-            src={logoImg}
-            alt="Logo"
-            className={styles.nav__logo}
-          />
-        </Link>
+        <NavLink to="/" onClick={onCloseMenu}>
+          <img src={logoImg} alt="Logo" className={styles.nav__logo} />
+        </NavLink>
 
         <button
           className={classNames(styles.nav__menu, {
@@ -58,19 +51,19 @@ export const Header: React.FC = () => {
           </div>
         </button>
 
-        <div className={classNames(styles.nav__wrapper, {
-          [styles.nav__wrapper_active]: activeMenu,
-        })}
+        <div
+          className={classNames(styles.nav__wrapper, {
+            [styles.nav__wrapper_active]: activeMenu,
+          })}
         >
           <ul className={styles.nav__list}>
             {navLinks.map(({ to, text }) => (
               <li key={text} className={styles.nav__item}>
                 <NavLink
                   to={to}
-                  className={
-                    ({ isActive }) => classNames(styles.nav__link,
-                      { [styles.nav__link_active]: isActive })
-                  }
+                  className={({ isActive }) => classNames(styles.nav__link, {
+                    [styles.nav__link_active]: isActive,
+                  })}
                   onClick={onCloseMenu}
                 >
                   {text}
@@ -90,7 +83,6 @@ export const Header: React.FC = () => {
                 alt="favorites"
                 className={styles.cart__cart_item_img}
               />
-
             </NavLink>
 
             <NavLink // need to create a context to get current value of favourite items
@@ -99,16 +91,11 @@ export const Header: React.FC = () => {
               onClick={onCloseMenu}
             >
               <img src={shoppingBagImg} alt="cart" />
-
-              <span className={styles.nav__cart_item_idis}>
-                5
-              </span>
-
+              <span className={styles.nav__cart_item_idis}>5</span>
             </NavLink>
           </div>
         </div>
       </nav>
     </header>
-
   );
 };

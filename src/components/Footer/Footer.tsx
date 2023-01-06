@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './Footer.module.scss';
 
 import logoImg from '../../assets/img/Logo.svg';
-import topArrow from '../../assets/img/TopArrow.svg';
+// import topArrow from '../../assets/img/TopArrow.svg';
 
 const navListFooter = [
   { to: '/github', text: 'github' },
@@ -35,23 +35,30 @@ export const Footer: React.FC = () => {
             ))}
           </ul>
         </nav>
-        <div className={styles.footer__button}>
-          <label htmlFor="buttonToTop" className={styles.footer__button_label}>
-            Back to top
-            <Link
-              to="/"
-              id="buttonToTop"
-              className={styles.footer__button_arrow}
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-              <img
-                src={topArrow}
-                alt="Logo"
-                className={styles.footer__button_icon}
-              />
-            </Link>
-          </label>
-        </div>
+        <label className={styles.footer__button}>
+          {/* <label htmlFor="buttonToTop" className={styles.footer__button_label}> */}
+          Back to top
+          {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+          <button
+            type="button"
+            className={styles.footer__button_arrow}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          />
+
+          {/* <Link
+            to="/"
+            id="buttonToTop"
+            className={styles.footer__button_arrow}
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
+            <img
+              src={topArrow}
+              alt="Logo"
+              className={styles.footer__button_icon}
+            />
+          </Link> */}
+          {/* </label> */}
+        </label>
       </div>
     </footer>
   );

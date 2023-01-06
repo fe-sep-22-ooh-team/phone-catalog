@@ -45,9 +45,27 @@
     display: flex;
     margin-top: 32px;
 
+    justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+
+      font-family: 'Mont';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      text-align: right;
+      line-height: 15px;
+
+      color: $secondary-color;
+      cursor: pointer;
+
+      &:hover {
+          color: $primary-color;
+        }
+
     @include onTablet {
       margin: 0 32px 0 0;
-      display: block;
+      // display: block;
     }
 
     &_label {
@@ -73,6 +91,10 @@
       height: 32px;
       display: flex;
       border: 1px solid $icons-color;
+
+      background-image: url(../../assets/img/TopArrow.svg);
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     &_icon {

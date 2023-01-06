@@ -1,0 +1,16 @@
+@import './styles/reset';
+@import './styles/vars';
+@import './styles/fonts';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Mont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  color: $primary-color;
+
+  font-size: 14px;
+}

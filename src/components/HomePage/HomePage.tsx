@@ -16,9 +16,7 @@ export const HomePage: React.FC = () => (
       <Featured />
     </div>
 
-    <div className="grid__item--tablet--1-12 grid__item--desktop--1-24">
-      <Categories />
-    </div>
+    <Categories />
 
     <div className="grid__item--tablet--1-12 grid__item--desktop--1-24">
       <Featured />

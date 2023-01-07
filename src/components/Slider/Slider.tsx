@@ -8,11 +8,7 @@ import img1 from '../../assets/img/swiper1.png';
 import img2 from '../../assets/img/swiper2.jpg';
 import img3 from '../../assets/img/swiper3.jpg';
 
-const sliderImages = [
-  img1,
-  img2,
-  img3,
-];
+const sliderImages = [img1, img2, img3];
 
 export const Slider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -68,15 +64,13 @@ export const Slider: React.FC = () => {
       </div>
 
       <div className={styles.slider__dots}>
-        {dots.map(dot => (
+        {dots.map((dot) => (
           <button
             key={dot}
             type="button"
-            className={classNames(
-              styles.slider__dot, {
-                [styles.slider__dot_active]: dot === activeIndex,
-              },
-            )}
+            className={classNames(styles.slider__dot, {
+              [styles.slider__dot_active]: dot === activeIndex,
+            })}
             onClick={() => setActiveIndex(dot)}
           />
         ))}

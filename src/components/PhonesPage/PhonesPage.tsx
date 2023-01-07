@@ -1,3 +1,5 @@
+import { ProductCard } from '../ProductCard';
+
 export const PhonesPage: React.FC = () => (
-  <h1 className="title">Phones page</h1>
+  <ProductCard />
 );

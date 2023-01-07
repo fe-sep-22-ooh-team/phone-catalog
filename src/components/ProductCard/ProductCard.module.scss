@@ -1,0 +1,127 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.productCard {
+  display: flex;
+  flex-direction: column;
+  width: 212px;
+  border: 1px solid $elements-color;
+  padding: 32px;
+  background-color: $white-color;
+  transition: all 0.2s ease;
+
+  // &:hover {
+  //   box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
+  //   transform: scale(1.02);
+  // }
+
+  &__action {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__btn {
+      flex-grow: 1;
+      margin-right: 8px;
+    }
+
+    &__favorite {
+      flex-shrink: 0;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto 8px;
+    height: 130px;
+
+    @include onTablet {
+      height: 196px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    height: 60px;
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 600;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    padding: 16px 0 0;
+    margin-bottom: 8px;
+  }
+
+  &__link {
+    color: $primary-color;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  &__price {
+    font-size: 22px;
+    line-height: 140%;
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+    &_oldPrice {
+      position: relative;
+      margin-left: 8px;
+      color: $secondary-color;
+      line-height: 28px;
+      font-weight: 500;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: -3px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: block;
+        width: 110%;
+        height: 1px;
+        background-color: $secondary-color;
+      }
+    }
+  }
+
+  &__specs {
+    padding-top: 16px;
+    margin: 0 0 16px;
+    list-style: none;
+
+    border-top: 1px solid $elements-color;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__name,
+  &__value {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  &__name {
+    color: $secondary-color;
+    font-weight: 600;
+  }
+}

@@ -3,6 +3,7 @@
 
 .btn {
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 100px;
   height: 40px;
@@ -20,11 +21,11 @@
   transition: box-shadow 0.2s ease;
 
   @include onTablet {
-    padding: 10px 20px 12px;
+    width: 125px;
   }
 
   @include onDesktop {
-    padding: 10px 30px 12px;
+    width: 160px;
   }
 
   &:hover {

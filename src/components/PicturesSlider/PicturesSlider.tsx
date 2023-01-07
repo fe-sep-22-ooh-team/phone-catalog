@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import styles from './Slider.module.scss';
+import styles from './PicturesSlider.module.scss';
 
 import img1 from '../../assets/img/swiper1.png';
 import img2 from '../../assets/img/swiper2.jpg';

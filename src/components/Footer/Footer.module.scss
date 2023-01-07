@@ -3,15 +3,18 @@
 @import '../../styles/extends';
 
 .footer {
-  margin-top: auto;
   display: flex;
-  align-items: center;
+  justify-content: center;
   height: $mob-footer-height;
   box-sizing: border-box;
+
+  padding-top: 34px;
+  width: 100vw;
 
   box-shadow: 0px -1px 0px $elements-color;
 
   @include onTablet {
+    padding: 0;
     height: $footer-height;
   }
 
@@ -97,7 +100,6 @@
     }
 
     &_icon {
-      margin: auto;
       width: 9px;
       height: 5px;
     }
@@ -136,6 +138,7 @@
         color: $primary-color;
       }
 
+      &:active,
       &_active {
         color: $primary-color;
         &::after {

@@ -5,7 +5,6 @@ import styles from './Footer.module.scss';
 import logoImg from '../../assets/img/Logo.svg';
 
 const navListFooter = [
-  { to: '/github', text: 'github' },
   { to: '/contacts', text: 'contacts' },
   { to: '/rights', text: 'rights' },
 ];
@@ -19,6 +18,12 @@ export const Footer: React.FC = () => {
         </Link>
         <nav className={styles.footer__nav}>
           <ul className={styles.footer__nav_item}>
+            <a
+              href="https://github.com/fe-sep-22-ooh-team"
+              className={styles.footer__nav_link}
+            >
+              github
+            </a>
             {navListFooter.map(({ to, text }) => (
               <li key={text}>
                 <NavLink
@@ -34,6 +39,7 @@ export const Footer: React.FC = () => {
             ))}
           </ul>
         </nav>
+
         <label className={styles.footer__button}>
           Back to top
           {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}

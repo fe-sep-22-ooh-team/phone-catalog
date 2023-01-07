@@ -1,0 +1,21 @@
+@import '../../styles/vars';
+
+.icon {
+  border: 1px solid $icons-color;
+  padding: 10px 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: border-color 0.2s ease;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &_selected {
+    border-color: $elements-color;
+  }
+}

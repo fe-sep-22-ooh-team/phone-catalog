@@ -1,0 +1,39 @@
+ @import '../../styles/vars';
+@import '../../styles/extends';
+
+.btn {
+  display: flex;
+  align-items:center;
+  width: 100px;
+  height: 40px;
+  padding: 10px;
+  flex-grow: 1;
+
+  color: $white-color;
+  background-color: $primary-color;
+
+  @extend %button-text;
+  text-align: center;
+
+  border: 1px solid transparent;
+
+  transition: box-shadow 0.2s ease;
+
+  @include onTablet {
+    padding: 10px 20px 12px;
+  }
+
+  @include onDesktop {
+    padding: 10px 30px 12px;
+  }
+
+  &:hover {
+    box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+  }
+
+  &_selected {
+    color: $green-color;
+    background-color: $white-color;
+    border: 1px solid $elements-color;
+  }
+}

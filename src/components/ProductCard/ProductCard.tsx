@@ -22,9 +22,7 @@ export const ProductCard: React.FC = () => {
 
       <div className={styles.productCard__price}>
         $799
-        <span className={styles.productCard__price_oldPrice}>
-          899
-        </span>
+        <span className={styles.productCard__price_oldPrice}>899</span>
       </div>
 
       <ul className={styles.productCard__specs}>

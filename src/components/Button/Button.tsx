@@ -6,7 +6,7 @@ import styles from './Button.module.scss';
 import { Phone } from '../../types/Phone';
 
 type Props = {
-  phone?: Phone,
+  phone?: Phone;
 };
 
 export const Button: React.FC<Props> = () => {
@@ -25,7 +25,7 @@ export const Button: React.FC<Props> = () => {
         [styles.btn_selected]: select,
       })}
     >
-      { select ? 'Added' : 'Add to cart' }
+      {select ? 'Added' : 'Add to cart'}
     </button>
   );
 };

@@ -1,0 +1,75 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+@import '../../styles/extends';
+
+.slider {
+  height: 432px;
+  overflow: hidden;
+
+  &__swiper {
+    height: 400px;
+    display: flex;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  &__button {
+    box-sizing: border-box;
+    width: 32px;
+    height: 100%;
+    border: 1px solid $icons-color;
+    background-color: $white-color;
+    padding: 0;
+    cursor: pointer;
+
+    transition: border-color 0.3s;
+
+    &:hover {
+      border-color: $primary-color;
+    }
+
+    &_prev {
+      background: url('../../assets/img/LeftArrowHover.svg') no-repeat center;
+    }
+
+    &_next {
+      background: url('../../assets/img/RightArrowHover.svg') no-repeat center;
+    }
+  }
+
+  &__image {
+    width: 100%;
+
+    &_link {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    &_item {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__dots {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  &__dot {
+    width: 14px;
+    height: 4px;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: $elements-color;
+    cursor: pointer;
+
+    &_active {
+      background-color: $primary-color;
+    }
+  }
+}

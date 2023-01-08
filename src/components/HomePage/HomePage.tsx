@@ -1,4 +1,4 @@
-import { Slider } from '../Slider';
+import { Slider } from '../PicturesSlider';
 import { Featured } from '../Featured';
 import { Categories } from '../Categories';
 

@@ -94,7 +94,6 @@ export const PhonesPage: React.FC = () => {
         <div className={styles.catalog}>
           {currentItems.map((item) => (
             <ProductCard key={item} />
-            // `Item ${item} `
           ))}
         </div>
       </div>

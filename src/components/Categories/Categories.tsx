@@ -1,21 +1,23 @@
+import { Category } from '../../types/Category';
 import { CategoryCard } from '../CategoryCard';
 
-export const Categories: React.FC = () => (
-  <>
-    <div className="grid__item--tablet--1-12 grid__item--desktop--1-24">
-      <h2 className="title">Shop by category</h2>
-    </div>
+import styles from './Categories.module.scss';
 
-    <div className="grid__item--tablet--1-4 grid__item--desktop--1-8">
-      <CategoryCard />
-    </div>
+type Props = {
+  categories: Category[];
+};
 
-    <div className="grid__item--tablet--5-8 grid__item--desktop--9-16">
-      <CategoryCard />
+export const Categories: React.FC<Props> = ({ categories }) => (
+  <div
+    className="grid__item--mobile--1-4
+                  grid__item--tablet--1-12
+                  grid__item--desktop--1-24"
+  >
+    <h2 className="page__subtitle">Shop by category</h2>
+    <div className={styles.categories}>
+      {categories.map((category) => (
+        <CategoryCard key={category.id} category={category} />
+      ))}
     </div>
-
-    <div className="grid__item--tablet--9-12 grid__item--desktop--17-24">
-      <CategoryCard />
-    </div>
-  </>
+  </div>
 );

@@ -1,5 +1,6 @@
 // eslint-disable-next-line max-len
-const BASE_URL = 'https://idyllic-lamington-19c8d3.netlify.app/.netlify/functions/server';
+const BASE_URL
+  = 'https://idyllic-lamington-19c8d3.netlify.app/.netlify/functions/server';
 
 // To have autocompletion and avoid mistypes
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';

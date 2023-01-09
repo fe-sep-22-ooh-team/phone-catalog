@@ -39,7 +39,7 @@ export const PhonesPage: React.FC = () => {
 
   const getSortBy = () => {
     return sortBy
-      ? optionsSortBy.find(option => option.value === sortBy)
+      ? optionsSortBy.find((option) => option.value === sortBy)
       : total;
   };
 
@@ -61,7 +61,7 @@ export const PhonesPage: React.FC = () => {
 
   const getPerPage = () => {
     return perPage
-      ? optionsCount.find(option => +option.value === perPage)
+      ? optionsCount.find((option) => +option.value === perPage)
       : total;
   };
 

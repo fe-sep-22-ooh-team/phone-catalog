@@ -1,8 +1,10 @@
-import { Slider } from '../../components/PicturesSlider';
 import { Featured } from '../../components/Featured';
+import { PicturesSlider } from '../../components/PicturesSlider';
 import { Categories } from '../../components/Categories';
 
 import styles from './HomePage.module.scss';
+
+import categoriesFromServer from '../../api/categories.json';
 
 export const HomePage: React.FC = () => (
   <div className={styles.homePage__container}>
@@ -12,17 +14,19 @@ export const HomePage: React.FC = () => (
       </div>
 
       <div className="grid__item--tablet--1-12 grid__item--desktop--1-24">
-        <Slider />
+        <PicturesSlider />
       </div>
 
       <div className="grid__item--tablet--1-12 grid__item--desktop--1-24">
-        <Featured />
+        <Featured title="Brand new models" />
       </div>
 
-      <Categories />
+      <div className="grid__item--tablet--1-12 grid__item--desktop--1-24">
+        <Categories categories={categoriesFromServer} />
+      </div>
 
       <div className="grid__item--tablet--1-12 grid__item--desktop--1-24">
-        <Featured />
+        <Featured title="Hot prices" />
       </div>
     </div>
   </div>

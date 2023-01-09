@@ -9,11 +9,7 @@ type Props = {
 };
 
 export const CategoryCard: React.FC<Props> = ({ category }) => {
-  const {
-    title,
-    count,
-    imgUrl,
-  } = category;
+  const { title, count, imgUrl } = category;
 
   return (
     <div className={styles.card}>

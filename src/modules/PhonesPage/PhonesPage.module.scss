@@ -1,0 +1,122 @@
+@import '../../styles/vars';
+@import '../../styles/extends';
+
+.phonesPage {
+  width: 100vw;
+
+  &__title {
+    margin-bottom: 8px;
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    line-height: 41px;
+    color: $primary-color;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+
+  &__container {
+    padding: 25px 16px 0 16px;
+    width: 320px;
+    height: 100%;
+
+    @include onTablet {
+      padding: 25px 24px 0 24px;
+      width: 640px;
+    }
+
+    @include onLaptop {
+      width: 768px;
+    }
+
+    @include onDesktop {
+      padding: 25px 32px 0 32px;
+      width: 1200px;
+    }
+  }
+
+  &__totalItems {
+    margin-bottom: 32px;
+
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: $secondary-color;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__sort {
+    display: flex;
+    flex-direction: column;
+
+    &_container {
+      margin-bottom: 24px;
+    }
+
+    &_text {
+      margin-bottom: 4px;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      color: $secondary-color;
+    }
+
+    &_selectMenu {
+      padding: 10px 12px;
+      height: 40px;
+      width: 100%;
+      border: 1px solid $icons-color;
+      outline: none;
+
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 21px;
+      color: $primary-color;
+
+      &:hover {
+        border-color: $secondary-color;
+      }
+
+      &:focus {
+        border-color: $primary-color;
+      }
+    }
+  }
+}
+
+.catalog {
+  margin-bottom: 24px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 16px;
+  row-gap: 40px;
+
+  @include onTablet {
+    margin-bottom: 40px;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include onLaptop {
+    justify-content: space-between;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include onDesktop {
+    justify-content: space-between;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

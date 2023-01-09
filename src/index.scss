@@ -6,6 +6,7 @@
 
 html {
   height: 100%;
+  scroll-behavior: smooth;
 }
 body,
 h1,
@@ -34,6 +35,8 @@ body {
   min-height: 100vh;
 
   &__section {
+    display: flex;
+    justify-content: center;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
@@ -47,6 +50,8 @@ body {
     font-weight: 800;
     font-size: 32px;
     line-height: 41px;
+
+    color: $primary-color;
 
     @include onTablet {
       margin: 32px 24px;
@@ -68,6 +73,8 @@ body {
     font-weight: 800;
     font-size: 22px;
     line-height: 140%;
+
+    color: $primary-color;
 
     @include onTablet {
       margin-left: 24px;

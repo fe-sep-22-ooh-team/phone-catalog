@@ -61,9 +61,14 @@ export const Header: React.FC = () => {
               <li key={text} className={styles.nav__item}>
                 <NavLink
                   to={to}
-                  className={({ isActive }) => classNames(styles.nav__link, {
-                    [styles.nav__link_active]: isActive,
-                  })}
+                  className={
+                    ({ isActive }) =>
+                      // eslint-disable-next-line implicit-arrow-linebreak
+                      classNames(styles.nav__link, {
+                        [styles.nav__link_active]: isActive,
+                      })
+                    // eslint-disable-next-line react/jsx-curly-newline
+                  }
                   onClick={onCloseMenu}
                 >
                   {text}

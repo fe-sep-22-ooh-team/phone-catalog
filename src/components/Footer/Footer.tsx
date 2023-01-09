@@ -29,9 +29,14 @@ export const Footer: React.FC = () => {
                 <NavLink
                   to={to}
                   // eslint-disable-next-line max-len
-                  className={({ isActive }) => classNames(styles.footer__nav_link, {
-                    [styles.footer__nav_link_active]: isActive,
-                  })}
+                  className={
+                    ({ isActive }) =>
+                      // eslint-disable-next-line implicit-arrow-linebreak
+                      classNames(styles.footer__nav_link, {
+                        [styles.footer__nav_link_active]: isActive,
+                      })
+                    // eslint-disable-next-line react/jsx-curly-newline
+                  }
                 >
                   {text}
                 </NavLink>

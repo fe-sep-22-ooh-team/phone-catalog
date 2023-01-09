@@ -1,0 +1,48 @@
+@import '../../styles/vars';
+@import '../../styles/extends';
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 64px;
+
+  &__arrow_prev {
+    margin-right: 16px;
+  }
+
+  &__arrow_next {
+    margin-left: 16px;
+  }
+
+  @include onTablet {
+    margin-bottom: 80px;
+  }
+
+  &__link {
+    margin-right: 8px;
+    height: 32px;
+    width: 32px;
+
+    background-color: $white-color;
+    color: $primary-color;
+    border: 1px solid $icons-color;
+
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+
+    &_active {
+      background-color: $primary-color;
+      color: $white-color;
+      border-color: $primary-color;
+    }
+
+    &_disabled {
+      cursor: default;
+      color: $icons-color;
+    }
+  }
+}

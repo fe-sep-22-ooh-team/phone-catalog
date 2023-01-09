@@ -9,7 +9,13 @@ import iPhoneXs64GbSilver from '../../assets/img/iPhoneXs64GbSilver.svg';
 export const ProductCard: React.FC = () => {
   return (
     <article className={styles.productCard}>
-      <img src={iPhoneXs64GbSilver} alt="appleProduct" />
+      <Link to="/phones/1" className={styles.productCard__link}>
+        <img
+          src={iPhoneXs64GbSilver}
+          alt="appleProduct"
+          className={styles.productCard__link_img}
+        />
+      </Link>
 
       <h3
         className={styles.productCard__title}

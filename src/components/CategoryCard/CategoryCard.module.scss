@@ -10,14 +10,17 @@
     }
   }
 
-  &__img {
+  &__cover {
     position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__img {
     width: 100%;
     height: 100%;
     object-fit: contain;
     object-position: center;
-
-    margin-bottom: 24px;
 
     transition: transform 0.5s;
 
@@ -32,8 +35,8 @@
 
     box-sizing: border-box;
     width: 100%;
+
     margin-bottom: 24px;
-    max-height: 368px;
 
     &::after {
       content: '';

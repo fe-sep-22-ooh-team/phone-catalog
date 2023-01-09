@@ -11,14 +11,17 @@ type Props = {
 
 export const CategoryCard: React.FC<Props> = ({ category }) => {
   const {
-    title, count, url, imgUrl,
+    title,
+    count,
+    url,
+    imgUrl,
   } = category;
 
   return (
     <div className={styles.card}>
       <div className={styles.card__container}>
-        <Link to={url} className={styles.card__img}>
-          <img src={imgUrl} alt={title} />
+        <Link to={url} className={styles.card__cover}>
+          <img src={imgUrl} alt={title} className={styles.card__img} />
         </Link>
       </div>
 

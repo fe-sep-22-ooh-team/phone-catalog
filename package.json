@@ -31,9 +31,9 @@
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write . --ignore-path .gitignore",
-    "lint": "eslint . --ignore-path .gitignore",
-    "fix-style": "npm run format && npm run lint",
+    "format": "prettier --write src/. --gitignore-path .gitignore",
+    "lint": "eslint src/. --ignore-path .gitignore",
+    "fix-style": "npm run format && npm run lint -- --fix",
     "prepare": "husky install"
   },
   "eslintConfig": {

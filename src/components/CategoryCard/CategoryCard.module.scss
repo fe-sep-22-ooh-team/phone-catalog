@@ -1,12 +1,44 @@
+@import '/src/styles/vars';
+
 .card {
-  &__img {
-    width: 100%;
-    height: 100%;
-    transition: transform 0.5s;
-    margin-bottom: 24px;
+  &__link {
+    color: $primary-color;
+    transition: all 0.2s ease;
 
     &:hover {
-      transform: scale(1.05);
+      color: $secondary-color;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+
+    margin-bottom: 24px;
+
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  &__container {
+    position: relative;
+    overflow: hidden;
+
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 24px;
+    max-height: 368px;
+
+    &::after {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
     }
   }
 

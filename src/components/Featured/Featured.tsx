@@ -8,8 +8,9 @@ type Props = {
 
 export const Featured: React.FC<Props> = ({ title }) => (
   <div className={styles.featured}>
-    <h2 className={styles.featured__title}>{title}</h2>
-
-    <p>TBA</p>
+    <h2 className="page__subtitle">{title}</h2>
+    <div className={styles.content}>
+      <p>TBA</p>
+    </div>
   </div>
 );

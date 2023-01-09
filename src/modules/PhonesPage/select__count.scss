@@ -1,0 +1,50 @@
+@import '../../styles/vars';
+
+.select {
+
+  &__indicator-separator {
+    display: none;
+  }
+
+  &__menu {
+    margin: 4px 0 !important;
+  }
+
+  &__option {
+    cursor: pointer !important;
+    color: $secondary-color !important;
+
+    &--is-focused,
+    &--is-selected {
+      color: $primary-color !important;
+      background-color: $hoverBg-color !important;
+    }
+  }
+
+  &__control {
+    background-color: $white-color !important;
+    cursor: pointer !important;
+
+    .select__dropdown-indicator {
+      transform: rotate(0deg) !important;
+      transition: transform 0.3s ease;
+    }
+
+    &--menu-is-open {
+      .select__dropdown-indicator {
+        transform: rotate(180deg) !important;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+}
+
+.css-t3ipsp-control {
+  border-radius: 0 !important;
+  box-shadow: 0 0 1px $primary-color !important;
+  border-color: $primary-color !important;
+}
+
+.css-13cymwt-control {
+  border-radius: 0 !important;
+}

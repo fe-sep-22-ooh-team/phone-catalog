@@ -13,13 +13,11 @@ export const PhonesPage: React.FC = () => {
   const total = items.length;
 
   const firstItem = (currentPage - 1) * perPage;
-  const lastItem = Math.min((firstItem + perPage), total);
+  const lastItem = Math.min(firstItem + perPage, total);
 
   const currentItems = items.slice(firstItem, lastItem);
 
-  const handlePerPage = (
-    event: React.ChangeEvent<HTMLSelectElement>,
-  ) => {
+  const handlePerPage = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setPerPage(Number(event.target.value));
     setCurrentPage(1);
   };
@@ -37,7 +35,8 @@ export const PhonesPage: React.FC = () => {
 
         <div className={styles.phonesPage__sort_container}>
           <div className="grid">
-            <div className="
+            <div
+              className="
               grid__item--mobile--1-2
               grid__item--tablet--1-4
               grid__item--desktop--1-4"
@@ -61,7 +60,8 @@ export const PhonesPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="
+            <div
+              className="
               grid__item--mobile--3-4
               grid__item--tablet--5-7
               grid__item--desktop--5-7"
@@ -84,7 +84,7 @@ export const PhonesPage: React.FC = () => {
                   <option value={4}>4</option>
                   <option value={8}>8</option>
                   <option value={16}>16</option>
-                  <option value={total}>{ total }</option>
+                  <option value={total}>{total}</option>
                 </select>
               </div>
             </div>
@@ -92,7 +92,7 @@ export const PhonesPage: React.FC = () => {
         </div>
 
         <div className={styles.catalog}>
-          {currentItems.map(item => (
+          {currentItems.map((item) => (
             <ProductCard key={item} />
             // `Item ${item} `
           ))}

@@ -50,10 +50,8 @@ export const Pagination: React.FC<Props> = ({
         </button>
       </li>
 
-      {pages.map(page => (
-        <li
-          key={page}
-        >
+      {pages.map((page) => (
+        <li key={page}>
           <button
             type="button"
             className={classNames(styles.pagination__link, {

@@ -18,7 +18,6 @@
   }
 
   &_img {
-
     @include onDesktop {
       height: 90%;
     }
@@ -48,32 +47,32 @@
   }
 
   &_button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100px;
-      height: 38px;
-      padding: 10px;
-      flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 38px;
+    padding: 10px;
+    flex-grow: 1;
 
-      color: $white-color;
-      background-color: $primary-color;
+    color: $white-color;
+    background-color: $primary-color;
 
-      font-family: 'Mont', sans-serif;
-      text-align: center;
-      font-size: 12px;
+    font-family: 'Mont', sans-serif;
+    text-align: center;
+    font-size: 12px;
 
-      border: 1px solid transparent;
+    border: 1px solid transparent;
 
-      @include onTablet {
-        width: 125px;
-        height: 40px;
-        font-size: 14px;
-        line-height: 21px;
-      }
+    @include onTablet {
+      width: 125px;
+      height: 40px;
+      font-size: 14px;
+      line-height: 21px;
+    }
 
-      @include onDesktop {
-        width: 160px;
-      }
+    @include onDesktop {
+      width: 160px;
+    }
   }
 }

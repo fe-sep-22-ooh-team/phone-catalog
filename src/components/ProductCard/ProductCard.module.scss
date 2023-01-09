@@ -4,14 +4,19 @@
 .productCard {
   display: flex;
   flex-direction: column;
-  width: 212px;
+  width: 100%;
+  height: 440px;
   border: 1px solid $elements-color;
   padding: 32px;
   background-color: $white-color;
   transition: all 0.2s ease;
 
   @include onTablet {
-    width: 237px;
+    height: 506px;
+  }
+
+  @include onLaptop {
+    width: 229px;
   }
 
   @include onDesktop {
@@ -30,27 +35,12 @@
 
     &__btn {
       flex-grow: 1;
+      width: 100%;
       margin-right: 8px;
     }
 
     &__favorite {
       flex-shrink: 0;
-    }
-  }
-
-  &__img {
-    display: block;
-    margin: 0 auto 8px;
-    height: 130px;
-
-    @include onTablet {
-      height: 196px;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
     }
   }
 
@@ -63,7 +53,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
-    padding: 16px 0 0;
+    padding: 24px 0 0;
     margin-bottom: 8px;
   }
 
@@ -72,6 +62,16 @@
 
     &:hover {
       color: $secondary-color;
+    }
+
+    &_img {
+      width: 100%;
+      height: 130px;
+      display: block;
+
+      @include onTablet {
+        height: 196px;
+      }
     }
   }
 

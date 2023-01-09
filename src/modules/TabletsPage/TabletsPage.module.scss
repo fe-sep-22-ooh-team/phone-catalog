@@ -1,0 +1,15 @@
+@import '../../styles/extends';
+
+.tablets__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  @include onTablet {
+    height: 85vh;
+  }
+}

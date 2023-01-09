@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/phone-catalog/static/css/main.24ad3a4b.css",
-    "main.js": "/phone-catalog/static/js/main.6442c161.js",
+    "main.css": "/phone-catalog/static/css/main.b226c0ce.css",
+    "main.js": "/phone-catalog/static/js/main.88dbbfd3.js",
     "static/media/Category.svg": "/phone-catalog/static/media/Category.00aabc3603b703bc7350f269f6e3dc3c.svg",
     "static/media/swiper2.jpg": "/phone-catalog/static/media/swiper2.72bd3ad074734a6a1db8.jpg",
     "static/media/iPhoneXs64GbSilver.svg": "/phone-catalog/static/media/iPhoneXs64GbSilver.0b49cfb066c59742208534a5417065ea.svg",
@@ -14,17 +14,18 @@
     "static/media/Mont-Regular.woff2": "/phone-catalog/static/media/Mont-Regular.efd082cbd3e10b7e9c88.woff2",
     "static/media/Mont-Bold.woff2": "/phone-catalog/static/media/Mont-Bold.8b7a4e0626328dd44205.woff2",
     "static/media/Cart-empty.svg": "/phone-catalog/static/media/Cart-empty.b3873c453850377ede151f619f7a9d0c.svg",
+    "static/media/404-page.svg": "/phone-catalog/static/media/404-page.3f38b99ddd0a166ac3ccef3d9de6dbe6.svg",
     "static/media/ShoppingBag.svg": "/phone-catalog/static/media/ShoppingBag.f9632dca8fdaed9bb696b99ac28006ba.svg",
     "static/media/Favourites.svg": "/phone-catalog/static/media/Favourites.c27aba199010538eb89e7685dec79752.svg",
     "index.html": "/phone-catalog/index.html",
     "static/media/RightArrowHover.svg": "/phone-catalog/static/media/RightArrowHover.a96d198de7ec6e137ad0.svg",
     "static/media/TopArrow.svg": "/phone-catalog/static/media/TopArrow.80e27a8f296e8f6d01b0.svg",
     "static/media/LeftArrowHover.svg": "/phone-catalog/static/media/LeftArrowHover.f8da456077b13aabd737.svg",
-    "main.24ad3a4b.css.map": "/phone-catalog/static/css/main.24ad3a4b.css.map",
-    "main.6442c161.js.map": "/phone-catalog/static/js/main.6442c161.js.map"
+    "main.b226c0ce.css.map": "/phone-catalog/static/css/main.b226c0ce.css.map",
+    "main.88dbbfd3.js.map": "/phone-catalog/static/js/main.88dbbfd3.js.map"
   },
   "entrypoints": [
-    "static/css/main.24ad3a4b.css",
-    "static/js/main.6442c161.js"
+    "static/css/main.b226c0ce.css",
+    "static/js/main.88dbbfd3.js"
   ]
 }

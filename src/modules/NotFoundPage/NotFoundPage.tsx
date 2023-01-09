@@ -18,9 +18,6 @@ export const NotFoundPage: React.FC = () => (
     </p>
 
     <NavLink to="/">
-      {/* <button type="button" className={styles.tablets__container_button}>
-        Take me home
-      </button> */}
       <Button text="Take me home" />
     </NavLink>
   </div>

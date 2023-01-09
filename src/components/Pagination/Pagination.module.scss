@@ -6,6 +6,14 @@
   justify-content: center;
   margin-bottom: 64px;
 
+  &__arrow_prev {
+    margin-right: 16px;
+  }
+
+  &__arrow_next {
+    margin-left: 16px;
+  }
+
   @include onTablet {
     margin-bottom: 80px;
   }
@@ -25,14 +33,6 @@
     font-size: 14px;
     line-height: 21px;
     text-align: center;
-
-    &:first-of-type {
-      margin-right: 16px;
-    }
-
-    &:last-of-type {
-      margin-left: 16px;
-    }
 
     &_active {
       background-color: $primary-color;

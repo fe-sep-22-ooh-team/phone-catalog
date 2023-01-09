@@ -37,7 +37,7 @@ export const Pagination: React.FC<Props> = ({
 
   return (
     <ul className={styles.pagination}>
-      <li>
+      <li className={styles.pagination__arrow_prev}>
         <button
           type="button"
           className={classNames(styles.pagination__link, {
@@ -64,7 +64,7 @@ export const Pagination: React.FC<Props> = ({
         </li>
       ))}
 
-      <li>
+      <li className={styles.pagination__arrow_next}>
         <button
           type="button"
           className={classNames(styles.pagination__link, {

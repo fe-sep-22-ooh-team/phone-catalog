@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './NotFoundPage.module.scss';
 import errorPage from '../../assets/img/404-page.svg';
+import { Button } from '../../components/Button';
 
 export const NotFoundPage: React.FC = () => (
   <div className={styles.tablets__container}>
@@ -17,9 +18,10 @@ export const NotFoundPage: React.FC = () => (
     </p>
 
     <NavLink to="/">
-      <button type="button" className={styles.tablets__container_button}>
+      {/* <button type="button" className={styles.tablets__container_button}>
         Take me home
-      </button>
+      </button> */}
+      <Button text="Take me home" />
     </NavLink>
   </div>
 );

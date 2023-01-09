@@ -51,7 +51,7 @@ export const ProductCard: React.FC = () => {
       <footer className={styles.productCard__action}>
         <div className={styles.productCard__action}>
           <div className={styles.productCard__action__btn}>
-            <Button />
+            <Button text="Add to cart" textAfterClick="Added" />
           </div>
 
           <div className={styles.productCard__action__favorite}>

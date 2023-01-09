@@ -17,11 +17,7 @@ export const CartItem: React.FC = () => {
             <img src={button} alt="button delete" />
           </button>
 
-          <img
-            className={styles.cartItem__image}
-            src={image}
-            alt="PhoneName"
-          />
+          <img className={styles.cartItem__image} src={image} alt="PhoneName" />
 
           <h3 className={styles.cartItem__title}>
             Apple iPhone Xs 64GB Silver (MQ023)
@@ -30,22 +26,16 @@ export const CartItem: React.FC = () => {
 
         <div className={styles.cartItem__wrapper}>
           <div className={styles.cartItem__counter}>
-            <button
-              className={styles.cartItem__button}
-            >
+            <button className={styles.cartItem__button}>
               <img src={minus} alt="Minus button" />
             </button>
             <p>1</p>
-            <button
-              className={styles.cartItem__button}
-            >
+            <button className={styles.cartItem__button}>
               <img src={plus} alt="Plus button" />
             </button>
           </div>
 
-          <div className={styles.cartItem__price}>
-            $999
-          </div>
+          <div className={styles.cartItem__price}>$999</div>
         </div>
       </div>
     </article>

@@ -16,13 +16,9 @@ export const Button: React.FC<Props> = ({ text, textAfterClick }) => {
     setSelect(true);
   };
 
-  const isSelected = select
-    ? textAfterClick
-    : text;
+  const isSelected = select ? textAfterClick : text;
 
-  const textToRender = textAfterClick
-    ? isSelected
-    : text;
+  const textToRender = textAfterClick ? isSelected : text;
 
   return (
     <button

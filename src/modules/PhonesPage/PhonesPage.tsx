@@ -4,12 +4,9 @@ import styles from './PhonesPage.module.scss';
 import './select__count.scss';
 import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
-// import { getNumbers } from '../../utils/utils';
 import { getAll, getPhones } from '../../api/goods';
 import { Phone } from '../../types/Phone';
 import { Loader } from '../../components/Loader';
-
-// const items = getNumbers(1, 42);
 
 export const PhonesPage: React.FC = () => {
   const [perPage, setPerPage] = useState(16);
@@ -151,15 +148,15 @@ export const PhonesPage: React.FC = () => {
           </div>
         </div>
 
-        {isLoading
-          ? <Loader />
-          : (
-            <div className={styles.catalog}>
-              {phones.map((phone) => (
-                <ProductCard key={phone.slug} phone={phone} />
-              ))}
-            </div>
-          )}
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <div className={styles.catalog}>
+            {phones.map((phone) => (
+              <ProductCard key={phone.slug} phone={phone} />
+            ))}
+          </div>
+        )}
       </div>
 
       <Pagination

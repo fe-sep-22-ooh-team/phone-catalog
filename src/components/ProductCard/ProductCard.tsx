@@ -22,10 +22,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
         />
       </Link>
 
-      <h3
-        className={styles.productCard__title}
-        title={`${phone.name}`}
-      >
+      <h3 className={styles.productCard__title} title={`${phone.name}`}>
         <Link to="/phones/1" className={styles.productCard__link}>
           {phone.name}
         </Link>
@@ -41,23 +38,17 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
       <ul className={styles.productCard__specs}>
         <li className={styles.productCard__info}>
           <h6 className={styles.productCard__name}>Screen</h6>
-          <strong className={styles.productCard__value}>
-            {phone.screen}
-          </strong>
+          <strong className={styles.productCard__value}>{phone.screen}</strong>
         </li>
 
         <li className={styles.productCard__info}>
           <h6 className={styles.productCard__name}>Capacity</h6>
-          <strong className={styles.productCard__value}>
-            {phone.memory}
-          </strong>
+          <strong className={styles.productCard__value}>{phone.memory}</strong>
         </li>
 
         <li className={styles.productCard__info}>
           <h6 className={styles.productCard__name}>RAM</h6>
-          <strong className={styles.productCard__value}>
-            {phone.ram}
-          </strong>
+          <strong className={styles.productCard__value}>{phone.ram}</strong>
         </li>
       </ul>
 

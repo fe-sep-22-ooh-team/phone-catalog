@@ -1,8 +1,8 @@
-import { Phone } from '../types/Phone';
+import { ResponseFromAPI } from '../types/ResponseFromAPI';
 import { client } from '../utils/fetchClient';
 
 export const getPhones = (page: number, perPage: number) => {
-  return client.get<Phone[]>(`/:${page}:${perPage}`);
+  return client.get<ResponseFromAPI>(`?page=${page}&limit=${perPage}`);
 };
 
 // export const addPhone = (phone: Omit<phone, 'id'>) => {

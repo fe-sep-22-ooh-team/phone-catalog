@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import Select from 'react-select';
 import styles from './PhonesPage.module.scss';
 import './select__count.scss';
 import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
-import { getNumbers } from '../../utils/utils';
+// import { getNumbers } from '../../utils/utils';
+import { getPhones } from '../../api/goods';
+import { Phone } from '../../types/Phone';
 
-const items = getNumbers(1, 42);
+// const items = getNumbers(1, 42);
 
 export const PhonesPage: React.FC = () => {
-  const [perPage, setPerPage] = useState(items.length);
+  const [perPage, setPerPage] = useState(4);
   const [sortBy, setSortBy] = useState('default');
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState<number>(1);
+  const [phones, setPhones] = useState<Phone[]>([]);
 
-  const total = items.length;
+  // const total = items.length;
 
-  const firstItem = (currentPage - 1) * perPage;
-  const lastItem = Math.min(firstItem + perPage, total);
+  // const firstItem = (currentPage - 1) * perPage;
+  // const lastItem = Math.min(firstItem + perPage, total);
 
-  const currentItems = items.slice(firstItem, lastItem);
+  // const currentItems = items.slice(firstItem, lastItem);
 
   const optionsCount = [
     { value: '4', label: '4' },
@@ -55,9 +59,35 @@ export const PhonesPage: React.FC = () => {
     setCurrentPage(1);
   };
 
-  const onPageChange = (newPage: number) => {
-    setCurrentPage(newPage);
-  };
+  // const onPageChange = (newPage: number) => {
+  //   setCurrentPage(newPage);
+  // };
+
+  const loadGoods = useCallback(async () => {
+    let response;
+
+    try {
+      response = await getPhones(currentPage, perPage);
+
+      // setPhones(...response);
+
+      setPhones(response.results);
+      setTotalPages(response.totalPages);
+
+      // eslint-disable-next-line no-console
+      console.log(response);
+      // eslint-disable-next-line no-console
+      console.log(phones, totalPages);
+    } catch {
+      return false;
+    }
+
+    return true;
+  }, [perPage, currentPage]);
+
+  useEffect(() => {
+    loadGoods();
+  }, [currentPage, perPage]);
 
   const getPerPage = () => {
     return perPage
@@ -70,7 +100,9 @@ export const PhonesPage: React.FC = () => {
       <div>
         <h1 className={styles.phonesPage__title}>Mobile phones</h1>
 
-        <p className={styles.phonesPage__totalItems}>{`${total} models`}</p>
+        <p className={styles.phonesPage__totalItems}>
+          {`${phones.length} models`}
+        </p>
 
         <div className={styles.phonesPage__sort_container}>
           <div className="grid">
@@ -132,12 +164,12 @@ export const PhonesPage: React.FC = () => {
         </div>
       </div>
 
-      <Pagination
-        total={total}
+      {/* <Pagination
+        total={12}
         perPage={perPage}
         currentPage={currentPage}
         onPageChange={onPageChange}
-      />
+      /> */}
     </div>
   );
 };

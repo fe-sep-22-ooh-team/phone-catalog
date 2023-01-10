@@ -9,10 +9,10 @@ import phonesFromServer from '../../api/phones.json';
 
 export const HomePage: React.FC = () => {
   const newModels = phonesFromServer
-    .filter(phone => phone.year === '2022')
+    .filter((phone) => phone.year === '2022')
     .slice(0, 8);
   const hotPrices = phonesFromServer
-    .filter(phone => phone.discountPrice !== phone.price)
+    .filter((phone) => phone.discountPrice !== phone.price)
     .slice(0, 4);
 
   return (

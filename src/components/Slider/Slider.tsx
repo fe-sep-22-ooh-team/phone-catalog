@@ -30,7 +30,7 @@ export const Slider: React.FC = () => {
         }}
         loop={true}
         autoplay={{
-          delay: 5000,
+          delay: 50000,
           disableOnInteraction: false,
         }}
         modules={[Autoplay, Navigation, Pagination]}

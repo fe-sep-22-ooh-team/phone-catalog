@@ -9,11 +9,11 @@ import { Phone } from '../../types/Phone';
 import { Loader } from '../../components/Loader';
 
 export const PhonesPage: React.FC = () => {
-  const [perPage, setPerPage] = useState(16);
+  const [allPhones, setAllPhones] = useState<Phone[]>([]);
+  const [perPage, setPerPage] = useState(50);
   const [sortBy, setSortBy] = useState('default');
   const [currentPage, setCurrentPage] = useState(1);
   const [phones, setPhones] = useState<Phone[]>([]);
-  const [allPhones, setAllPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
   const total = allPhones.length;
@@ -63,9 +63,6 @@ export const PhonesPage: React.FC = () => {
 
       const goods = await getPhones(currentPage, perPage);
       const allGoods = await getAll();
-
-      // eslint-disable-next-line no-console
-      console.log(allGoods.results);
 
       setPhones(await goods.results);
       setAllPhones(await allGoods.results);

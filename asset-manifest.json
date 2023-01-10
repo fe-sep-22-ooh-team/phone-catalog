@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/phone-catalog/static/css/main.19b60c6b.css",
-    "main.js": "/phone-catalog/static/js/main.5dcf6282.js",
+    "main.js": "/phone-catalog/static/js/main.0e71c5af.js",
     "static/media/swiper2.jpg": "/phone-catalog/static/media/swiper2.72bd3ad074734a6a1db8.jpg",
     "static/media/iPhoneXs64GbSilver.svg": "/phone-catalog/static/media/iPhoneXs64GbSilver.0b49cfb066c59742208534a5417065ea.svg",
     "static/media/Logo.svg": "/phone-catalog/static/media/Logo.443fc83827bbdd265741a3ec0d34d99a.svg",
@@ -16,6 +16,7 @@
     "static/media/404-page.svg": "/phone-catalog/static/media/404-page.3f38b99ddd0a166ac3ccef3d9de6dbe6.svg",
     "static/media/ShoppingBag.svg": "/phone-catalog/static/media/ShoppingBag.f9632dca8fdaed9bb696b99ac28006ba.svg",
     "static/media/Favourites.svg": "/phone-catalog/static/media/Favourites.c27aba199010538eb89e7685dec79752.svg",
+    "static/media/Home.svg": "/phone-catalog/static/media/Home.d4c29e4f137b3a79235a5293536d71a0.svg",
     "static/media/Delete.svg": "/phone-catalog/static/media/Delete.6e7f15f7413e962f75496f60bb32404f.svg",
     "static/media/Plus.svg": "/phone-catalog/static/media/Plus.dea157243cc9d361ac05ab671dbec40b.svg",
     "index.html": "/phone-catalog/index.html",
@@ -24,10 +25,10 @@
     "static/media/LeftArrowHover.svg": "/phone-catalog/static/media/LeftArrowHover.f8da456077b13aabd737.svg",
     "static/media/Minus.svg": "/phone-catalog/static/media/Minus.cecb4be39afa7b933ec169dd495a73ff.svg",
     "main.19b60c6b.css.map": "/phone-catalog/static/css/main.19b60c6b.css.map",
-    "main.5dcf6282.js.map": "/phone-catalog/static/js/main.5dcf6282.js.map"
+    "main.0e71c5af.js.map": "/phone-catalog/static/js/main.0e71c5af.js.map"
   },
   "entrypoints": [
     "static/css/main.19b60c6b.css",
-    "static/js/main.5dcf6282.js"
+    "static/js/main.0e71c5af.js"
   ]
 }

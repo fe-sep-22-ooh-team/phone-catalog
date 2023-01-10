@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import homeIcon from '../../assets/img/Home.svg';
 
 type Props = {
-  location: string[],
+  location: string[];
 };
 
 export const Breadcrumbs: React.FC<Props> = ({ location }) => {
@@ -19,9 +19,11 @@ export const Breadcrumbs: React.FC<Props> = ({ location }) => {
           <div key={page}>
             <Link to={`/${page}`}>
               <>
-                {i !== location.length - 1
-                  ? <img src={homeIcon} alt="home" />
-                  : <p>{page}</p>}
+                {i !== location.length - 1 ? (
+                  <img src={homeIcon} alt="home" />
+                ) : (
+                  <p>{page}</p>
+                )}
               </>
             </Link>
           </div>

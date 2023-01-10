@@ -22,19 +22,16 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
         />
       </Link>
 
-      <h3
-        className={styles.productCard__title}
-        title="Apple iPhone Xs 64GB Silver (iMT9G2FS/A)"
-      >
+      <h3 className={styles.productCard__title} title={`${phone.name}`}>
         <Link to="/phones/1" className={styles.productCard__link}>
-          Apple iPhone Xs 64GB Silver (iMT9G2FS/A)
+          {phone.name}
         </Link>
       </h3>
 
       <div className={styles.productCard__price}>
-        {phone.fullPrice}
+        {`$${phone.discountPrice}`}
         <span className={styles.productCard__price_oldPrice}>
-          {phone.price}
+          {`$${phone.price}`}
         </span>
       </div>
 
@@ -46,12 +43,12 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
         <li className={styles.productCard__info}>
           <h6 className={styles.productCard__name}>Capacity</h6>
-          <strong className={styles.productCard__value}>{phone.ram}</strong>
+          <strong className={styles.productCard__value}>{phone.memory}</strong>
         </li>
 
         <li className={styles.productCard__info}>
           <h6 className={styles.productCard__name}>RAM</h6>
-          <strong className={styles.productCard__value}>4 GB</strong>
+          <strong className={styles.productCard__value}>{phone.ram}</strong>
         </li>
       </ul>
 

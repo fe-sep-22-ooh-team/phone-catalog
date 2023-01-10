@@ -5,18 +5,19 @@ import { Button } from '../Button';
 import { Favorite } from '../Favorite';
 
 import styles from './ProductCard.module.scss';
-// import iPhoneXs64GbSilver from '../../assets/img/iPhoneXs64GbSilver.svg';
 
 type Props = {
   phone: Phone;
 };
 
 export const ProductCard: React.FC<Props> = ({ phone }) => {
+  const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
+
   return (
     <article className={styles.productCard}>
       <Link to="/phones/1" className={styles.productCard__link}>
         <img
-          src={phone.image}
+          src={serverLocation + phone.image}
           alt="appleProduct"
           className={styles.productCard__link_img}
         />

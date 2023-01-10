@@ -31,8 +31,10 @@ export const PhonesPage: React.FC = () => {
   // };
 
   const loadGoods = useCallback(async () => {
+    let response;
+
     try {
-      const response = await getPhones(currentPage, perPage);
+      response = await getPhones(currentPage, perPage);
 
       // setPhones(...response);
 
@@ -44,10 +46,10 @@ export const PhonesPage: React.FC = () => {
       // eslint-disable-next-line no-console
       console.log(phones, totalPages);
     } catch {
-      return true;
+      return false;
     }
 
-    return false;
+    return true;
   }, [perPage, currentPage]);
 
   useEffect(() => {

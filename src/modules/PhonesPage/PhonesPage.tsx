@@ -5,17 +5,14 @@ import './select__count.scss';
 import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
 import { getNumbers } from '../../utils/utils';
-// import { SortType } from '../../types/SortType';
-// import { Phone } from '../../types/Phone';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
 
 const items = getNumbers(1, 42);
 
 export const PhonesPage: React.FC = () => {
   const [perPage, setPerPage] = useState(items.length);
-  const [sortBy, setSortBy] = useState('');
+  const [sortBy, setSortBy] = useState('default'); // don't remove it - this is for the select default value //
   const [currentPage, setCurrentPage] = useState(1);
-  // const [order, setOrder] = useState('');
-  // const [orderBy, setOrderBy] = useState('');
 
   const total = items.length;
 
@@ -69,79 +66,11 @@ export const PhonesPage: React.FC = () => {
       : total;
   };
 
-  // const setSortOrder = (sort: SortType) => {
-  //   switch (sort) {
-  //     case SortType.ascAge:
-  //       setOrderBy('age');
-  //       setOrder('asc');
-  //       break;
-
-  //     case SortType.descAge:
-  //       setOrderBy('age');
-  //       setOrder('desc');
-  //       break;
-
-  //     case SortType.descPrice:
-  //       setOrderBy('price');
-  //       setOrder('desc');
-  //       break;
-
-  //     case SortType.ascPrice:
-  //       setOrderBy('price');
-  //       setOrder('asc');
-  //       break;
-
-  //     case SortType.ascName:
-  //       setOrderBy('name');
-  //       setOrder('asc');
-  //       break;
-
-  //     case SortType.descName:
-  //       setOrderBy('name');
-  //       setOrder('desc');
-  //       break;
-
-  //     case SortType.default:
-  //     default:
-  //       setOrderBy('');
-  //       setOrder('');
-  //   }
-  // };
-
-  // const gerReoderedGoods = (
-  //   goods: Phone[],
-  //   sortField: string,
-  //   order: string,
-  // ) => {
-  //   const visibleGoods = [...goods];
-
-  //   visibleGoods.sort((currentGood, nextGood) => {
-  //     switch (sortField) {
-  //       case 'age':
-  //         return currentGood.year - nextGood.year;
-
-  //       case 'price':
-  //         return currentGood.price - nextGood.price;
-
-  //       case 'name':
-  //         return currentGood.name.localeCompare(nextGood.name);
-
-  //       case 'default':
-  //       default:
-  //         return 0;
-  //     }
-  //   });
-
-  //   return visibleGoods;
-  // };
-
-  // useEffect(() => {
-  //   setOrder(sortBy);
-  // }, []);
-
   return (
     <div className={styles.phonesPage__container}>
       <div>
+        <Breadcrumbs />
+
         <h1 className={styles.phonesPage__title}>Mobile phones</h1>
 
         <p className={styles.phonesPage__totalItems}>{`${total} models`}</p>

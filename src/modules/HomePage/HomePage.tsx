@@ -1,9 +1,7 @@
+import styles from './HomePage.module.scss';
 import { Featured } from '../../components/Featured';
 import { PicturesSlider } from '../../components/PicturesSlider';
 import { Categories } from '../../components/Categories';
-
-import styles from './HomePage.module.scss';
-
 import categoriesFromServer from '../../api/categories.json';
 
 export const HomePage: React.FC = () => (

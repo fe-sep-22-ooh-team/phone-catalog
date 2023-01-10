@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
+import { useLocation } from 'react-router-dom';
 import styles from './PhonesPage.module.scss';
 import './select__count.scss';
 import { Pagination } from '../../components/Pagination';
@@ -13,6 +14,9 @@ export const PhonesPage: React.FC = () => {
   const [perPage, setPerPage] = useState(items.length);
   const [sortBy, setSortBy] = useState('default'); // don't remove it - this is for the select default value //
   const [currentPage, setCurrentPage] = useState(1);
+
+  const location = useLocation();
+  const path = location.pathname.split('/');
 
   const total = items.length;
 
@@ -47,7 +51,6 @@ export const PhonesPage: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleSortBy = (newValue: any) => {
     setSortBy(newValue.value);
-    setCurrentPage(1);
   };
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -69,7 +72,7 @@ export const PhonesPage: React.FC = () => {
   return (
     <div className={styles.phonesPage__container}>
       <div>
-        <Breadcrumbs />
+        <Breadcrumbs location={path} />
 
         <h1 className={styles.phonesPage__title}>Mobile phones</h1>
 

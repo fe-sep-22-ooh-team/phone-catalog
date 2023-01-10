@@ -11,10 +11,7 @@ type Props = {
 
 export const CategoryCard: React.FC<Props> = ({ category }) => {
   const {
-    title,
-    count,
-    url,
-    imgUrl,
+    title, count, url, imgUrl,
   } = category;
 
   return (

@@ -1,0 +1,28 @@
+@import '/src/styles/mixins';
+
+.featured {
+  margin-bottom: 80px;
+
+  &__title {
+    margin-bottom: 24px;
+
+    font-weight: 800;
+    font-size: 22px;
+
+    @include onTablet {
+      font-size: 32px;
+    }
+  }
+}
+
+.content {
+  padding-left: 16px;
+
+  @include onTablet {
+    padding-left: 24px;
+  }
+
+  @include onDesktop {
+    padding-left: 0;
+  }
+}

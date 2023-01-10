@@ -1,5 +1,9 @@
 import React, { useCallback, useState, useEffect } from 'react';
+import Select from 'react-select';
+
 import styles from './PhonesPage.module.scss';
+// import { Pagination } from '../../components/Pagination';
+import './select__count.scss';
 // import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
 // import { getNumbers } from '../../utils/utils';
@@ -10,19 +14,50 @@ import { Phone } from '../../types/Phone';
 
 export const PhonesPage: React.FC = () => {
   const [perPage, setPerPage] = useState(4);
+  const [sortBy, setSortBy] = useState('default');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState<number>(1);
   const [phones, setPhones] = useState<Phone[]>([]);
 
-  // const total = items.length;
+  const total = 42;
 
   // const firstItem = (currentPage - 1) * perPage;
   // const lastItem = Math.min(firstItem + perPage, total);
 
   // const currentItems = items.slice(firstItem, lastItem);
 
-  const handlePerPage = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setPerPage(Number(event.target.value));
+  const optionsCount = [
+    { value: '4', label: '4' },
+    { value: '8', label: '8' },
+    { value: '16', label: '16' },
+    { value: `${total}`, label: 'All' },
+  ];
+
+  const optionsSortBy = [
+    { value: 'ascAge', label: 'Newest' },
+    { value: 'descAge', label: 'Oldest' },
+    { value: 'descPrice', label: 'Price: High to Low' },
+    { value: 'ascPrice', label: 'Price: Low to High' },
+    { value: 'ascName', label: 'Name: A - Z' },
+    { value: 'descName', label: 'Name: Z - A' },
+    { value: 'default', label: 'Show all' },
+  ];
+
+  const getSortBy = () => {
+    return sortBy
+      ? optionsSortBy.find((option) => option.value === sortBy)
+      : total;
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSortBy = (newValue: any) => {
+    setSortBy(newValue.value);
+    setCurrentPage(1);
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handlePerPage = (newValue: any) => {
+    setPerPage(newValue.value);
     setCurrentPage(1);
   };
 
@@ -56,6 +91,12 @@ export const PhonesPage: React.FC = () => {
     loadGoods();
   }, [currentPage, perPage]);
 
+  const getPerPage = () => {
+    return perPage
+      ? optionsCount.find((option) => +option.value === perPage)
+      : total;
+  };
+
   return (
     <div className={styles.phonesPage__container}>
       <div>
@@ -80,15 +121,14 @@ export const PhonesPage: React.FC = () => {
                 >
                   Sort by:
                 </label>
-                <select
-                  name="phones-sort"
+                <Select
                   id="phones-sort"
-                  className={styles.phonesPage__sort_selectMenu}
-                >
-                  <option value="newest">Newest</option>
-                  <option value="newest">Alphabetically</option>
-                  <option value="newest">Cheapest</option>
-                </select>
+                  classNamePrefix="select"
+                  value={getSortBy()}
+                  defaultValue={{ value: 'default', label: 'Show all' }}
+                  options={optionsSortBy}
+                  onChange={handleSortBy}
+                />
               </div>
             </div>
 
@@ -106,18 +146,14 @@ export const PhonesPage: React.FC = () => {
                   Items on page
                 </label>
 
-                <select
-                  name="perPageSelector"
+                <Select
                   id="perPageSelector"
-                  className={styles.phonesPage__sort_selectMenu}
-                  value={perPage}
+                  classNamePrefix="select"
+                  value={getPerPage()}
+                  defaultValue={{ value: `${total}`, label: 'All' }}
+                  options={optionsCount}
                   onChange={handlePerPage}
-                >
-                  <option value={4}>4</option>
-                  <option value={8}>8</option>
-                  <option value={16}>16</option>
-                  {/* <option value={1}>{1}</option> */}
-                </select>
+                />
               </div>
             </div>
           </div>

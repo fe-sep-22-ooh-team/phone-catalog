@@ -10,7 +10,7 @@ import img3 from '../../assets/img/swiper3.jpg';
 
 const sliderImages = [img1, img2, img3];
 
-export const Slider: React.FC = () => {
+export const PicturesSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const imagesCount = sliderImages.length;
   const dots = sliderImages.map((el, i) => i);

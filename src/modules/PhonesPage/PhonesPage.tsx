@@ -32,10 +32,7 @@ export const PhonesPage: React.FC = () => {
 
   const loadGoods = useCallback(async () => {
     try {
-      const response = await getPhones(
-        currentPage,
-        perPage,
-      );
+      const response = await getPhones(currentPage, perPage);
 
       // setPhones(...response);
 
@@ -62,9 +59,7 @@ export const PhonesPage: React.FC = () => {
       <div>
         <h1 className={styles.phonesPage__title}>Mobile phones</h1>
 
-        <p
-          className={styles.phonesPage__totalItems}
-        >
+        <p className={styles.phonesPage__totalItems}>
           {`${phones.length} models`}
         </p>
 

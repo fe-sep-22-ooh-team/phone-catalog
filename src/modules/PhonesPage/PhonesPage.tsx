@@ -3,7 +3,7 @@ import Select from 'react-select';
 import styles from './PhonesPage.module.scss';
 import './select__count.scss';
 import { Pagination } from '../../components/Pagination';
-import { ProductCard } from '../../components/ProductCard';
+// import { ProductCard } from '../../components/ProductCard';
 import { getNumbers } from '../../utils/utils';
 
 const items = getNumbers(1, 42);
@@ -15,10 +15,10 @@ export const PhonesPage: React.FC = () => {
 
   const total = items.length;
 
-  const firstItem = (currentPage - 1) * perPage;
-  const lastItem = Math.min(firstItem + perPage, total);
+  // const firstItem = (currentPage - 1) * perPage;
+  // const lastItem = Math.min(firstItem + perPage, total);
 
-  const currentItems = items.slice(firstItem, lastItem);
+  // const currentItems = items.slice(firstItem, lastItem);
 
   const optionsCount = [
     { value: '4', label: '4' },
@@ -126,9 +126,9 @@ export const PhonesPage: React.FC = () => {
         </div>
 
         <div className={styles.catalog}>
-          {currentItems.map((item) => (
+          {/* {currentItems.map((item) => (
             <ProductCard key={item} />
-          ))}
+          ))} */}
         </div>
       </div>
 

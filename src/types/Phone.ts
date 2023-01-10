@@ -1,15 +1,11 @@
 export interface Phone {
-  id: string;
-  category: string;
-  phoneId: string;
-  itemId: string;
+  slug: string;
   name: string;
-  fullPrice: number;
-  price: number;
+  price: string;
+  discountPrice: string;
+  year: string;
   screen: string;
-  capacity: string;
-  color: string;
+  memory: string;
   ram: string;
-  year: number;
   image: string;
 }

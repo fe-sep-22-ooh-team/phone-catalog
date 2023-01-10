@@ -58,9 +58,35 @@ export const PhonesPage: React.FC = () => {
     setCurrentPage(1);
   };
 
-  const onPageChange = (newPage: number) => {
-    setCurrentPage(newPage);
-  };
+  // const onPageChange = (newPage: number) => {
+  //   setCurrentPage(newPage);
+  // };
+
+  const loadGoods = useCallback(async () => {
+    let response;
+
+    try {
+      response = await getPhones(currentPage, perPage);
+
+      // setPhones(...response);
+
+      setPhones(response.results);
+      setTotalPages(response.totalPages);
+
+      // eslint-disable-next-line no-console
+      console.log(response);
+      // eslint-disable-next-line no-console
+      console.log(phones, totalPages);
+    } catch {
+      return false;
+    }
+
+    return true;
+  }, [perPage, currentPage]);
+
+  useEffect(() => {
+    loadGoods();
+  }, [currentPage, perPage]);
 
   const loadGoods = useCallback(async () => {
     try {
@@ -164,12 +190,12 @@ export const PhonesPage: React.FC = () => {
           )}
       </div>
 
-      <Pagination
-        total={total}
+      {/* <Pagination
+        total={12}
         perPage={perPage}
         currentPage={currentPage}
         onPageChange={onPageChange}
-      />
+      /> */}
     </div>
   );
 };

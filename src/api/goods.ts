@@ -8,6 +8,7 @@ export const getPhones = (page: number, perPage: number) => {
 export const getAll = () => {
   return client.get<ResponseFromAPI>('');
 };
+
 // export const addPhone = (phone: Omit<phone, 'id'>) => {
 //   return client.post('/phones', phone);
 // };

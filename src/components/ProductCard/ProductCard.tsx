@@ -44,6 +44,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
           <strong className={styles.productCard__value}>
             {phone.screen}
           </strong>
+
         </li>
 
         <li className={styles.productCard__info}>

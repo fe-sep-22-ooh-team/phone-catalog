@@ -3,6 +3,7 @@ const BASE_URL
   = 'https://idyllic-lamington-19c8d3.netlify.app/'
   + '.netlify/functions/server/products/';
 
+
 // To have autocompletion and avoid mistypes
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';
 

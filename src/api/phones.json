@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "apple-iphone-xs-64gb-silver-imt9g2fs-a-1",
+    "name": "Apple iPhone Xs 64GB Silver (iMT9G2FS/A)",
+    "price": "899",
+    "discountPrice": "799",
+    "year": "2022",
+    "screen": "5.8” OLED",
+    "memory": "64 GB",
+    "ram": "4 GB",
+    "image": "https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg"
+  },
+  {
+    "slug": "apple-iphone-11-pro-max-64gb-gold-imt9g2fs-a-2",
+    "name": "Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)",
+    "price": "1199",
+    "discountPrice": "799",
+    "year": "2022",
+    "screen": "6.5” OLED",
+    "memory": "64 GB",
+    "ram": "3 GB",
+    "image": "https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg"
+  },
+  {
+    "slug": "apple-iphone-11-128gb-Purple-imt9g2fs-a-3",
+    "name": "Apple iPhone 11 128GB Purple (iMT9G2FS/A)",
+    "price": "899",
+    "discountPrice": "799",
+    "year": "2022",
+    "screen": "6.2” IPS",
+    "memory": "128 GB",
+    "ram": "4 GB",
+    "image": "https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg"
+  },
+  {
+    "slug": "apple-iphone-x-256gb-silver-imt9g2fs-a-4",
+    "name": "Apple iPhone X 256GB Silver (iMT9G2FS/A)",
+    "price": "899",
+    "discountPrice": "859",
+    "year": "2022",
+    "screen": "5.8” OLED",
+    "memory": "256 GB",
+    "ram": "3 GB",
+    "image": "https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg"
+  },
+  {
+    "slug": "apple-iphone-xs-64gb-silver-imt9g2fs-a-5",
+    "name": "Apple iPhone Xs 64GB Silver (iMT9G2FS/A)",
+    "price": "899",
+    "discountPrice": "799",
+    "year": "2022",
+    "screen": "5.8” OLED",
+    "memory": "64 GB",
+    "ram": "4 GB",
+    "image": "https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg"
+  },
+  {
+    "slug": "apple-iphone-11-pro-max-64gb-gold-imt9g2fs-a-6",
+    "name": "Apple iPhone 11 Pro Max 64GB Gold (iMT9G2FS/A)",
+    "price": "1199",
+    "discountPrice": "799",
+    "year": "2022",
+    "screen": "6.5” OLED",
+    "memory": "64 GB",
+    "ram": "3 GB",
+    "image": "https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg"
+  },
+  {
+    "slug": "apple-iphone-11-128gb-Purple-imt9g2fs-a-7",
+    "name": "Apple iPhone 11 128GB Purple (iMT9G2FS/A)",
+    "price": "899",
+    "discountPrice": "799",
+    "year": "2022",
+    "screen": "6.2” IPS",
+    "memory": "128 GB",
+    "ram": "4 GB",
+    "image": "https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg"
+  },
+  {
+    "slug": "apple-iphone-x-256gb-silver-imt9g2fs-a-8",
+    "name": "Apple iPhone X 256GB Silver (iMT9G2FS/A)",
+    "price": "899",
+    "discountPrice": "859",
+    "year": "2022",
+    "screen": "5.8” OLED",
+    "memory": "256 GB",
+    "ram": "3 GB",
+    "image": "https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg"
+  }
+]

@@ -1,11 +1,11 @@
 export interface Phone {
-  discountPrice: string;
-  image: string;
-  memory: string;
+  slug: string;
   name: string;
   price: string;
-  ram: string;
-  screen: string;
-  slug: string;
+  discountPrice: string;
   year: string;
+  screen: string;
+  memory: string;
+  ram: string;
+  image: string;
 }

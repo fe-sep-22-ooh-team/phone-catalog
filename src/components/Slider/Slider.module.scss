@@ -1,0 +1,94 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.container {
+  margin-bottom: 66px;
+
+  @include onTablet {
+    padding: 0 16px;
+    margin-bottom: 74px;
+  }
+
+  @include onDesktop {
+    padding: 0;
+    margin-bottom: 90px;
+  }
+
+  .swiper {
+    @include onTablet {
+      height: 207px;
+    }
+
+    @include onLaptop {
+      height: 328px;
+    }
+
+    @include onDesktop {
+      height: 428px;
+    }
+
+    &__slide {
+      position: relative;
+      overflow: hidden;
+
+      box-sizing: border-box;
+      width: 100%;
+
+      &::after {
+        content: '';
+        display: block;
+        padding-bottom: 100%;
+      }
+
+      @include onTablet {
+        height: 189px;
+      }
+
+      @include onLaptop {
+        height: 300px;
+      }
+
+      @include onDesktop {
+        height: 400px;
+      }
+    }
+
+    &__imgBox {
+      width: 100%;
+
+      @include onTablet {
+        height: 189px;
+      }
+
+      @include onLaptop {
+        height: 300px;
+      }
+
+      @include onDesktop {
+        height: 400px;
+      }
+    }
+
+    &__img {
+      position: absolute;
+      object-fit: cover;
+      height: 100%;
+
+      @include onTablet {
+        width: calc(100% - 96px);
+      }
+
+      @include onTablet {
+        height: 189px;
+      }
+
+      @include onLaptop {
+        height: 300px;
+      }
+
+      @include onDesktop {
+        height: 400px;
+      }
+    }
+  }
+}

@@ -16,6 +16,7 @@ export const PhonesPage: React.FC = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
+
   const total = allPhones.length;
 
   const optionsCount = [
@@ -144,6 +145,7 @@ export const PhonesPage: React.FC = () => {
             </div>
           </div>
         </div>
+
 
         {isLoading ? (
           <Loader />

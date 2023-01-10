@@ -1,11 +1,35 @@
-import categoryImg from '../../assets/img/Category.svg';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-export const CategoryCard: React.FC = () => (
-  <div className="card">
-    <img src={categoryImg} alt="Mobile phones" className="card__img" />
+import { Category } from '../../types/Category';
 
-    <h3 className="card__title">Mobile phones</h3>
+import styles from './CategoryCard.module.scss';
 
-    <p className="card__description">95 models</p>
-  </div>
-);
+type Props = {
+  category: Category;
+};
+
+export const CategoryCard: React.FC<Props> = ({ category }) => {
+  const {
+    title,
+    count,
+    url,
+    imgUrl,
+  } = category;
+
+  return (
+    <div className={styles.card}>
+      <div className={styles.card__container}>
+        <Link to={url} className={styles.card__cover}>
+          <img src={imgUrl} alt={title} className={styles.card__img} />
+        </Link>
+      </div>
+
+      <Link to={url} className={styles.card__link}>
+        <p className={styles.card__title}>{title}</p>
+      </Link>
+
+      <p className={styles.card__count}>{count}</p>
+    </div>
+  );
+};

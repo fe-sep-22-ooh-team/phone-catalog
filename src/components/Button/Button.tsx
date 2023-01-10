@@ -3,20 +3,22 @@ import React, { useState } from 'react';
 
 import classnames from 'classnames';
 import styles from './Button.module.scss';
-import { Phone } from '../../types/Phone';
 
 type Props = {
-  phone?: Phone;
+  text: string;
+  textAfterClick?: string;
 };
 
-export const Button: React.FC<Props> = () => {
+export const Button: React.FC<Props> = ({ text, textAfterClick }) => {
   const [select, setSelect] = useState(false);
 
-  const handleCartButtonClick = (event: React.MouseEvent) => {
-    event.preventDefault();
-
+  const handleCartButtonClick = () => {
     setSelect(true);
   };
+
+  const isSelected = select ? textAfterClick : text;
+
+  const textToRender = textAfterClick ? isSelected : text;
 
   return (
     <button
@@ -25,7 +27,7 @@ export const Button: React.FC<Props> = () => {
         [styles.btn_selected]: select,
       })}
     >
-      {select ? 'Added' : 'Add to cart'}
+      {textToRender}
     </button>
   );
 };

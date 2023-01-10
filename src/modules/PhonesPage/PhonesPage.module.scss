@@ -30,10 +30,6 @@
       width: 640px;
     }
 
-    @include onLaptop {
-      width: 768px;
-    }
-
     @include onDesktop {
       padding: 25px 32px 0 32px;
       width: 1200px;
@@ -72,27 +68,27 @@
       color: $secondary-color;
     }
 
-    &_selectMenu {
-      padding: 10px 12px;
-      height: 40px;
-      width: 100%;
-      border: 1px solid $icons-color;
-      outline: none;
+    // &_selectMenu {
+    //   padding: 10px 12px;
+    //   height: 40px;
+    //   width: 100%;
+    //   border: 1px solid $icons-color;
+    //   outline: none;
 
-      font-style: normal;
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 21px;
-      color: $primary-color;
+    //   font-style: normal;
+    //   font-weight: 700;
+    //   font-size: 14px;
+    //   line-height: 21px;
+    //   color: $primary-color;
 
-      &:hover {
-        border-color: $secondary-color;
-      }
+    //   &:hover {
+    //     border-color: $secondary-color;
+    //   }
 
-      &:focus {
-        border-color: $primary-color;
-      }
-    }
+    //   &:focus {
+    //     border-color: $primary-color;
+    //   }
+    // }
   }
 }
 

@@ -4,27 +4,24 @@ import Select from 'react-select';
 import styles from './PhonesPage.module.scss';
 // import { Pagination } from '../../components/Pagination';
 import './select__count.scss';
-// import { Pagination } from '../../components/Pagination';
+import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
 // import { getNumbers } from '../../utils/utils';
-import { getPhones } from '../../api/goods';
+import { getAll, getPhones } from '../../api/goods';
 import { Phone } from '../../types/Phone';
+import { Loader } from '../../components/Loader';
 
 // const items = getNumbers(1, 42);
 
 export const PhonesPage: React.FC = () => {
-  const [perPage, setPerPage] = useState(4);
+  const [perPage, setPerPage] = useState(16);
   const [sortBy, setSortBy] = useState('default');
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState<number>(1);
   const [phones, setPhones] = useState<Phone[]>([]);
+  const [allPhones, setAllPhones] = useState<Phone[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const total = 42;
-
-  // const firstItem = (currentPage - 1) * perPage;
-  // const lastItem = Math.min(firstItem + perPage, total);
-
-  // const currentItems = items.slice(firstItem, lastItem);
+  const total = allPhones.length;
 
   const optionsCount = [
     { value: '4', label: '4' },
@@ -61,35 +58,32 @@ export const PhonesPage: React.FC = () => {
     setCurrentPage(1);
   };
 
-  // const onPageChange = (newPage: number) => {
-  //   setCurrentPage(newPage);
-  // };
+  const onPageChange = (newPage: number) => {
+    setCurrentPage(newPage);
+  };
 
   const loadGoods = useCallback(async () => {
-    let response;
-
     try {
-      response = await getPhones(currentPage, perPage);
+      setIsLoading(true);
 
-      // setPhones(...response);
-
-      setPhones(response.results);
-      setTotalPages(response.totalPages);
+      const goods = await getPhones(currentPage, perPage);
+      const allGoods = await getAll();
 
       // eslint-disable-next-line no-console
-      console.log(response);
-      // eslint-disable-next-line no-console
-      console.log(phones, totalPages);
-    } catch {
-      return false;
+      console.log(allGoods.results);
+
+      setPhones(await goods.results);
+      setAllPhones(await allGoods.results);
+    } catch (err) {
+      throw new Error(`${err}`);
+    } finally {
+      setIsLoading(false);
     }
-
-    return true;
   }, [perPage, currentPage]);
 
   useEffect(() => {
     loadGoods();
-  }, [currentPage, perPage]);
+  }, [currentPage, perPage, sortBy]);
 
   const getPerPage = () => {
     return perPage
@@ -159,22 +153,23 @@ export const PhonesPage: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.catalog}>
-          {phones.length
-            ? phones.map((phone) => (
-              <ProductCard key={phone.id} phone={phone} />
-              // `Item ${item} `
-            ))
-            : 'Loading...'}
-        </div>
+        {isLoading
+          ? <Loader />
+          : (
+            <div className={styles.catalog}>
+              {phones.map((phone) => (
+                <ProductCard key={phone.slug} phone={phone} />
+              ))}
+            </div>
+          )}
       </div>
 
-      {/* <Pagination
-        total={12}
+      <Pagination
+        total={total}
         perPage={perPage}
         currentPage={currentPage}
         onPageChange={onPageChange}
-      /> */}
+      />
     </div>
   );
 };

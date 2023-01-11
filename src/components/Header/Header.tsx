@@ -20,9 +20,7 @@ export const Header: React.FC = () => {
   const [activeMenu, setActiveMenu] = useState(false);
   const { cartList, favList } = useContext(ContextFavCart);
 
-  const totalCartCount = cartList.reduce(
-    (acc, item) => acc + item.count, 0,
-  );
+  const totalCartCount = cartList.reduce((acc, item) => acc + item.count, 0);
 
   const totalFavCount = favList.length;
 
@@ -68,13 +66,11 @@ export const Header: React.FC = () => {
               <li key={text} className={styles.nav__item}>
                 <NavLink
                   to={to}
-                  className={
-                    ({ isActive }) =>
-                      // eslint-disable-next-line implicit-arrow-linebreak
-                      classNames(styles.nav__link, {
-                        [styles.nav__link_active]: isActive,
-                      })
-                  }
+                  className={({ isActive }) =>
+                    // eslint-disable-next-line implicit-arrow-linebreak
+                    classNames(styles.nav__link, {
+                      [styles.nav__link_active]: isActive,
+                    })}
                   onClick={onCloseMenu}
                 >
                   {text}
@@ -87,13 +83,11 @@ export const Header: React.FC = () => {
             <NavLink
               to="/favorites"
               onClick={onCloseMenu}
-              className={
-                ({ isActive }) =>
-                  // eslint-disable-next-line implicit-arrow-linebreak
-                  classNames(styles.nav__cart_item, {
-                    [styles.nav__link_active]: isActive,
-                  })
-              }
+              className={({ isActive }) =>
+                // eslint-disable-next-line implicit-arrow-linebreak
+                classNames(styles.nav__cart_item, {
+                  [styles.nav__link_active]: isActive,
+                })}
             >
               <img
                 src={favouritesImg}
@@ -110,13 +104,11 @@ export const Header: React.FC = () => {
             <NavLink // need to create a context to get current value of favourite items
               to="/cart"
               onClick={onCloseMenu}
-              className={
-                ({ isActive }) =>
-                  // eslint-disable-next-line implicit-arrow-linebreak
-                  classNames(styles.nav__cart_item, {
-                    [styles.nav__link_active]: isActive,
-                  })
-              }
+              className={({ isActive }) =>
+                // eslint-disable-next-line implicit-arrow-linebreak
+                classNames(styles.nav__cart_item, {
+                  [styles.nav__link_active]: isActive,
+                })}
             >
               <img src={shoppingBagImg} alt="cart" />
               {totalCartCount > 0 && (

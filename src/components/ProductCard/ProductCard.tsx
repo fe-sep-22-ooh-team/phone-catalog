@@ -16,11 +16,13 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
   const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
   const { cartList, setCartList } = useContext(ContextFavCart);
 
-  const indexCart = cartList.find(el => el.phone.slug === phone.slug);
+  const indexCart = cartList.find((el) => el.phone.slug === phone.slug);
 
   const handleAddCart = () => {
     if (indexCart) {
-      const filteredList = cartList.filter(el => el.phone.slug !== phone.slug);
+      const filteredList = cartList.filter(
+        (el) => el.phone.slug !== phone.slug,
+      );
 
       setIsActiveCart(false);
       setCartList(filteredList);

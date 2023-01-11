@@ -12,19 +12,13 @@ import { PhoneWithCount } from '../../types/PhoneWithCount';
 import { ContextFavCart } from '../ContextFavCart';
 
 interface Props {
-  item: PhoneWithCount,
-  setTotalCost: (value: React.SetStateAction<number>) => void,
+  item: PhoneWithCount;
+  setTotalCost: (value: React.SetStateAction<number>) => void;
 }
 
-export const CartItem: React.FC<Props> = ({
-  item,
-  setTotalCost,
-}) => {
+export const CartItem: React.FC<Props> = ({ item, setTotalCost }) => {
   const {
-    name,
-    image,
-    discountPrice,
-    slug,
+    name, image, discountPrice, slug,
   } = item.phone;
 
   const { cartList, setCartList } = useContext(ContextFavCart);
@@ -35,7 +29,7 @@ export const CartItem: React.FC<Props> = ({
   const priceToShow = item.count * +discountPrice;
 
   const handleAdd = () => {
-    const newList = cartList.map(el => {
+    const newList = cartList.map((el) => {
       if (el.phone.slug === slug) {
         el.count += 1;
       }
@@ -44,11 +38,11 @@ export const CartItem: React.FC<Props> = ({
     });
 
     setCartList(newList);
-    setTotalCost(prev => prev + +discountPrice);
+    setTotalCost((prev) => prev + +discountPrice);
   };
 
   const handleRemove = () => {
-    const newList = cartList.map(el => {
+    const newList = cartList.map((el) => {
       if (el.phone.slug === slug) {
         el.count -= 1;
       }
@@ -57,16 +51,14 @@ export const CartItem: React.FC<Props> = ({
     });
 
     setCartList(newList);
-    setTotalCost(prev => prev - +discountPrice);
+    setTotalCost((prev) => prev - +discountPrice);
   };
 
   const handleDeleteItem = () => {
-    const newList = cartList.filter(el => (
-      el.phone.slug !== slug
-    ));
+    const newList = cartList.filter((el) => el.phone.slug !== slug);
 
     setCartList(newList);
-    setTotalCost(prev => prev - (+discountPrice * item.count));
+    setTotalCost((prev) => prev - +discountPrice * item.count);
   };
 
   return (
@@ -77,15 +69,9 @@ export const CartItem: React.FC<Props> = ({
             <img src={button} alt="button delete" />
           </button>
 
-          <img
-            className={styles.cartItem__image}
-            src={img}
-            alt="PhoneName"
-          />
+          <img className={styles.cartItem__image} src={img} alt="PhoneName" />
 
-          <h3 className={styles.cartItem__title}>
-            {name}
-          </h3>
+          <h3 className={styles.cartItem__title}>{name}</h3>
         </div>
 
         <div className={styles.cartItem__wrapper}>

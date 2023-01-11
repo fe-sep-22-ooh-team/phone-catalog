@@ -11,13 +11,12 @@ type Props = {
 };
 
 export const ProductCard: React.FC<Props> = ({ phone }) => {
-
   const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
+
   return (
     <article className={styles.productCard}>
       <Link to="/phones/1" className={styles.productCard__link}>
         <img
-
           src={serverLocation + phone.image}
           alt="appleProduct"
           className={styles.productCard__link_img}

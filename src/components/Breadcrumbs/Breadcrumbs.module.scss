@@ -1,0 +1,56 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  margin-bottom: 25px;
+
+  @include onTablet {
+    margin-bottom: 40px;
+  }
+
+  &__link {
+    position: relative;
+    color: $primary-color;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    margin-right: 32px;
+
+    &:last-child {
+      color: $secondary-color;
+      cursor: auto;
+    }
+
+    &:not(:last-child) {
+      &::after {
+        content: ' ';
+        color: $secondary-color;
+        width: 6px;
+        height: 10px;
+        text-align: center;
+        height: 10px;
+        line-height: 10px;
+        margin-bottom: -50%;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 200%;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        cursor: auto;
+        background: url('../../assets/img/RightArrow.svg');
+      }
+    }
+  }
+
+  &__img {
+    height: 14px;
+    width: 14px;
+  }
+}

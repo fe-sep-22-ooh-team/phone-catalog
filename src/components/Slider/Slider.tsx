@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-boolean-value */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -18,9 +18,29 @@ import img4 from '../../assets/img/slider1.jpg';
 import img5 from '../../assets/img/slider2.jpg';
 import img6 from '../../assets/img/slider3.jpg';
 
-const sliderImages = [img1, img2, img3, img4, img5, img6];
+let sliderImages;
 
 export const Slider: React.FC = () => {
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setInnerWidth(window.innerWidth);
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        setInnerWidth(window.innerWidth);
+      });
+    };
+  }, [innerWidth]);
+
+  if (innerWidth < 640) {
+    sliderImages = [img6, img2, img3, img4, img5];
+  } else {
+    sliderImages = [img1, img2, img3, img4, img5];
+  }
+
   return (
     <div className={styles.container}>
       <Swiper
@@ -39,7 +59,7 @@ export const Slider: React.FC = () => {
         {sliderImages.map((sliderImg) => (
           <SwiperSlide className={styles.swiper__slide}>
             <Link to="/phones" className={styles.swiper__imgBox}>
-              <img src={sliderImg} alt="" className={styles.swiper__img} />
+              <img src={sliderImg} alt="phone" className={styles.swiper__img} />
             </Link>
           </SwiperSlide>
         ))}

@@ -2,20 +2,22 @@ import React, { useCallback, useState, useEffect } from 'react';
 import Select from 'react-select';
 import styles from './PhonesPage.module.scss';
 import './select__count.scss';
+
 import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
+import { Loader } from '../../components/Loader';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
+
 import { getAll, getPhones } from '../../api/goods';
 import { Phone } from '../../types/Phone';
-import { Loader } from '../../components/Loader';
 
 export const PhonesPage: React.FC = () => {
   const [allPhones, setAllPhones] = useState<Phone[]>([]);
-  const [perPage, setPerPage] = useState(50);
+  const [perPage, setPerPage] = useState(59);
   const [sortBy, setSortBy] = useState('default');
   const [currentPage, setCurrentPage] = useState(1);
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-
 
   const total = allPhones.length;
 
@@ -58,6 +60,12 @@ export const PhonesPage: React.FC = () => {
     setCurrentPage(newPage);
   };
 
+  const getPerPage = () => {
+    return perPage
+      ? optionsCount.find((option) => +option.value === perPage)
+      : total;
+  };
+
   const loadGoods = useCallback(async () => {
     try {
       setIsLoading(true);
@@ -78,92 +86,88 @@ export const PhonesPage: React.FC = () => {
     loadGoods();
   }, [currentPage, perPage, sortBy]);
 
-  const getPerPage = () => {
-    return perPage
-      ? optionsCount.find((option) => +option.value === perPage)
-      : total;
-  };
-
   return (
-    <div className={styles.phonesPage__container}>
-      <div>
-        <h1 className={styles.phonesPage__title}>Mobile phones</h1>
+    <div className="page__container">
+      <div className={styles.phonesPage__container}>
+        <div>
+          <Breadcrumbs location={['/', '/phones']} />
+          <h1 className={styles.phonesPage__title}>Mobile phones</h1>
 
-        <p className={styles.phonesPage__totalItems}>
-          {`${phones.length} models`}
-        </p>
+          <p className={styles.phonesPage__totalItems}>
+            {`${phones.length} models`}
+          </p>
 
-        <div className={styles.phonesPage__sort_container}>
-          <div className="grid">
-            <div
-              className="
-              grid__item--mobile--1-2
-              grid__item--tablet--1-4
-              grid__item--desktop--1-4"
-            >
-              <div className={styles.phonesPage__sort}>
-                <label
-                  htmlFor="phones-sort"
-                  className={styles.phonesPage__sort_text}
-                >
-                  Sort by:
-                </label>
-                <Select
-                  id="phones-sort"
-                  classNamePrefix="select"
-                  value={getSortBy()}
-                  defaultValue={{ value: 'default', label: 'Show all' }}
-                  options={optionsSortBy}
-                  onChange={handleSortBy}
-                />
+          <div className={styles.phonesPage__sort_container}>
+            <div className="grid">
+              <div
+                className="
+                grid__item--mobile--1-2
+                grid__item--tablet--1-4
+                grid__item--desktop--1-4"
+              >
+                <div className={styles.phonesPage__sort}>
+                  <label
+                    htmlFor="phones-sort"
+                    className={styles.phonesPage__sort_text}
+                  >
+                    Sort by:
+                  </label>
+                  <Select
+                    id="phones-sort"
+                    classNamePrefix="select"
+                    value={getSortBy()}
+                    defaultValue={{ value: 'default', label: 'Show all' }}
+                    options={optionsSortBy}
+                    onChange={handleSortBy}
+                  />
+                </div>
               </div>
-            </div>
 
-            <div
-              className="
-              grid__item--mobile--3-4
-              grid__item--tablet--5-7
-              grid__item--desktop--5-7"
-            >
-              <div className={styles.phonesPage__sort}>
-                <label
-                  htmlFor="perPageSelector"
-                  className={styles.phonesPage__sort_text}
-                >
-                  Items on page
-                </label>
+              <div
+                className="
+                grid__item--mobile--3-4
+                grid__item--tablet--5-7
+                grid__item--desktop--5-7"
+              >
+                <div className={styles.phonesPage__sort}>
+                  <label
+                    htmlFor="perPageSelector"
+                    className={styles.phonesPage__sort_text}
+                  >
+                    Items on page
+                  </label>
 
-                <Select
-                  id="perPageSelector"
-                  classNamePrefix="select"
-                  value={getPerPage()}
-                  defaultValue={{ value: `${total}`, label: 'All' }}
-                  options={optionsCount}
-                  onChange={handlePerPage}
-                />
+                  <Select
+                    id="perPageSelector"
+                    classNamePrefix="select"
+                    value={getPerPage()}
+                    defaultValue={{ value: `${total}`, label: 'All' }}
+                    options={optionsCount}
+                    onChange={handlePerPage}
+                  />
+                </div>
               </div>
             </div>
           </div>
+
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <div className={styles.catalog}>
+              {phones.map((phone) => (
+                <ProductCard key={phone.slug} phone={phone} />
+              ))}
+            </div>
+          )}
         </div>
 
-
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <div className={styles.catalog}>
-            {phones.map((phone) => (
-              <ProductCard key={phone.slug} phone={phone} />
-            ))}
-          </div>
-        )}
+        <Pagination
+          total={total}
+          perPage={perPage}
+          currentPage={currentPage}
+          onPageChange={onPageChange}
+        />
       </div>
-
-      <Pagination
-        total={total}
-        perPage={perPage}
-        currentPage={currentPage}
-        onPageChange={onPageChange}
-      />
     </div>
   );
 };

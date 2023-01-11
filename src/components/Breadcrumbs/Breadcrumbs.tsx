@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-// import styles from './Breadcrumbs.module.scss';
+import styles from './Breadcrumbs.module.scss';
 import homeIcon from '../../assets/img/Home.svg';
 
 type Props = {
@@ -8,20 +8,21 @@ type Props = {
 
 export const Breadcrumbs: React.FC<Props> = ({ location }) => {
   return (
-    <nav className="breadcrumbs">
-      {location.map((page: string) => {
+    <nav className={styles.breadcrumbs}>
+      {location.map((page: string, i) => {
+        const key = `${page}${i}`;
+
         return (
-          <Link
-            to={`${page}1`}
-            style={{ color: '#000' }}
-            className="breadcrumbs__link"
-            key={page}
-          >
-            {page === '/' ? (
-              <img src={homeIcon} className="breadcrumbs__img" alt="home" />
-            ) : (
-              `${page[1].toUpperCase()}${page.slice(2)}`
-            )}
+          <Link to={`${page}`} className={styles.breadcrumbs__link} key={key}>
+            {page === '/'
+              ? (
+                <img
+                  src={homeIcon}
+                  className={styles.breadcrumbs__img}
+                  alt="home"
+                />
+              )
+              : `${page[1].toUpperCase()}${page.slice(2)}`}
           </Link>
         );
       })}

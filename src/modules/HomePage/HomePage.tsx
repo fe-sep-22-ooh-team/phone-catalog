@@ -29,7 +29,7 @@ export const HomePage: React.FC = () => {
     loadGoods();
   }, [phones]);
 
-  const hotPrices = phones.filter(phone => phone.price !== '');
+  const hotPrices = phones.filter((phone) => phone.price !== '');
 
   return (
     <div className={styles.homePage__container}>

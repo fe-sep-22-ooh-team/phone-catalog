@@ -1,8 +1,4 @@
-import React, {
-  useCallback,
-  useState,
-  useEffect,
-} from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import Select from 'react-select';
 import styles from './PhonesPage.module.scss';
 import './select__count.scss';

@@ -11,16 +11,17 @@ export const Breadcrumbs: React.FC<Props> = ({ location }) => {
     <nav className="breadcrumbs">
       {location.map((page: string) => {
         return (
-          <Link to={`${page}1`} style={{ color: '#000' }} className="breadcrumbs__link" key={page}>
-            {page === '/'
-              ? (
-                <img
-                  src={homeIcon}
-                  className="breadcrumbs__img"
-                  alt="home"
-                />
-              )
-              : `${page[1].toUpperCase()}${page.slice(2)}`}
+          <Link
+            to={`${page}1`}
+            style={{ color: '#000' }}
+            className="breadcrumbs__link"
+            key={page}
+          >
+            {page === '/' ? (
+              <img src={homeIcon} className="breadcrumbs__img" alt="home" />
+            ) : (
+              `${page[1].toUpperCase()}${page.slice(2)}`
+            )}
           </Link>
         );
       })}

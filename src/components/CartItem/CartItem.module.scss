@@ -90,6 +90,10 @@
     &:hover {
       border-color: $primary-color;
     }
+
+    &_disabled {
+      cursor: auto;
+    }
   }
 
   &__price {

@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './AccessoriesPage.module.scss';
 import cartEmpty from '../../assets/img/Cart-empty.svg';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
 
 export const AccessoriesPage: React.FC = () => (
-  <div className={styles.accessories__container}>
-    <h1 className="page__subtitle">There are no accessories yet</h1>
-    <img src={cartEmpty} alt="CartEmpty" />
+  <div className="page__container">
+    <div className={styles.accessories__container}>
+      <Breadcrumbs location={['/', '/accessories']} />
+      <h1 className="page__subtitle">There are no accessories yet</h1>
+      <img src={cartEmpty} alt="CartEmpty" />
+    </div>
   </div>
 );

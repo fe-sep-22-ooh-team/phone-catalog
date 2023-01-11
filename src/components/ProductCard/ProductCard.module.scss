@@ -4,7 +4,7 @@
 .productCard {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  max-width: 288px;
   height: 440px;
   border: 1px solid $elements-color;
   padding: 32px;
@@ -51,7 +51,6 @@
     line-height: 21px;
     font-weight: 600;
 
-    overflow: hidden;
     text-overflow: ellipsis;
 
     padding: 24px 0 0;
@@ -62,7 +61,7 @@
     color: $primary-color;
 
     &:hover {
-      color: $secondary-color;
+      font-weight: bolder;
     }
 
     &_img {

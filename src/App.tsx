@@ -12,26 +12,28 @@ import { PhonesPage } from './modules/PhonesPage';
 import { RightsPage } from './modules/RightsPage';
 import { TabletsPage } from './modules/TabletsPage';
 import { Footer } from './components/Footer';
+import { PhoneInfoPage } from './modules/PhoneInfoPage';
 
 export const App: React.FC = () => (
   <div className="page">
     <Header />
 
     <main className="page__section">
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/home" element={<Navigate to="/" replace />} />
-          <Route path="/phones" element={<PhonesPage />} />
-          <Route path="/accessories" element={<AccessoriesPage />} />
-          <Route path="/tablets" element={<TabletsPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/favorites" element={<FavoritesPage />} />
-          <Route path="/contacts" element={<ContactsPage />} />
-          <Route path="/rights" element={<RightsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/home" element={<Navigate to="/" replace />} />
+        <Route path="/phones">
+          <Route index element={<PhonesPage />} />
+          <Route path=":slug" element={<PhoneInfoPage />} />
+        </Route>
+        <Route path="/accessories" element={<AccessoriesPage />} />
+        <Route path="/tablets" element={<TabletsPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/contacts" element={<ContactsPage />} />
+        <Route path="/rights" element={<RightsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
     </main>
 
     <Footer />

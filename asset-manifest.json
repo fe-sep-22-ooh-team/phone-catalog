@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/phone-catalog/static/css/main.10c7d3fa.css",
+    "main.css": "/phone-catalog/static/css/main.348c6092.css",
     "main.js": "/phone-catalog/static/js/main.a0ad8fa2.js",
     "static/media/swiper2.jpg": "/phone-catalog/static/media/swiper2.72bd3ad074734a6a1db8.jpg",
     "static/media/iPhoneXs64GbSilver.svg": "/phone-catalog/static/media/iPhoneXs64GbSilver.0b49cfb066c59742208534a5417065ea.svg",
@@ -30,11 +30,11 @@
     "static/media/TopArrow.svg": "/phone-catalog/static/media/TopArrow.80e27a8f296e8f6d01b0.svg",
     "static/media/LeftArrowHover.svg": "/phone-catalog/static/media/LeftArrowHover.f8da456077b13aabd737.svg",
     "static/media/Minus.svg": "/phone-catalog/static/media/Minus.cecb4be39afa7b933ec169dd495a73ff.svg",
-    "main.10c7d3fa.css.map": "/phone-catalog/static/css/main.10c7d3fa.css.map",
+    "main.348c6092.css.map": "/phone-catalog/static/css/main.348c6092.css.map",
     "main.a0ad8fa2.js.map": "/phone-catalog/static/js/main.a0ad8fa2.js.map"
   },
   "entrypoints": [
-    "static/css/main.10c7d3fa.css",
+    "static/css/main.348c6092.css",
     "static/js/main.a0ad8fa2.js"
   ]
 }

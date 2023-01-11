@@ -26,7 +26,7 @@ export const Featured: React.FC<Props> = ({ title, phones }) => {
       <h2 className="page__subtitle">{title}</h2>
       <div className="container1">
         <Swiper
-          slidesPerView={"auto"}
+          slidesPerView={'auto'}
           navigation={true}
           // loop={true}
           // loopedSlides={8}
@@ -44,7 +44,6 @@ export const Featured: React.FC<Props> = ({ title, phones }) => {
           ))}
         </Swiper>
       </div>
-
     </>
   );
 };

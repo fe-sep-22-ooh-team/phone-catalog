@@ -77,15 +77,16 @@
   }
 }
 
-.container1 .swiper-button-prev, .swiper-rtl .swiper-button-next {
+.container1 .swiper-button-prev,
+.swiper-rtl .swiper-button-next {
   left: calc(100% - 96px);
 
   @include onLaptop {
     left: calc(100% - 104px);
- }
+  }
 
   @include onDesktop {
-     left: calc(100% - 80px);
+    left: calc(100% - 80px);
   }
 }
 

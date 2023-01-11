@@ -14,15 +14,15 @@ export const Breadcrumbs: React.FC<Props> = ({ location }) => {
 
         return (
           <Link to={`${page}`} className={styles.breadcrumbs__link} key={key}>
-            {page === '/'
-              ? (
-                <img
-                  src={homeIcon}
-                  className={styles.breadcrumbs__img}
-                  alt="home"
-                />
-              )
-              : `${page[1].toUpperCase()}${page.slice(2)}`}
+            {page === '/' ? (
+              <img
+                src={homeIcon}
+                className={styles.breadcrumbs__img}
+                alt="home"
+              />
+            ) : (
+              `${page[1].toUpperCase()}${page.slice(2)}`
+            )}
           </Link>
         );
       })}

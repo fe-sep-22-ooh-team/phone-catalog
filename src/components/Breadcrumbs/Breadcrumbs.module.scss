@@ -1,7 +1,6 @@
 @import '../../styles/vars';
 @import '../../styles/mixins';
 
-
 .breadcrumbs {
   display: flex;
   flex-direction: row;
@@ -29,7 +28,7 @@
 
     &:not(:last-child) {
       &::after {
-        content: " ";
+        content: ' ';
         color: $secondary-color;
         width: 6px;
         height: 10px;
@@ -45,7 +44,7 @@
         bottom: 0;
         margin: auto;
         cursor: auto;
-        background: url("../../assets/img/RightArrow.svg");
+        background: url('../../assets/img/RightArrow.svg');
       }
     }
   }
@@ -55,4 +54,3 @@
     width: 14px;
   }
 }
-

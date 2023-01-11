@@ -1,4 +1,5 @@
 @import '/src/styles/mixins';
+@import '/src/styles/vars';
 
 .featured {
   margin-bottom: 80px;
@@ -29,5 +30,30 @@
   @include onDesktop {
     grid-template-columns: repeat(4, 1fr);
     padding-left: 0;
+  }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  display: none;
+  transition: border-color 0.3s;
+  color: $primary-color;
+  width: 32px;
+  height: 32px;
+  border: 1px solid $icons-color;
+  top: 0;
+  margin: 0;
+  padding: 0;
+
+  @include onTablet {
+    display: block;
+  }
+
+  @include onLaptop {
+    height: 300px;
+  }
+
+  @include onDesktop {
+    height: 32px;
   }
 }

@@ -1,17 +1,38 @@
+import React, { useCallback, useEffect, useState } from 'react';
 import styles from './HomePage.module.scss';
 import { Featured } from '../../components/Featured';
 import { Slider } from '../../components/Slider';
 import { Categories } from '../../components/Categories';
 import categoriesFromServer from '../../api/categories.json';
-import phonesFromServer from '../../api/phones.json';
+import { getAll } from '../../api/goods';
+import { Phone } from '../../types/Phone';
 
 export const HomePage: React.FC = () => {
-  const newModels = phonesFromServer
-    .filter((phone) => phone.year === '2022')
+  const [phones, setPhones] = useState<Phone[]>([]);
+  // const [isLoading, setIsLoading] = useState(false);
+
+  const loadGoods = useCallback(async () => {
+    try {
+      // setIsLoading(true);
+
+      const allGoods = await getAll();
+
+      setPhones(await allGoods.results);
+    } catch (err) {
+      throw new Error(`${err}`);
+    } finally {
+      // setIsLoading(false);
+    }
+  }, [phones]);
+
+  useEffect(() => {
+    loadGoods();
+  }, [phones]);
+
+  const newModels = phones
     .slice(0, 8);
-  const hotPrices = phonesFromServer
-    .filter((phone) => phone.discountPrice !== phone.price)
-    .slice(0, 4);
+  const hotPrices = phones
+    .slice(0, 8);
 
   return (
     <div className={styles.homePage__container}>

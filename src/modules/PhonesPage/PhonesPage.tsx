@@ -29,8 +29,8 @@ export const PhonesPage: React.FC = () => {
   ];
 
   const optionsSortBy = [
-    { value: 'ascAge', label: 'Newest' },
-    { value: 'descAge', label: 'Oldest' },
+    { value: 'descAge', label: 'Newest' },
+    { value: 'ascAge', label: 'Oldest' },
     { value: 'descPrice', label: 'Price: High to Low' },
     { value: 'ascPrice', label: 'Price: Low to High' },
     { value: 'ascName', label: 'Name: A - Z' },
@@ -70,7 +70,7 @@ export const PhonesPage: React.FC = () => {
     try {
       setIsLoading(true);
 
-      const goods = await getPhones(currentPage, perPage);
+      const goods = await getPhones(currentPage, perPage, sortBy);
       const allGoods = await getAll();
 
       setPhones(await goods.results);
@@ -80,7 +80,7 @@ export const PhonesPage: React.FC = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [perPage, currentPage]);
+  }, [perPage, currentPage, sortBy]);
 
   useEffect(() => {
     loadGoods();

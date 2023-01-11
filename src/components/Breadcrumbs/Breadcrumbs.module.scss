@@ -14,12 +14,17 @@
 
   &__link {
     position: relative;
+    margin-right: 32px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
     color: $primary-color;
     font-style: normal;
     font-weight: 600;
     font-size: 12px;
-    line-height: 15px;
-    margin-right: 32px;
+    height: 15px;
 
     &:last-child {
       color: $secondary-color;
@@ -29,20 +34,18 @@
     &:not(:last-child) {
       &::after {
         content: ' ';
-        color: $secondary-color;
+
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: -17px;
+        bottom: 0;
         width: 6px;
         height: 10px;
+
+        color: $secondary-color;
         text-align: center;
-        height: 10px;
-        line-height: 10px;
-        margin-bottom: -50%;
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 200%;
-        right: 0;
-        bottom: 0;
-        margin: auto;
+
         cursor: auto;
         background: url('../../assets/img/RightArrow.svg');
       }

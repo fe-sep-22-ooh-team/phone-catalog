@@ -10,10 +10,6 @@
   overflow: hidden;
 
   @include onTablet {
-    height: 85vh;
-  }
-
-  @include onDesktop {
-    height: 80vh;
+    min-height: 60vh;
   }
 }

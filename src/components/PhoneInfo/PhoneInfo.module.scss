@@ -1,0 +1,80 @@
+@import '../../styles/vars';
+@import '../../styles/extends';
+@import '../../styles/mixins';
+
+.product {
+  &__about {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    @include onDesktop {
+      display: flex;
+      margin-bottom: 0;
+    }
+
+    &_title {
+      @extend %product-title;
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid $elements-color;
+    }
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    &_item {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+
+      &_title {
+        @extend %about-title;
+        margin-bottom: 16px;
+      }
+
+      &_text {
+        color: $secondary-color;
+      }
+    }
+  }
+
+  &__description {
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    @include onDesktop {
+      max-width: 560px;
+      margin-right: 64px;
+    }
+  }
+
+  &__specs {
+    @include onDesktop {
+      flex-grow: 1;
+    }
+
+    &_name {
+      font-weight: 500;
+      color: $secondary-color;
+    }
+
+    &_item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    &_value {
+      font-weight: 600;
+      text-align: right;
+    }
+  }
+}

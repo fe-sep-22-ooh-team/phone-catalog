@@ -1,8 +1,10 @@
 import { ResponseFromAPI } from '../types/ResponseFromAPI';
 import { client } from '../utils/fetchClient';
 
-export const getPhones = (page: number, perPage: number) => {
-  return client.get<ResponseFromAPI>(`?page=${page}&limit=${perPage}`);
+export const getPhones = (page: number, perPage: number, sortBy: string) => {
+  return client.get<ResponseFromAPI>(
+    `?page=${page}&limit=${perPage}&sortBy=${sortBy}`,
+  );
 };
 
 export const getAll = () => {

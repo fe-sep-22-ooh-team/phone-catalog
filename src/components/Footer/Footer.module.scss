@@ -9,7 +9,6 @@
   box-sizing: border-box;
 
   padding-top: 34px;
-  width: 100vw;
 
   box-shadow: 0px -1px 0px $elements-color;
 
@@ -67,6 +66,10 @@
     }
 
     @include onTablet {
+      margin: 0 24px 0 0;
+    }
+
+    @include onDesktop {
       margin: 0 32px 0 0;
     }
 

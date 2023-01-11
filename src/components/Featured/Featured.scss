@@ -1,0 +1,99 @@
+@import '../../styles/vars';
+@import '../../styles/mixins';
+
+.container1 .swiper-button-next,
+.container1 .swiper-button-prev {
+  transition: border-color 0.3s;
+  color: $primary-color;
+  width: 32px;
+  height: 32px;
+  border: 1px solid $icons-color;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.container1 .swiper-button-next:after,
+.container1 .swiper-button-prev:after {
+  display: none;
+}
+
+.container1 .swiper-button-next {
+  background: $white-color url('../../assets/img/RightArrowHover.svg') no-repeat
+    center;
+}
+
+.container1 .swiper-button-prev {
+  background: $white-color url('../../assets/img/LeftArrowHover.svg') no-repeat
+    center;
+}
+
+.container1 .swiper-button-next,
+.container1 .swiper-rtl .swiper-button-prev {
+  right: 16px;
+
+  @include onTablet {
+    right: 24px;
+  }
+
+  @include onDesktop {
+    right: 0;
+  }
+}
+
+.container1 .swiper-button-next.swiper-button-disabled,
+.container1 .swiper-button-prev.swiper-button-disabled {
+  opacity: 0.5;
+}
+
+.container1 .swiper-slide {
+  width: 212px;
+  height: 439px;
+
+  @include onTablet {
+    padding: 0;
+    width: 237px;
+    height: 512px;
+  }
+
+  @include onDesktop {
+    width: 272px;
+    height: 506px;
+  }
+}
+
+.container1 .swiper-wrapper {
+  margin-bottom: 64px;
+  padding-top: 60px;
+  padding-left: 16px;
+
+  @include onTablet {
+    padding-left: 24px;
+    margin-bottom: 80px;
+  }
+
+  @include onDesktop {
+    padding-left: 0;
+  }
+}
+
+.container1 .swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: calc(100% - 96px);
+
+  @include onLaptop {
+    left: calc(100% - 104px);
+  }
+
+  @include onDesktop {
+    left: calc(100% - 80px);
+  }
+}
+
+.container1 .swiper {
+  margin-top: -55px;
+
+  @include onTablet {
+    margin-top: -65px;
+  }
+}

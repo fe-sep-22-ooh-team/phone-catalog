@@ -1,21 +1,27 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, {
+  useCallback,
+  useState,
+  useEffect,
+} from 'react';
 import Select from 'react-select';
 import styles from './PhonesPage.module.scss';
 import './select__count.scss';
+
 import { Pagination } from '../../components/Pagination';
 import { ProductCard } from '../../components/ProductCard';
+import { Loader } from '../../components/Loader';
+import { Breadcrumbs } from '../../components/Breadcrumbs';
+
 import { getAll, getPhones } from '../../api/goods';
 import { Phone } from '../../types/Phone';
-import { Loader } from '../../components/Loader';
 
 export const PhonesPage: React.FC = () => {
   const [allPhones, setAllPhones] = useState<Phone[]>([]);
-  const [perPage, setPerPage] = useState(50);
+  const [perPage, setPerPage] = useState(59);
   const [sortBy, setSortBy] = useState('default');
   const [currentPage, setCurrentPage] = useState(1);
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-
 
   const total = allPhones.length;
 
@@ -58,6 +64,12 @@ export const PhonesPage: React.FC = () => {
     setCurrentPage(newPage);
   };
 
+  const getPerPage = () => {
+    return perPage
+      ? optionsCount.find((option) => +option.value === perPage)
+      : total;
+  };
+
   const loadGoods = useCallback(async () => {
     try {
       setIsLoading(true);
@@ -78,15 +90,10 @@ export const PhonesPage: React.FC = () => {
     loadGoods();
   }, [currentPage, perPage, sortBy]);
 
-  const getPerPage = () => {
-    return perPage
-      ? optionsCount.find((option) => +option.value === perPage)
-      : total;
-  };
-
   return (
     <div className={styles.phonesPage__container}>
       <div>
+        <Breadcrumbs location={['/', '/phones']} />
         <h1 className={styles.phonesPage__title}>Mobile phones</h1>
 
         <p className={styles.phonesPage__totalItems}>
@@ -145,7 +152,6 @@ export const PhonesPage: React.FC = () => {
             </div>
           </div>
         </div>
-
 
         {isLoading ? (
           <Loader />

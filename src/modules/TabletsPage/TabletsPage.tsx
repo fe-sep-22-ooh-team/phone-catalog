@@ -5,8 +5,8 @@ import { Breadcrumbs } from '../../components/Breadcrumbs';
 
 export const TabletsPage: React.FC = () => (
   <div className="page__container">
+    <Breadcrumbs location={['/', '/tablets']} />
     <div className={styles.tablets__container}>
-      <Breadcrumbs location={['/', '/tablets']} />
       <h1 className="page__subtitle">There are no tablets yet</h1>
       <img src={cartEmpty} alt="CartEmpty" />
     </div>

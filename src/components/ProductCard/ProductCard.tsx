@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import { Button } from '../Button';
+import { ContextFavCart } from '../ContextFavCart';
 import { Favorite } from '../Favorite';
 
 import styles from './ProductCard.module.scss';
@@ -11,7 +12,27 @@ type Props = {
 };
 
 export const ProductCard: React.FC<Props> = ({ phone }) => {
+  const [isActiveCart, setIsActiveCart] = useState(false);
   const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
+  const { cartList, setCartList } = useContext(ContextFavCart);
+
+  const indexCart = cartList.find((el) => el.phone.slug === phone.slug);
+
+  const handleAddCart = () => {
+    if (indexCart) {
+      const filteredList = cartList.filter(
+        (el) => el.phone.slug !== phone.slug,
+      );
+
+      setIsActiveCart(false);
+      setCartList(filteredList);
+    }
+
+    if (!indexCart) {
+      setIsActiveCart(true);
+      setCartList([...cartList, { phone, count: 1 }]);
+    }
+  };
 
   return (
     <article className={styles.productCard}>
@@ -57,7 +78,12 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
       <footer className={styles.productCard__action}>
         <div className={styles.productCard__action}>
           <div className={styles.productCard__action__btn}>
-            <Button text="Add to cart" textAfterClick="Added" />
+            <Button
+              text="Add to cart"
+              textAfterClick="Added"
+              onClick={handleAddCart}
+              isActiveCart={isActiveCart}
+            />
           </div>
 
           <div className={styles.productCard__action__favorite}>

@@ -5,6 +5,24 @@
 .product {
   margin-top: 25px;
 
+  &__back {
+    margin-bottom: 16px;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+    color: $primary-color;
+
+    @include onTablet {
+      font-size: 32px;
+      line-height: 41px;
+      letter-spacing: -0.01em;
+    }
+  }
+
   &__info {
     margin-top: 40px;
 

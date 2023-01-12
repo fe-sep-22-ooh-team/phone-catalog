@@ -1,13 +1,11 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './CartPage.module.scss';
 
 import { ContextFavCart } from '../../components/ContextFavCart';
 import { CartItem } from '../../components/CartItem';
 import { EmptyCart } from '../../components/EmptyCart';
 import { Button } from '../../components/Button';
-
-import LeftArrow from '../../assets/img/LeftArrowHover.svg';
+import { ToBackButton } from '../../components/ToBackButton';
 
 export const CartPage: React.FC = () => {
   const { cartList } = useContext(ContextFavCart);
@@ -20,18 +18,16 @@ export const CartPage: React.FC = () => {
 
   const totalAmount = cartList.reduce((acc, el) => acc + el.count, 0);
 
+  // const handleCheckout = () => {
+  //   setCartList([]);
+  //   localStorage.setItem('cart', JSON.stringify([]));
+  // };
+
   return (
     <div className="page__container">
       <div className={styles.cart__container}>
-        <div className={styles.cart__back}>
-          <img
-            src={LeftArrow}
-            alt="left arrow"
-            className={styles.cart__back_img}
-          />
-          <Link to="/" className={styles.cart__back_link}>
-            Back
-          </Link>
+        <div className={styles.cart__button}>
+          <ToBackButton />
         </div>
         {cartList.length > 0 ? (
           <>

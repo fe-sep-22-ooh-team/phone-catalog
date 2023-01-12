@@ -1,0 +1,17 @@
+@import '../../styles/mixins';
+@import '../../styles/vars';
+
+.button {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60px;
+
+  &_link {
+    color: $secondary-color;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    height: 15px;
+  }
+}

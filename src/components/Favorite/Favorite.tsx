@@ -1,21 +1,45 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable max-len */
 import classNames from 'classnames';
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Phone } from '../../types/Phone';
+import { ContextFavCart } from '../ContextFavCart';
 import styles from './Favorite.module.scss';
 
 interface Props {
-  onClick?: () => void;
-  isActiveFav?: boolean;
+  phone: Phone;
 }
 
-export const Favorite: React.FC<Props> = ({ onClick, isActiveFav }) => {
+export const Favorite: React.FC<Props> = ({ phone }) => {
+  const [isActiveFav, setIsActiveFav] = useState(false);
+  const { favList, setFavList } = useContext(ContextFavCart);
+
+  const indexFav = favList.find((el) => el.slug === phone.slug);
+
+  useEffect(() => {
+    if (indexFav) {
+      setIsActiveFav(true);
+    }
+  }, []);
+
+  const handleAddFav = () => {
+    if (!indexFav) {
+      setIsActiveFav(true);
+      setFavList([...favList, phone]);
+    }
+
+    if (indexFav) {
+      setIsActiveFav(false);
+      setFavList(favList.filter((el) => el.slug !== phone.slug));
+    }
+  };
+
   return (
     <button
       className={classNames(styles.icon, {
         [styles.icon_active]: isActiveFav,
       })}
-      onClick={onClick}
+      onClick={handleAddFav}
     >
       {isActiveFav ? (
         <svg

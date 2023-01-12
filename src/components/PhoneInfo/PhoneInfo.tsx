@@ -5,13 +5,17 @@ import styles from './PhoneInfo.module.scss';
 import { PhoneInfoSlider } from './PhoneInfoSlider';
 import { Breadcrumbs } from '../Breadcrumbs';
 import { ProductControls } from './ProductControls';
-import { Button } from '../Button';
+// import { Button } from '../Button';
+import { ToBackButton } from '../ToBackButton';
 // import { Favorite } from '../Favorite';
 
 export const PhoneInfo: React.FC = () => (
   <div className="page__container">
     <div className={styles.product}>
-      <Breadcrumbs location={['/', '/phones']} />
+      <Breadcrumbs location={['/', '/phones', '/Apple iPhone 11 64GB Black']} />
+      <div className={styles.product__back}>
+        <ToBackButton />
+      </div>
 
       <h1 className={styles.product__title}>
         Apple iPhone 11 64GB Black iMT9G2FS/A
@@ -30,7 +34,7 @@ export const PhoneInfo: React.FC = () => (
           </div>
 
           <div className={styles.product__action}>
-            <Button text="Add to cart" />
+            {/* <Button text="Add to cart" /> */}
             {/* <Favorite /> */}
           </div>
 

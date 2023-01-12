@@ -14,7 +14,7 @@ import {
 } from 'swiper';
 
 import styles from './Slider.module.scss';
-import img1 from '../../assets/img/swiper1.png';
+import img1 from '../../assets/img/swiper1.jpg';
 import img2 from '../../assets/img/swiper2.jpg';
 import img3 from '../../assets/img/swiper3.jpg';
 import img4 from '../../assets/img/slider1.jpg';

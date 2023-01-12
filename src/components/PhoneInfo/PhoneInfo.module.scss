@@ -19,23 +19,30 @@
   }
 
   &__gallery {
+    margin-bottom: 16px;
 
     @include onTablet {
       margin-right: 17px;
     }
 
     @include onDesktop {
-      margin-right: 76px;
+      margin-right: 66px;
     }
   }
 
   &__promo {
-    max-width: 275px;
+    min-width: 237px;
+    margin-bottom: 56px;
 
     @include onTablet {
       margin-bottom: 64px;
       flex-direction: row;
       justify-content: space-between;
+    }
+
+    @include onDesktop {
+      min-width: 320px;
+      margin-bottom: 109px;
     }
 
   }
@@ -91,8 +98,6 @@
       font-weight: 700;
     }
   }
-
-  //==========================
 
   &__about {
     margin-bottom: 56px;

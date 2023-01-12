@@ -59,7 +59,8 @@
 }
 
 .swiper-button-next {
-  background: $white-color url('../../assets/img/RightArrowHover.svg') no-repeat center;
+  background: $white-color url('../../assets/img/RightArrowHover.svg') no-repeat
+    center;
 
   &:hover {
     border-color: $primary-color;
@@ -67,7 +68,8 @@
 }
 
 .swiper-button-prev {
-  background: $white-color url('../../assets/img/LeftArrowHover.svg') no-repeat center;
+  background: $white-color url('../../assets/img/LeftArrowHover.svg') no-repeat
+    center;
 
   &:hover {
     border-color: $primary-color;

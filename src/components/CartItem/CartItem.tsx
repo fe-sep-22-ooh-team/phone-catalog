@@ -89,15 +89,15 @@ export const CartItem: React.FC<Props> = ({ item, setTotalCost }) => {
               onClick={handleRemove}
               disabled={!isVisible}
             >
-              {isVisible
-                ? <img src={minus} alt="Minus button" />
-                : (
-                  <img
-                    className={styles.cartItem__button_img}
-                    src={minusinvis}
-                    alt="Minus light button"
-                  />
-                )}
+              {isVisible ? (
+                <img src={minus} alt="Minus button" />
+              ) : (
+                <img
+                  className={styles.cartItem__button_img}
+                  src={minusinvis}
+                  alt="Minus light button"
+                />
+              )}
             </button>
 
             <p>{item.count}</p>

@@ -6,7 +6,32 @@
   justify-content: center;
   margin-bottom: 64px;
 
-  overflow: hidden;
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 16px;
+
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      height: 15px;
+      border: 1px solid $icons-color;
+      border-radius: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      width: 100px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $primary-color;
+      border-radius: 6px;
+    }
+
+    @include onTablet {
+      overflow: hidden;
+    }
+  }
 
   &__arrow_prev {
     margin-right: 16px;
@@ -21,7 +46,7 @@
   }
 
   &__link {
-    margin-right: 8px;
+    margin: 0 4px;
     height: 32px;
     width: 32px;
 
@@ -36,6 +61,14 @@
     line-height: 21px;
     text-align: center;
 
+    &:hover {
+      border-color: $primary-color;
+    }
+
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+
     &_active {
       background-color: $primary-color;
       color: $white-color;
@@ -45,6 +78,14 @@
     &_disabled {
       cursor: default;
       color: $icons-color;
+
+      &:hover {
+        border-color: $icons-color;
+      }
+    }
+
+    &_arrow {
+      margin: 0;
     }
   }
 }

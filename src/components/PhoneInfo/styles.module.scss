@@ -44,12 +44,12 @@
   :global(.swiper-wrapper) {
     justify-content: space-between !important;
 
-  @include onTablet {
-    flex-direction: column;
-    justify-content: flex-start !important;
-    margin-right: 450px !important;
+    @include onTablet {
+      flex-direction: column;
+      justify-content: flex-start !important;
+      margin-right: 450px !important;
+    }
   }
-}
 
   :global(.swiper-slide-thumb-active) {
     border-color: $primary-color !important;

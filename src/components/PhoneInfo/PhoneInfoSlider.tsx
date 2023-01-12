@@ -55,9 +55,7 @@ export const PhoneInfoSlider: React.FC = () => {
         slidesPerView={5}
       >
         {images?.map((image) => (
-          <SwiperSlide
-            className={styles.product__slider_thumb}
-          >
+          <SwiperSlide className={styles.product__slider_thumb}>
             <img
               src={image}
               alt={image}
@@ -69,7 +67,6 @@ export const PhoneInfoSlider: React.FC = () => {
             />
           </SwiperSlide>
         ))}
-
       </Swiper>
     </div>
   );

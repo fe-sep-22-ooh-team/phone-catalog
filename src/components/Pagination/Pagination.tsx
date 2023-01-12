@@ -39,9 +39,12 @@ export const Pagination: React.FC<Props> = ({
       <li className={styles.pagination__arrow_prev}>
         <button
           type="button"
-          className={classNames(`${styles.pagination__link} ${styles.pagination__link_arrow}`, {
-            [styles.pagination__link_disabled]: isFirstPage,
-          })}
+          className={classNames(
+            `${styles.pagination__link} ${styles.pagination__link_arrow}`,
+            {
+              [styles.pagination__link_disabled]: isFirstPage,
+            },
+          )}
           disabled={isFirstPage}
           onClick={onFirstPage}
         >
@@ -68,9 +71,12 @@ export const Pagination: React.FC<Props> = ({
       <li className={styles.pagination__arrow_next}>
         <button
           type="button"
-          className={classNames(`${styles.pagination__link} ${styles.pagination__link_arrow}`, {
-            [styles.pagination__link_disabled]: isLastPage,
-          })}
+          className={classNames(
+            `${styles.pagination__link} ${styles.pagination__link_arrow}`,
+            {
+              [styles.pagination__link_disabled]: isLastPage,
+            },
+          )}
           disabled={isLastPage}
           onClick={onLastPage}
         >

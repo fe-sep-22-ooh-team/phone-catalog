@@ -19,19 +19,10 @@ export const FavoritesPage: React.FC = () => {
           <>
             <h1 className={styles.fav__title}>Favorites page</h1>
             <p className={styles.fav__text}>{`${totalAmount} items`}</p>
-            <div className="grid">
-              <div
-                className="
-                  grid__item--mobile--1-4
-                  grid__item--tablet--1-12
-                  grid__item--desktop--1-16"
-              >
-                <div>
-                  {favList.map((phone) => (
-                    <ProductCard key={phone.slug} phone={phone} />
-                  ))}
-                </div>
-              </div>
+            <div className={styles.fav__catalog}>
+              {favList.map((phone) => (
+                <ProductCard key={phone.slug} phone={phone} />
+              ))}
             </div>
           </>
         ) : (

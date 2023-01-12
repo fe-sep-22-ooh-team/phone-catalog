@@ -14,36 +14,42 @@ import { Phone } from '../../types/Phone';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './Featured.scss';
+import { Loader } from '../Loader';
 
 type Props = {
   title: string;
   phones: Phone[];
+  isLoading: boolean;
 };
 
-export const Featured: React.FC<Props> = ({ title, phones }) => {
+export const Featured: React.FC<Props> = ({ title, phones, isLoading }) => {
   return (
     <>
       <h2 className="page__subtitle">{title}</h2>
-      <div className="container1">
-        <Swiper
-          slidesPerView={'auto'}
-          navigation={true}
-          // loop={true}
-          // loopedSlides={8}
-          spaceBetween={16}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-          }}
-          modules={[Autoplay, Navigation]}
-        >
-          {phones.map((phone) => (
-            <SwiperSlide>
-              <ProductCard key={phone.slug} phone={phone} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      {isLoading
+        ? <Loader />
+        : (
+          <div className="container1">
+            <Swiper
+              slidesPerView={'auto'}
+              navigation={true}
+              // loop={true}
+              // loopedSlides={8}
+              spaceBetween={16}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              modules={[Autoplay, Navigation]}
+            >
+              {phones.map((phone) => (
+                <SwiperSlide>
+                  <ProductCard key={phone.slug} phone={phone} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        )}
     </>
   );
 };

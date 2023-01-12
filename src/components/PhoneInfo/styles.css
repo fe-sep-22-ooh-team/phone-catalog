@@ -1,0 +1,106 @@
+/*!* .App {*/
+/*  font-family: sans-serif;*/
+/*  text-align: center;*/
+/*}*/
+
+/*body {*/
+/*  background: gray;*/
+/*  height: 1000px;*/
+/*  width: 700px;*/
+/*} *!*/
+/*!*.slider {*!*/
+/*!*  !* padding: 32px; *!*!*/
+/*!*  background-color: aqua;*!*/
+/*!*  width: 100%;*!*/
+/*!*  height: 100%;*!*/
+/*!*}*!*/
+/*.slider__flex {*/
+/*  width: 700px;*/
+/*  !*height: 600px;*!*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+/*.slider__flex .swiper-container1 {*/
+/*  width: 200px;*/
+/*  height: 300px;*/
+/*  background-color: red;*/
+/*}*/
+/*.slider__flex .swiper-container2 {*/
+/*  width: 200px;*/
+/*  height: 300px;*/
+/*  background-color: darkcyan;*/
+/*}*/
+
+/*.slider__col {*/
+/*  display: flex;*/
+/*  flex-direction: row;*/
+/*  width: 150px;*/
+/*  !* margin-right: 32px; *!*/
+/*}*/
+
+/*.slider__thumbs {*/
+/*  height: 400px;*/
+/*  padding: 10px;*/
+/*}*/
+/*.slider__thumbs .slider__image {*/
+/*  transition: 0.25s;*/
+/*  -webkit-filter: grayscale(100%);*/
+/*  filter: grayscale(100%);*/
+/*  opacity: 0.5;*/
+/*}*/
+/*.slider__thumbs .slider__image:hover {*/
+/*  opacity: 1;*/
+/*}*/
+/*.slider__thumbs .swiper-slide-thumb-active .slider__image {*/
+/*  -webkit-filter: grayscale(0%);*/
+/*  filter: grayscale(0%);*/
+/*  opacity: 1;*/
+/*}*/
+/*.slider__images {*/
+/*  height: 500px;*/
+/*  width: 500px;*/
+/*}*/
+/*.slider__images .slider__image img {*/
+/*  transition: 3s;*/
+/*}*/
+/*.slider__images .slider__image:hover img {*/
+/*  transform: scale(1.1);*/
+/*}*/
+/*.slider__image {*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  overflow: hidden;*/
+/*  !* padding: 5px; *!*/
+/*}*/
+/*.slider__image img {*/
+/*  display: block;*/
+/*  width: 100%;*/
+/*  height: 100%;*/
+/*  -o-object-fit: cover;*/
+/*  object-fit: cover;*/
+/*}*/
+/*@media (max-width: 767.98px) {*/
+/*  .slider__flex {*/
+/*    flex-direction: column-reverse;*/
+/*  }*/
+/*  .slider__col {*/
+/*    flex-direction: row;*/
+/*    align-items: center;*/
+/*    margin-right: 0;*/
+/*    margin-top: 24px;*/
+/*    width: 100%;*/
+/*  }*/
+/*  .slider__images {*/
+/*    width: 100%;*/
+/*  }*/
+/*  .slider__thumbs {*/
+/*    height: 100px;*/
+/*    width: calc(100% - 96px);*/
+/*    margin: 0 16px;*/
+/*  }*/
+/*  .slider__prev,*/
+/*  .slider__next {*/
+/*    height: auto;*/
+/*    width: 32px;*/
+/*  }*/
+/*}*/

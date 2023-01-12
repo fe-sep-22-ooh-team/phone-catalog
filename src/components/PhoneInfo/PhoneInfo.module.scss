@@ -3,6 +3,96 @@
 @import '../../styles/mixins';
 
 .product {
+  margin-top: 25px;
+
+  &__info {
+    margin-top: 40px;
+
+    @include onTablet {
+      display: flex;
+    }
+
+    @include onDesktop {
+      display: flex;
+      margin-bottom: 0;
+    }
+  }
+
+  &__gallery {
+
+    @include onTablet {
+      margin-right: 17px;
+    }
+
+    @include onDesktop {
+      margin-right: 76px;
+    }
+  }
+
+  &__promo {
+    max-width: 275px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+  }
+
+  &__price {
+    margin-bottom: 16px;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+    letter-spacing: -0.01em;
+    display: flex;
+    align-items: center;
+
+    &_old {
+      margin-left: 8px;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 28px;
+      color: $secondary-color;
+      text-decoration-line: line-through;
+    }
+  }
+
+  &__action {
+    display: flex;
+    flex-direction: row;
+
+    :nth-child(2) {
+      margin-left: 10px;
+    }
+  }
+
+  &__params {
+    margin-top: 40px;
+
+    &_item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+
+    &_name {
+      @extend %small-text;
+      color: $secondary-color;
+    }
+
+    &_value {
+      @extend %small-text;
+      font-weight: 700;
+    }
+  }
+
+  //==========================
 
   &__about {
     margin-bottom: 56px;

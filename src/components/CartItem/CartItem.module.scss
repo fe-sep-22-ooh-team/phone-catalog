@@ -93,6 +93,10 @@
 
     &_disabled {
       cursor: auto;
+
+      &:hover {
+        border-color: $icons-color;
+      }
     }
   }
 

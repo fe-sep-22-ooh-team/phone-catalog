@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import { Button } from '../Button';
@@ -13,24 +13,50 @@ type Props = {
 
 export const ProductCard: React.FC<Props> = ({ phone }) => {
   const [isActiveCart, setIsActiveCart] = useState(false);
+  const [isActiveFav, setIsActiveFav] = useState(false);
+
   const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
-  const { cartList, setCartList } = useContext(ContextFavCart);
+  const {
+    cartList,
+    setCartList,
+    favList,
+    setFavList,
+  } = useContext(ContextFavCart);
 
   const indexCart = cartList.find((el) => el.phone.slug === phone.slug);
+  const indexFav = favList.find((el) => el.slug === phone.slug);
 
-  const handleAddCart = () => {
+  useEffect(() => {
     if (indexCart) {
-      const filteredList = cartList.filter(
-        (el) => el.phone.slug !== phone.slug,
-      );
-
-      setIsActiveCart(false);
-      setCartList(filteredList);
+      setIsActiveCart(true);
     }
 
+    if (indexFav) {
+      setIsActiveFav(true);
+    }
+  }, []);
+
+  const handleAddCart = () => {
     if (!indexCart) {
       setIsActiveCart(true);
       setCartList([...cartList, { phone, count: 1 }]);
+    }
+
+    if (indexCart) {
+      setIsActiveCart(false);
+      setCartList(cartList.filter(el => el.phone.slug !== phone.slug));
+    }
+  };
+
+  const handleAddFav = () => {
+    if (!indexFav) {
+      setIsActiveFav(true);
+      setFavList([...favList, phone]);
+    }
+
+    if (indexFav) {
+      setIsActiveFav(false);
+      setFavList(favList.filter(el => el.slug !== phone.slug));
     }
   };
 
@@ -87,7 +113,10 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
           </div>
 
           <div className={styles.productCard__action__favorite}>
-            <Favorite />
+            <Favorite
+              onClick={handleAddFav}
+              isActiveFav={isActiveFav}
+            />
           </div>
         </div>
       </footer>

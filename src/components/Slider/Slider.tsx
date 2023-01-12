@@ -58,7 +58,7 @@ export const Slider: React.FC = () => {
           className={styles.swiper}
         >
           {sliderImages.map((sliderImg) => (
-            <SwiperSlide className={styles.swiper__slide}>
+            <SwiperSlide className={styles.swiper__slide} key={sliderImg}>
               <Link to="/phones" className={styles.swiper__imgBox}>
                 <img
                   src={sliderImg}

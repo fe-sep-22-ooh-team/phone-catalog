@@ -49,19 +49,21 @@ export const Pagination: React.FC<Props> = ({
         </button>
       </li>
 
-      {pages.map((page) => (
-        <li key={page}>
-          <button
-            type="button"
-            className={classNames(styles.pagination__link, {
-              [styles.pagination__link_active]: page === currentPage,
-            })}
-            onClick={() => onPageChange(page)}
-          >
-            {page}
-          </button>
-        </li>
-      ))}
+      <li className={styles.pagination}>
+        {pages.map((page) => (
+          <div key={page}>
+            <button
+              type="button"
+              className={classNames(styles.pagination__link, {
+                [styles.pagination__link_active]: page === currentPage,
+              })}
+              onClick={() => onPageChange(page)}
+            >
+              {page}
+            </button>
+          </div>
+        ))}
+      </li>
 
       <li className={styles.pagination__arrow_next}>
         <button

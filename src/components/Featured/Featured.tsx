@@ -32,7 +32,7 @@ export const Featured: React.FC<Props> = ({ title, phones }) => {
           // loopedSlides={8}
           spaceBetween={16}
           autoplay={{
-            delay: 500000,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           modules={[Autoplay, Navigation]}

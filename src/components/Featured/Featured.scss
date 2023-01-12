@@ -18,14 +18,20 @@
   display: none;
 }
 
-.container1 .swiper-button-next {
-  background: $white-color url('../../assets/img/RightArrowHover.svg') no-repeat
-    center;
+.swiper-button-next {
+  background: $white-color url('../../assets/img/RightArrowHover.svg') no-repeat center;
+
+  &:hover {
+    border-color: $primary-color;
+  }
 }
 
-.container1 .swiper-button-prev {
-  background: $white-color url('../../assets/img/LeftArrowHover.svg') no-repeat
-    center;
+.swiper-button-prev {
+  background: $white-color url('../../assets/img/LeftArrowHover.svg') no-repeat center;
+
+  &:hover {
+    border-color: $primary-color;
+  }
 }
 
 .container1 .swiper-button-next,
@@ -37,7 +43,7 @@
   }
 
   @include onDesktop {
-    right: 0;
+    right: 12px;
   }
 }
 
@@ -51,7 +57,6 @@
   height: 439px;
 
   @include onTablet {
-    padding: 0;
     width: 237px;
     height: 512px;
   }
@@ -67,13 +72,17 @@
   padding-top: 60px;
   padding-left: 16px;
 
+  &::after {
+    margin-right: 16px;
+  }
+
   @include onTablet {
     padding-left: 24px;
     margin-bottom: 80px;
   }
 
   @include onDesktop {
-    padding-left: 0;
+    padding-left: 12px;
   }
 }
 
@@ -86,7 +95,7 @@
   }
 
   @include onDesktop {
-    left: calc(100% - 80px);
+    left: calc(100% - 92px);
   }
 }
 
@@ -95,5 +104,16 @@
 
   @include onTablet {
     margin-top: -65px;
+  }
+
+  @include onDesktop {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
+}
+
+.last-slide {
+  @include onDesktop {
+    margin: 16px;
   }
 }

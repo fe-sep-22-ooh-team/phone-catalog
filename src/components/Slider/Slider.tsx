@@ -7,8 +7,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import './Slider.scss';
+import 'swiper/css/effect-creative';
 
-import { Autoplay, Navigation, Pagination } from 'swiper';
+import {
+  Autoplay, Navigation, Pagination, EffectCreative,
+} from 'swiper';
 
 import styles from './Slider.module.scss';
 import img1 from '../../assets/img/swiper1.png';
@@ -45,6 +48,17 @@ export const Slider: React.FC = () => {
     <div className={styles.container}>
       <div className="slider">
         <Swiper
+          grabCursor={true}
+          effect="creative"
+          creativeEffect={{
+            prev: {
+              shadow: true,
+              translate: [0, 0, -400],
+            },
+            next: {
+              translate: ['100%', 0, 0],
+            },
+          }}
           navigation={true}
           pagination={{
             clickable: true,
@@ -54,7 +68,7 @@ export const Slider: React.FC = () => {
             delay: 5000,
             disableOnInteraction: false,
           }}
-          modules={[Autoplay, Navigation, Pagination]}
+          modules={[Autoplay, Navigation, Pagination, EffectCreative]}
           className={styles.swiper}
         >
           {sliderImages.map((sliderImg) => (

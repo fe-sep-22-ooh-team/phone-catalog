@@ -9,19 +9,14 @@ import { Phone } from '../../types/Phone';
 
 export const HomePage: React.FC = () => {
   const [phones, setPhones] = useState<Phone[]>([]);
-  // const [isLoading, setIsLoading] = useState(false);
 
   const loadGoods = useCallback(async () => {
     try {
-      // setIsLoading(true);
-
       const allGoods = await getAll();
 
       setPhones(await allGoods.results);
     } catch (err) {
       throw new Error(`${err}`);
-    } finally {
-      // setIsLoading(false);
     }
   }, [phones]);
 
@@ -29,7 +24,7 @@ export const HomePage: React.FC = () => {
     loadGoods();
   }, [phones]);
 
-  const hotPrices = phones.filter((phone) => phone.price !== '');
+  const hotPrices = phones.filter((phone) => phone.price !== '').slice(0, 24);
 
   return (
     <div className={styles.homePage__container}>

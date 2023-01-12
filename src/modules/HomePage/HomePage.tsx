@@ -27,7 +27,7 @@ export const HomePage: React.FC = () => {
 
   useEffect(() => {
     loadGoods();
-  }, []);
+  }, [phones]);
 
   const hotPrices = phones.filter((phone) => phone.price !== '');
 

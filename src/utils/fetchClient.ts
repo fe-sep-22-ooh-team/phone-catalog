@@ -1,6 +1,6 @@
 // eslint-disable-next-line max-len
 const BASE_URL
-  = 'https://idyllic-lamington-19c8d3.netlify.app/'
+  = 'https://stately-meerkat-f84066.netlify.app/'
   + '.netlify/functions/server/products/';
 
 // To have autocompletion and avoid mistypes

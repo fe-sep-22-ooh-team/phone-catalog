@@ -10,33 +10,56 @@ import { Phone } from '../../types/Phone';
 export const HomePage: React.FC = () => {
   const [newPhones, setNewPhones] = useState<Phone[]>([]);
   const [discountedPhones, setDiscountedPhones] = useState<Phone[]>([]);
-  // const [isLoading, setIsLoading] = useState(false);
+  const [isLoadingNew, setIsLoadingNew] = useState(false);
+  const [isLoadingDiscounted, setIsLoadingDiscounted] = useState(false);
 
-  const loadGoods = useCallback(async () => {
+  const loadNewPhones = useCallback(async () => {
     try {
-      // setIsLoading(true);
+      setIsLoadingNew(true);
 
       const newGoods = await getNew();
-      const discountedGoods = await getDiscounted();
 
       setNewPhones(await newGoods);
+    } catch (err) {
+      throw new Error(`${err}`);
+    } finally {
+      setIsLoadingNew(false);
+    }
+  }, [newPhones]);
+
+  const loadNewDiscounted = useCallback(async () => {
+    try {
+      setIsLoadingDiscounted(true);
+      const discountedGoods = await getDiscounted();
+
       setDiscountedPhones(await discountedGoods);
     } catch (err) {
       throw new Error(`${err}`);
+    } finally {
+      setIsLoadingDiscounted(false);
     }
-  }, [newPhones, discountedPhones]);
+  }, [discountedPhones]);
 
   useEffect(() => {
-    loadGoods();
-  }, [newPhones, discountedPhones]);
+    loadNewPhones();
+    loadNewDiscounted();
+  }, []);
 
   return (
     <div className={styles.homePage__container}>
       <h1 className="page__title">Welcome to Nice Gadgets store!</h1>
       <Slider />
-      <Featured phones={newPhones} title="Brand new models" />
+      <Featured
+        phones={newPhones}
+        isLoading={isLoadingNew}
+        title="Brand new models"
+      />
       <Categories categories={categoriesFromServer} />
-      <Featured phones={discountedPhones} title="Hot prices" />
+      <Featured
+        phones={discountedPhones}
+        isLoading={isLoadingDiscounted}
+        title="Hot prices"
+      />
     </div>
   );
 };

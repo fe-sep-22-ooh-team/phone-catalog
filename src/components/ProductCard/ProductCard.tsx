@@ -17,11 +17,9 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
   const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
   const {
-    cartList,
-    setCartList,
-    favList,
-    setFavList,
-  } = useContext(ContextFavCart);
+    cartList, setCartList, favList, setFavList,
+  }
+    = useContext(ContextFavCart);
 
   const indexCart = cartList.find((el) => el.phone.slug === phone.slug);
   const indexFav = favList.find((el) => el.slug === phone.slug);

@@ -1,5 +1,6 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable max-len */
+import classNames from 'classnames';
 import React from 'react';
 import styles from './Favorite.module.scss';
 
@@ -10,7 +11,12 @@ interface Props {
 
 export const Favorite: React.FC<Props> = ({ onClick, isActiveFav }) => {
   return (
-    <button className={styles.icon} onClick={onClick}>
+    <button
+      className={classNames(styles.icon, {
+        [styles.icon_active]: isActiveFav,
+      })}
+      onClick={onClick}
+    >
       {isActiveFav ? (
         <svg
           width="16"

@@ -14,8 +14,8 @@
   &:hover {
     border-color: $primary-color;
   }
-
-  &_selected {
+  
+  &_active {
     border-color: $elements-color;
   }
 }

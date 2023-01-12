@@ -28,10 +28,7 @@ export const FavoritesPage: React.FC = () => {
               >
                 <div>
                   {favList.map((phone) => (
-                    <ProductCard
-                      key={phone.slug}
-                      phone={phone}
-                    />
+                    <ProductCard key={phone.slug} phone={phone} />
                   ))}
                 </div>
               </div>

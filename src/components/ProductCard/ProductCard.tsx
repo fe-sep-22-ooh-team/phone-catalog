@@ -44,7 +44,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
     if (indexCart) {
       setIsActiveCart(false);
-      setCartList(cartList.filter(el => el.phone.slug !== phone.slug));
+      setCartList(cartList.filter((el) => el.phone.slug !== phone.slug));
     }
   };
 
@@ -56,7 +56,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
 
     if (indexFav) {
       setIsActiveFav(false);
-      setFavList(favList.filter(el => el.slug !== phone.slug));
+      setFavList(favList.filter((el) => el.slug !== phone.slug));
     }
   };
 
@@ -113,10 +113,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
           </div>
 
           <div className={styles.productCard__action__favorite}>
-            <Favorite
-              onClick={handleAddFav}
-              isActiveFav={isActiveFav}
-            />
+            <Favorite onClick={handleAddFav} isActiveFav={isActiveFav} />
           </div>
         </div>
       </footer>

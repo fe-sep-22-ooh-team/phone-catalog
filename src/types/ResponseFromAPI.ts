@@ -5,7 +5,14 @@ export interface Next {
   limit: number;
 }
 
-export interface ResponseFromAPI {
+export interface ResponseFromAPIAll {
+  next: Next;
+  results: Phone[];
+  totalPages: number;
+  currentPage: number;
+}
+
+export interface ResponseFromAPIOne {
   next: Next;
   results: Phone[];
   totalPages: number;

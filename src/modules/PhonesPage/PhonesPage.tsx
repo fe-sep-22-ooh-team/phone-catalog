@@ -9,7 +9,10 @@ import { ProductCard } from '../../components/ProductCard';
 import { Loader } from '../../components/Loader';
 import { Breadcrumbs } from '../../components/Breadcrumbs';
 
-import { getAll, getPhones } from '../../api/goods';
+import {
+  getAll,
+  getPhones,
+} from '../../api/goods';
 import { Phone } from '../../types/Phone';
 
 export const PhonesPage: React.FC = () => {

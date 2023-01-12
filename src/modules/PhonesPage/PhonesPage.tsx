@@ -13,7 +13,7 @@ import { getAll, getPhones } from '../../api/goods';
 import { Phone } from '../../types/Phone';
 
 export const PhonesPage: React.FC = () => {
-  const [perPage, setPerPage] = useState(+Infinity);
+  const [perPage, setPerPage] = useState(32);
   const [sortBy, setSortBy] = useState('default');
   const [currentPage, setCurrentPage] = useState(1);
   const [phones, setPhones] = useState<Phone[]>([]);
@@ -21,9 +21,9 @@ export const PhonesPage: React.FC = () => {
   const [total, setTotal] = useState(0);
 
   const optionsCount = [
-    { value: '4', label: '4' },
     { value: '8', label: '8' },
     { value: '16', label: '16' },
+    { value: '32', label: '32' },
     { value: `${total}`, label: 'All' },
   ];
 

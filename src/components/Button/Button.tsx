@@ -1,29 +1,50 @@
 /* eslint-disable react/button-has-type */
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import classnames from 'classnames';
 import styles from './Button.module.scss';
+import { Phone } from '../../types/Phone';
+import { ContextFavCart } from '../ContextFavCart';
 
 type Props = {
   text: string;
+  phone?: Phone,
   textAfterClick?: string;
-  onClick?: () => void;
-  isActiveCart?: boolean;
 };
 
 export const Button: React.FC<Props> = ({
   text,
+  phone,
   textAfterClick,
-  onClick,
-  isActiveCart,
 }) => {
+  const { cartList, setCartList } = useContext(ContextFavCart);
+  const [isActiveCart, setIsActiveCart] = useState(false);
   const isSelected = isActiveCart ? textAfterClick : text;
-
   const textToRender = textAfterClick ? isSelected : text;
+
+  const indexCart = cartList.find((el) => el.phone.slug === phone?.slug);
+
+  useEffect(() => {
+    if (indexCart) {
+      setIsActiveCart(true);
+    }
+  }, []);
+
+  const handleAddCart = () => {
+    if (!indexCart && phone) {
+      setIsActiveCart(true);
+      setCartList([...cartList, { phone, count: 1 }]);
+    }
+
+    if (indexCart) {
+      setIsActiveCart(false);
+      setCartList(cartList.filter((el) => el.phone.slug !== phone?.slug));
+    }
+  };
 
   return (
     <button
-      onClick={onClick}
+      onClick={handleAddCart}
       className={classnames(styles.btn, {
         [styles.btn_selected]: isActiveCart,
       })}

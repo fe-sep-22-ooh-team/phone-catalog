@@ -1,8 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import { Button } from '../Button';
-import { ContextFavCart } from '../ContextFavCart';
 import { Favorite } from '../Favorite';
 
 import styles from './ProductCard.module.scss';
@@ -12,51 +11,7 @@ type Props = {
 };
 
 export const ProductCard: React.FC<Props> = ({ phone }) => {
-  const [isActiveCart, setIsActiveCart] = useState(false);
-  const [isActiveFav, setIsActiveFav] = useState(false);
-
   const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
-  const {
-    cartList, setCartList, favList, setFavList,
-  }
-    = useContext(ContextFavCart);
-
-  const indexCart = cartList.find((el) => el.phone.slug === phone.slug);
-  const indexFav = favList.find((el) => el.slug === phone.slug);
-
-  useEffect(() => {
-    if (indexCart) {
-      setIsActiveCart(true);
-    }
-
-    if (indexFav) {
-      setIsActiveFav(true);
-    }
-  }, []);
-
-  const handleAddCart = () => {
-    if (!indexCart) {
-      setIsActiveCart(true);
-      setCartList([...cartList, { phone, count: 1 }]);
-    }
-
-    if (indexCart) {
-      setIsActiveCart(false);
-      setCartList(cartList.filter((el) => el.phone.slug !== phone.slug));
-    }
-  };
-
-  const handleAddFav = () => {
-    if (!indexFav) {
-      setIsActiveFav(true);
-      setFavList([...favList, phone]);
-    }
-
-    if (indexFav) {
-      setIsActiveFav(false);
-      setFavList(favList.filter((el) => el.slug !== phone.slug));
-    }
-  };
 
   return (
     <article className={styles.productCard}>
@@ -69,7 +24,7 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
       </Link>
 
       <h3 className={styles.productCard__title} title={`${phone.name}`}>
-        <Link to="/phones/1" className={styles.productCard__link}>
+        <Link to="/phones/1" className={`${styles.productCard__link} ${styles.productCard__link_text}`}>
           {phone.name}
         </Link>
       </h3>
@@ -105,13 +60,12 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
             <Button
               text="Add to cart"
               textAfterClick="Added"
-              onClick={handleAddCart}
-              isActiveCart={isActiveCart}
+              phone={phone}
             />
           </div>
 
           <div className={styles.productCard__action__favorite}>
-            <Favorite onClick={handleAddFav} isActiveFav={isActiveFav} />
+            <Favorite phone={phone} />
           </div>
         </div>
       </footer>

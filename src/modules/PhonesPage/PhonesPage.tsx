@@ -72,11 +72,11 @@ export const PhonesPage: React.FC = () => {
     try {
       setIsLoading(true);
 
-      const goods = await getPhones(currentPage, perPage, sortBy);
       const allGoods = await getAll();
+      const goods = await getPhones(currentPage, perPage, sortBy);
 
-      setPhones(await goods.results);
       setTotal(await allGoods.results.length);
+      setPhones(await goods.results);
     } catch (err) {
       throw new Error(`${err}`);
     } finally {
@@ -117,6 +117,7 @@ export const PhonesPage: React.FC = () => {
                   <Select
                     id="phones-sort"
                     classNamePrefix="select"
+                    isSearchable={false}
                     value={getSortBy()}
                     defaultValue={{ value: 'default', label: 'Show all' }}
                     options={optionsSortBy}
@@ -142,6 +143,7 @@ export const PhonesPage: React.FC = () => {
                   <Select
                     id="perPageSelector"
                     classNamePrefix="select"
+                    isSearchable={false}
                     value={getPerPage()}
                     defaultValue={{ value: `${total}`, label: 'All' }}
                     options={optionsCount}

@@ -7,6 +7,14 @@
     min-width: 288px;
   }
 
+  &__button {
+    margin-bottom: 24px;
+
+    @include onTablet {
+      margin-bottom: 16px;
+    }
+  }
+
   &__title {
     margin-bottom: 32px;
 
@@ -21,26 +29,6 @@
     @include onTablet {
       font-size: 48px;
       line-height: 56px;
-    }
-  }
-
-  &__back {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 24px;
-    width: 60px;
-
-    @include onTablet {
-      margin-bottom: 16px;
-    }
-
-    &_link {
-      color: $secondary-color;
-      font-style: normal;
-      font-weight: 700;
-      font-size: 12px;
-      height: 15px;
     }
   }
 

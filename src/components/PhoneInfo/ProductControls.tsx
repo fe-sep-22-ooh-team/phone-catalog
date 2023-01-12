@@ -23,9 +23,7 @@ export const ProductControls: React.FC = () => {
                 to="/phones/1"
                 className={styles.controls__params_item_wrap}
               >
-                <div
-                  className={styles.controls__params_item_inner}
-                > </div>
+                <div className={styles.controls__params_item_inner}> </div>
               </Link>
             </li>
           ))}
@@ -33,20 +31,12 @@ export const ProductControls: React.FC = () => {
       </div>
 
       <div className={styles.controls__item}>
-        <h4 className={styles.controls__title}>
-          Select capacity
-        </h4>
+        <h4 className={styles.controls__title}>Select capacity</h4>
 
         <ul className={styles.controls__params}>
           {capacityAvailable.map((currentCatacity, i) => (
-            <li
-              key={i}
-              className={styles.controls__params_item}
-            >
-              <Link
-                to="/phones/1"
-                className={styles.controls__params_capacity}
-              >
+            <li key={i} className={styles.controls__params_item}>
+              <Link to="/phones/1" className={styles.controls__params_capacity}>
                 {`${currentCatacity} GB`}
               </Link>
             </li>

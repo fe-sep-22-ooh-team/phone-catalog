@@ -71,6 +71,7 @@
       padding: 4px 8px;
       font-weight: 500;
       color: $primary-color;
+      transition: border-color 0.3s;
 
       border: 1px solid $icons-color;
 
@@ -78,6 +79,10 @@
         background-color: $primary-color;
         border-color: $primary-color;
         color: $white-color;
+      }
+
+      &:hover {
+        border-color: $primary-color;
       }
     }
   }

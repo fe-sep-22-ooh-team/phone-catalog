@@ -8,6 +8,7 @@ import { getNew, getDiscounted } from '../../api/goods';
 import { Phone } from '../../types/Phone';
 
 export const HomePage: React.FC = () => {
+
   const [newPhones, setNewPhones] = useState<Phone[]>([]);
   const [discountedPhones, setDiscountedPhones] = useState<Phone[]>([]);
   // const [isLoading, setIsLoading] = useState(false);
@@ -17,14 +18,11 @@ export const HomePage: React.FC = () => {
       // setIsLoading(true);
 
       const newGoods = await getNew();
-      const discountedGoods = await getDiscounted();
 
       setNewPhones(await newGoods);
       setDiscountedPhones(await discountedGoods);
     } catch (err) {
       throw new Error(`${err}`);
-    } finally {
-      // setIsLoading(false);
     }
   }, [newPhones, discountedPhones]);
 

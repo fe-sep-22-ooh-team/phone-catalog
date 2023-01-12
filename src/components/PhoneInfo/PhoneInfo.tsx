@@ -23,11 +23,11 @@ export const PhoneInfo: React.FC = () => (
           <ProductControls />
 
           <div className={styles.product__price}>
-            {1199}
+            {`$${799}`}
             <span
               className={styles.product__price_old}
             >
-              {1320}
+              {`$${1199}`}
             </span>
           </div>
 

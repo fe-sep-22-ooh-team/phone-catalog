@@ -4,8 +4,8 @@ import React from 'react';
 import styles from './Favorite.module.scss';
 
 interface Props {
-  onClick: () => void;
-  isActiveFav: boolean;
+  onClick?: () => void;
+  isActiveFav?: boolean;
 }
 
 export const Favorite: React.FC<Props> = ({ onClick, isActiveFav }) => {

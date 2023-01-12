@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import styles from './ProductControls.module.scss';
 
 export const ProductControls: React.FC = () => {
-  const capacityAvailable = [64, 128, 256];
+  const capacityAvailable = [64, 256, 512];
   const colorsAvailable = ['black', 'yellow', 'purple'];
 
   return (
@@ -47,7 +47,7 @@ export const ProductControls: React.FC = () => {
                 to="/phones/1"
                 className={styles.controls__params_capacity}
               >
-                {currentCatacity}
+                {`${currentCatacity} GB`}
               </Link>
             </li>
           ))}

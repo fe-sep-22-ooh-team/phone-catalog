@@ -90,6 +90,14 @@
     &:hover {
       border-color: $primary-color;
     }
+
+    &_disabled {
+      cursor: auto;
+
+      &:hover {
+        border-color: $icons-color;
+      }
+    }
   }
 
   &__price {

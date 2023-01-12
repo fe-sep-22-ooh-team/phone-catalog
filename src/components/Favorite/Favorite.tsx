@@ -1,20 +1,17 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable max-len */
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './Favorite.module.scss';
 
-export const Favorite: React.FC = () => {
-  const [select, setSelect] = useState(false);
+interface Props {
+  onClick: () => void;
+  isActiveFav: boolean;
+}
 
-  const handleFavourite = (event: React.MouseEvent) => {
-    event.preventDefault();
-
-    setSelect(!select);
-  };
-
+export const Favorite: React.FC<Props> = ({ onClick, isActiveFav }) => {
   return (
-    <button className={styles.icon} onClick={handleFavourite}>
-      {select ? (
+    <button className={styles.icon} onClick={onClick}>
+      {isActiveFav ? (
         <svg
           width="16"
           height="14"

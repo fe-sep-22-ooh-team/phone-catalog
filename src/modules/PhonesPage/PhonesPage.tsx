@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React, { useCallback, useState, useEffect } from 'react';
 import Select from 'react-select';
 import styles from './PhonesPage.module.scss';
@@ -12,19 +13,17 @@ import { getAll, getPhones } from '../../api/goods';
 import { Phone } from '../../types/Phone';
 
 export const PhonesPage: React.FC = () => {
-  const [allPhones, setAllPhones] = useState<Phone[]>([]);
-  const [perPage, setPerPage] = useState(59);
+  const [perPage, setPerPage] = useState(32);
   const [sortBy, setSortBy] = useState('default');
   const [currentPage, setCurrentPage] = useState(1);
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  const total = allPhones.length;
+  const [total, setTotal] = useState(0);
 
   const optionsCount = [
-    { value: '4', label: '4' },
     { value: '8', label: '8' },
     { value: '16', label: '16' },
+    { value: '32', label: '32' },
     { value: `${total}`, label: 'All' },
   ];
 
@@ -74,7 +73,7 @@ export const PhonesPage: React.FC = () => {
       const allGoods = await getAll();
 
       setPhones(await goods.results);
-      setAllPhones(await allGoods.results);
+      setTotal(await allGoods.results.length);
     } catch (err) {
       throw new Error(`${err}`);
     } finally {

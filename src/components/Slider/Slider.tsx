@@ -43,27 +43,33 @@ export const Slider: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <Swiper
-        navigation={true}
-        pagination={{
-          clickable: true,
-        }}
-        loop={true}
-        autoplay={{
-          delay: 50000,
-          disableOnInteraction: false,
-        }}
-        modules={[Autoplay, Navigation, Pagination]}
-        className={styles.swiper}
-      >
-        {sliderImages.map((sliderImg) => (
-          <SwiperSlide className={styles.swiper__slide}>
-            <Link to="/phones" className={styles.swiper__imgBox}>
-              <img src={sliderImg} alt="phone" className={styles.swiper__img} />
-            </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="slider">
+        <Swiper
+          navigation={true}
+          pagination={{
+            clickable: true,
+          }}
+          loop={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay, Navigation, Pagination]}
+          className={styles.swiper}
+        >
+          {sliderImages.map((sliderImg) => (
+            <SwiperSlide className={styles.swiper__slide} key={sliderImg}>
+              <Link to="/phones" className={styles.swiper__imgBox}>
+                <img
+                  src={sliderImg}
+                  alt="phone"
+                  className={styles.swiper__img}
+                />
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };

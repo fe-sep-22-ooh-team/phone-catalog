@@ -5,7 +5,5 @@ import { PhoneInfo } from '../../components/PhoneInfo';
 export const PhoneInfoPage: React.FC = () => {
   // const { slug } = useParams();
 
-  return (
-    <PhoneInfo />
-  );
+  return <PhoneInfo />;
 };

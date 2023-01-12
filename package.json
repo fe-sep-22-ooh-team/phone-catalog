@@ -31,7 +31,7 @@
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "format": "prettier --write ./src --ignore-path .gitignore",
+    "format": "prettier ./src --ignore-path .gitignore",
     "lint": "eslint . --ignore-path .gitignore",
     "fix-style": "npm run format && npm run lint -- --fix",
     "prepare": "husky install"

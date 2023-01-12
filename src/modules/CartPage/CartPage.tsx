@@ -43,15 +43,13 @@ export const CartPage: React.FC = () => {
                   grid__item--tablet--1-12
                   grid__item--desktop--1-16"
               >
-                <div>
-                  {cartList.map((item) => (
-                    <CartItem
-                      key={item.phone.slug}
-                      item={item}
-                      setTotalCost={setTotalCost}
-                    />
-                  ))}
-                </div>
+                {cartList.map((item) => (
+                  <CartItem
+                    key={item.phone.slug}
+                    item={item}
+                    setTotalCost={setTotalCost}
+                  />
+                ))}
               </div>
 
               <div

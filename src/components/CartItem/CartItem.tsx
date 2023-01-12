@@ -8,6 +8,7 @@ import styles from './CartItem.module.scss';
 import button from '../../assets/img/Delete.svg';
 import minus from '../../assets/img/Minus.svg';
 import plus from '../../assets/img/Plus.svg';
+import minusinvis from '../../assets/img/MinusDisabled.svg';
 import { PhoneWithCount } from '../../types/PhoneWithCount';
 import { ContextFavCart } from '../ContextFavCart';
 
@@ -24,7 +25,7 @@ export const CartItem: React.FC<Props> = ({ item, setTotalCost }) => {
   const { cartList, setCartList } = useContext(ContextFavCart);
   const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
   const img = serverLocation + image;
-  const isVisible = item.count > 0;
+  const isVisible = item.count > 1;
 
   const priceToShow = item.count * +discountPrice;
 
@@ -65,7 +66,11 @@ export const CartItem: React.FC<Props> = ({ item, setTotalCost }) => {
     <article className={styles.cartItem}>
       <div className={styles.cartItem__content}>
         <div className={styles.cartItem__info}>
-          <button type="button" onClick={handleDeleteItem}>
+          <button
+            type="button"
+            className={styles.cartItem__info_btn}
+            onClick={handleDeleteItem}
+          >
             <img src={button} alt="button delete" />
           </button>
 
@@ -84,7 +89,15 @@ export const CartItem: React.FC<Props> = ({ item, setTotalCost }) => {
               onClick={handleRemove}
               disabled={!isVisible}
             >
-              <img src={minus} alt="Minus button" />
+              {isVisible ? (
+                <img src={minus} alt="Minus button" />
+              ) : (
+                <img
+                  className={styles.cartItem__button_img}
+                  src={minusinvis}
+                  alt="Minus light button"
+                />
+              )}
             </button>
 
             <p>{item.count}</p>

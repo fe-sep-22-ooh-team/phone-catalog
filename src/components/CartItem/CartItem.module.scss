@@ -11,8 +11,9 @@
   &__content {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    padding: 24px;
+    padding: 16px;
 
     @include onTablet {
       flex-direction: row;
@@ -27,16 +28,18 @@
     flex-direction: row;
     margin-bottom: 16px;
     align-items: center;
-    justify-content: space-between;
+    justify-content: start;
 
-    @include onDesktop {
-      gap: 24px;
+    @include onTablet {
       margin-bottom: 0px;
     }
 
-    @include onTablet {
-      gap: 32px;
-      margin-bottom: 0px;
+    &_btn {
+      margin-right: 26px;
+
+      @include onTablet {
+        margin-right: 31px;
+      }
     }
   }
 
@@ -44,32 +47,38 @@
     object-fit: contain;
     width: 66px;
     height: 66px;
+    margin-right: 16px;
+
+    @include onTablet {
+      margin-right: 31px;
+    }
   }
 
   &__title {
-    width: 128px;
     font-size: 14px;
     line-height: 21px;
     font-weight: 600;
     color: $primary-color;
 
     @include onTablet {
-      width: 176px;
-    }
-
-    @include onDesktop {
-      width: 336px;
+      margin-right: 24px;
     }
   }
 
   &__wrapper {
     display: flex;
     flex-direction: row;
-    gap: 109px;
+    justify-content: space-between;
     align-items: center;
+    width: 256px;
 
     @include onTablet {
       gap: 53px;
+      width: 200px;
+    }
+
+    @include onDesktop {
+      width: 200px;
     }
   }
 
@@ -92,11 +101,17 @@
     }
 
     &_disabled {
-      cursor: auto;
+      border-color: $elements-color;
+      color: $icons-color;
+      cursor: default;
 
       &:hover {
-        border-color: $icons-color;
+        border-color: $elements-color;
       }
+    }
+
+    &_img {
+      width: 16px;
     }
   }
 

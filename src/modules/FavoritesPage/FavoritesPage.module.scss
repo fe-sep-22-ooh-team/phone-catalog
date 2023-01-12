@@ -2,24 +2,21 @@
 @import '../../styles/mixins';
 
 .fav {
-  // &__title {
-  //   font-family: 'Mont';
-  //   font-style: normal;
-  //   font-weight: 800;
-  //   font-size: 32px;
-  //   line-height: 41px;
-  //   letter-spacing: -0.01em;
-
-  //   color: $primary-color;
-  // }
-
   &__container {
-    padding-top: 15px;
     min-width: 288px;
+    margin-bottom: 56px;
+
+    @include onTablet {
+      margin-bottom: 64px;
+    }
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
   }
 
   &__title {
-    margin-bottom: 32px;
+    margin-bottom: 8px;
 
     font-family: 'Mont';
     font-style: normal;
@@ -36,10 +33,41 @@
   }
 
   &__text {
+    margin-bottom: 32px;
+
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
     color: $secondary-color;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__catalog {
+    margin-bottom: 24px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 16px;
+    row-gap: 40px;
+
+    @include onTablet {
+      margin-bottom: 40px;
+      justify-content: space-between;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onLaptop {
+      justify-content: space-between;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include onDesktop {
+      justify-content: space-between;
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 }

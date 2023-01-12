@@ -6,7 +6,7 @@ import { PhoneInfoSlider } from './PhoneInfoSlider';
 import { Breadcrumbs } from '../Breadcrumbs';
 import { ProductControls } from './ProductControls';
 import { Button } from '../Button';
-import { Favorite } from '../Favorite';
+// import { Favorite } from '../Favorite';
 
 export const PhoneInfo: React.FC = () => (
   <div className="page__container">
@@ -33,7 +33,7 @@ export const PhoneInfo: React.FC = () => (
 
           <div className={styles.product__action}>
             <Button text="Add to cart" />
-            <Favorite />
+            {/* <Favorite /> */}
           </div>
 
           <ul className={styles.product__params}>

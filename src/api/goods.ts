@@ -1,3 +1,4 @@
+import { Phone } from '../types/Phone';
 import { ResponseFromAPI } from '../types/ResponseFromAPI';
 import { client } from '../utils/fetchClient';
 
@@ -9,6 +10,14 @@ export const getPhones = (page: number, perPage: number, sortBy: string) => {
 
 export const getAll = () => {
   return client.get<ResponseFromAPI>('');
+};
+
+export const getNew = () => {
+  return client.get<Phone[]>('getNew');
+};
+
+export const getDiscounted = () => {
+  return client.get<Phone[]>('getDiscounted');
 };
 // export const addPhone = (phone: Omit<phone, 'id'>) => {
 //   return client.post('/phones', phone);

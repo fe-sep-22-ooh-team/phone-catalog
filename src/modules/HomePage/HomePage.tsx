@@ -4,35 +4,39 @@ import { Featured } from '../../components/Featured';
 import { Slider } from '../../components/Slider';
 import { Categories } from '../../components/Categories';
 import categoriesFromServer from '../../api/categories.json';
-import { getAll } from '../../api/goods';
+import { getNew, getDiscounted } from '../../api/goods';
 import { Phone } from '../../types/Phone';
 
 export const HomePage: React.FC = () => {
-  const [phones, setPhones] = useState<Phone[]>([]);
+  const [newPhones, setNewPhones] = useState<Phone[]>([]);
+  const [discountedPhones, setDiscountedPhones] = useState<Phone[]>([]);
+  // const [isLoading, setIsLoading] = useState(false);
 
   const loadGoods = useCallback(async () => {
     try {
-      const allGoods = await getAll();
+      // setIsLoading(true);
 
-      setPhones(await allGoods.results);
+      const newGoods = await getNew();
+      const discountedGoods = await getDiscounted();
+
+      setNewPhones(await newGoods);
+      setDiscountedPhones(await discountedGoods);
     } catch (err) {
       throw new Error(`${err}`);
     }
-  }, [phones]);
+  }, [newPhones, discountedPhones]);
 
   useEffect(() => {
     loadGoods();
-  }, [phones]);
-
-  const hotPrices = phones.filter((phone) => phone.price !== '').slice(0, 24);
+  }, [newPhones, discountedPhones]);
 
   return (
     <div className={styles.homePage__container}>
       <h1 className="page__title">Welcome to Nice Gadgets store!</h1>
       <Slider />
-      <Featured phones={phones} title="Brand new models" />
+      <Featured phones={newPhones} title="Brand new models" />
       <Categories categories={categoriesFromServer} />
-      <Featured phones={hotPrices} title="Hot prices" />
+      <Featured phones={discountedPhones} title="Hot prices" />
     </div>
   );
 };

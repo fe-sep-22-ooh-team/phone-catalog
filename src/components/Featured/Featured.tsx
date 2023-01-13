@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper';
 
 import { ProductCard } from '../ProductCard';
+import { Loader } from '../Loader';
 
 import { Phone } from '../../types/Phone';
 
@@ -14,7 +15,6 @@ import { Phone } from '../../types/Phone';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import './Featured.scss';
-import { Loader } from '../Loader';
 
 type Props = {
   title: string;
@@ -22,7 +22,11 @@ type Props = {
   isLoading?: boolean;
 };
 
-export const Featured: React.FC<Props> = ({ title, phones, isLoading }) => {
+export const Featured: React.FC<Props> = ({
+  title,
+  phones,
+  isLoading,
+}) => {
   return (
     <>
       <h2 className="page__subtitle page__subtitle_mobile">{title}</h2>
@@ -44,7 +48,10 @@ export const Featured: React.FC<Props> = ({ title, phones, isLoading }) => {
             >
               {phones?.map((phone) => (
                 <SwiperSlide key={phone.slug}>
-                  <ProductCard key={phone.slug} phone={phone} />
+                  <ProductCard
+                    key={phone.slug}
+                    phone={phone}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>

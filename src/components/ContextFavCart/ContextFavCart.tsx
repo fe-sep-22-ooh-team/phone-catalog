@@ -7,13 +7,17 @@ interface ContextValues {
   setCartList: React.Dispatch<React.SetStateAction<PhoneWithCount[]>>;
   favList: Phone[];
   setFavList: React.Dispatch<React.SetStateAction<Phone[]>>;
+  currentId: string;
+  setCurrentId: (id: string) => void;
 }
 
 export const ContextFavCart = React.createContext<ContextValues>({
   cartList: [],
   setCartList: () => {},
   favList: [],
-  setFavList: () => {},
+  setFavList: () => { },
+  currentId: '',
+  setCurrentId: () => '',
 });
 
 type Props = {
@@ -25,6 +29,7 @@ export const ContextFavCartProvider: React.FC<Props> = ({ children }) => {
   const [cartList, setCartList] = useState(getCartStorage);
   const getFavStorage = JSON.parse(localStorage.getItem('favorites') || '[]');
   const [favList, setFavList] = useState(getFavStorage);
+  const [currentId, setCurrentId] = useState('');
 
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartList));
@@ -39,6 +44,8 @@ export const ContextFavCartProvider: React.FC<Props> = ({ children }) => {
     setCartList,
     favList,
     setFavList,
+    currentId,
+    setCurrentId,
   };
 
   return (

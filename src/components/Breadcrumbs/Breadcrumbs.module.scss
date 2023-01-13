@@ -28,7 +28,7 @@
 
     &:last-child {
       color: $secondary-color;
-      cursor: auto;
+      pointer-events: none;
     }
 
     &:not(:last-child) {

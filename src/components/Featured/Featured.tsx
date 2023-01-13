@@ -37,8 +37,6 @@ export const Featured: React.FC<Props> = ({
             <Swiper
               slidesPerView={'auto'}
               navigation={true}
-              // loop={true}
-              // loopedSlides={8}
               spaceBetween={16}
               autoplay={{
                 delay: 5000,

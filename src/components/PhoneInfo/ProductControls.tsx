@@ -15,7 +15,7 @@ export const ProductControls: React.FC<Props> = ({ colors, capacity }) => {
       <div className={styles.controls__item}>
         <h4 className={styles.controls__title}>
           Available colors
-          <span className={styles.controls__code}>ID: 802390</span>
+          <span className={styles.controls__code}>ID: 80239</span>
         </h4>
 
         <ul className={styles.controls__params}>

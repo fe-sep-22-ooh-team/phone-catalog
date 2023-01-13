@@ -57,6 +57,7 @@
 .container1 .swiper-slide {
   width: 212px;
   height: 439px;
+  flex-shrink: 0;
 
   @include onTablet {
     width: 237px;
@@ -64,21 +65,21 @@
   }
 
   @include onDesktop {
-    width: 268px;
+    width: 272px;
     height: 506px;
   }
 
-  &:last-child {
-    margin-right: 60px;
+  // &:last-child {
+  //   margin-right: 60px;
 
-    @include onTablet {
-      margin-right: 45px;
-    }
+  //   @include onTablet {
+  //     margin-right: 45px;
+  //   }
 
-    @include onDesktop {
-      margin-right: 23px;
-    }
-  }
+  //   @include onDesktop {
+  //     margin-right: 23px;
+  //   }
+  // }
 }
 
 .container1 .swiper-wrapper {

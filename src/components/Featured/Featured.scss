@@ -64,8 +64,20 @@
   }
 
   @include onDesktop {
-    width: 272px;
+    width: 268px;
     height: 506px;
+  }
+
+  &:last-child {
+    margin-right: 60px;
+
+    @include onTablet {
+      margin-right: 45px;
+    }
+
+    @include onDesktop {
+      margin-right: 23px;
+    }
   }
 }
 

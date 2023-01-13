@@ -108,5 +108,13 @@ body {
     @include onDesktop {
       margin-left: 0;
     }
+
+    &_mobile {
+      max-width: 136px;
+
+      @include onTablet {
+        max-width: 100%;
+      }
+    }
   }
 }

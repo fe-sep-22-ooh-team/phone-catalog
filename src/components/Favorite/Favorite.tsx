@@ -2,12 +2,12 @@
 /* eslint-disable max-len */
 import classNames from 'classnames';
 import React, { useContext, useEffect, useState } from 'react';
-import { Phone } from '../../types/Phone';
+// import { Phone } from '../../types/Phone';
 import { ContextFavCart } from '../ContextFavCart';
 import styles from './Favorite.module.scss';
 
 interface Props {
-  phone: Phone;
+  phone: any;
 }
 
 export const Favorite: React.FC<Props> = ({ phone }) => {

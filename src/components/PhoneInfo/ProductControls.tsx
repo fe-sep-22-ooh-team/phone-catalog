@@ -4,10 +4,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './ProductControls.module.scss';
 
-export const ProductControls: React.FC = () => {
-  const capacityAvailable = [64, 256, 512];
-  const colorsAvailable = ['black', 'yellow', 'purple'];
+interface Props {
+  colors?: string[],
+  capacity?: string[],
+}
 
+export const ProductControls: React.FC<Props> = ({ colors, capacity }) => {
   return (
     <div className={styles.controls}>
       <div className={styles.controls__item}>
@@ -17,10 +19,10 @@ export const ProductControls: React.FC = () => {
         </h4>
 
         <ul className={styles.controls__params}>
-          {colorsAvailable.map((currentColor: string, i) => (
+          {colors?.map((currentColor: string, i) => (
             <li key={i} className={styles.controls__params_item}>
               <Link
-                to="/phones/1"
+                to="/phones/apple-iphone-14-pro-512gb-gold"
                 className={styles.controls__params_item_wrap}
               >
                 <div className={styles.controls__params_item_inner}> </div>
@@ -34,7 +36,7 @@ export const ProductControls: React.FC = () => {
         <h4 className={styles.controls__title}>Select capacity</h4>
 
         <ul className={styles.controls__params}>
-          {capacityAvailable.map((currentCatacity, i) => (
+          {capacity?.map((currentCatacity, i) => (
             <li key={i} className={styles.controls__params_item}>
               <Link to="/phones/1" className={styles.controls__params_capacity}>
                 {`${currentCatacity} GB`}

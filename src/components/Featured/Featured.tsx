@@ -25,7 +25,7 @@ type Props = {
 export const Featured: React.FC<Props> = ({ title, phones, isLoading }) => {
   return (
     <>
-      <h2 className="page__subtitle">{title}</h2>
+      <h2 className="page__subtitle page__subtitle_mobile">{title}</h2>
       {isLoading
         ? <Loader />
         : (

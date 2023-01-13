@@ -2,23 +2,6 @@
 @import '../../styles/mixins';
 @import '../../styles/extends';
 
-// .header {
-//   display: flex;
-//   justify-content: center;
-//   width: 100%;
-//   box-shadow: 0px 1px 0px #e2e6e9;
-
-//   &__container {
-//     flex-direction: row;
-//     justify-content: space-between;
-//     align-items: center;
-//     flex-wrap: wrap;
-//     max-width: 1200px;
-//     width: 100%;
-//     margin: 0 auto;
-//   }
-// }
-
 .nav {
   position: relative;
   display: flex;

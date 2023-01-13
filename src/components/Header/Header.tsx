@@ -39,8 +39,8 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.header__container}>
+    <header>
+      <div>
         <nav className={styles.nav}>
           <NavLink to="/" onClick={onCloseMenu}>
             <img src={logoImg} alt="Logo" className={styles.nav__logo} />

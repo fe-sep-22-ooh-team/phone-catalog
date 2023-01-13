@@ -6,9 +6,12 @@ import { PhoneInfoSlider } from './PhoneInfoSlider';
 import { Breadcrumbs } from '../Breadcrumbs';
 import { ProductControls } from './ProductControls';
 import { Button } from '../Button';
+import { Featured } from '../Featured';
 import { ToBackButton } from '../ToBackButton';
 import { getById } from '../../api/goods';
 import { RarePhone } from '../../types/RareDataPhone';
+import { Phone } from '../../types/Phone';
+
 // import { Favorite } from '../Favorite';
 
 interface Props {
@@ -18,12 +21,14 @@ interface Props {
 export const PhoneInfo: React.FC<Props> = ({ slug }) => {
   const [currentSlug] = useState(slug);
   const [currPhoneInfo, setCurrPhoneInfo] = useState<RarePhone>();
+  const [recommendedPhones, setRecommendedPhones] = useState<Phone[]>();
 
   const loadPhone = async () => {
     try {
       const response = await getById(slug);
 
       setCurrPhoneInfo(await response.phoneInfo);
+      setRecommendedPhones(await response.phones);
     } catch (err) {
       throw new Error(`${err}`);
     }
@@ -203,6 +208,11 @@ export const PhoneInfo: React.FC<Props> = ({ slug }) => {
             </ul>
           </div>
         </div>
+
+        <Featured
+          phones={recommendedPhones}
+          title="You may also like"
+        />
       </div>
     </div>
   );

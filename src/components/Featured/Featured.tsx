@@ -18,8 +18,8 @@ import { Loader } from '../Loader';
 
 type Props = {
   title: string;
-  phones: Phone[];
-  isLoading: boolean;
+  phones?: Phone[];
+  isLoading?: boolean;
 };
 
 export const Featured: React.FC<Props> = ({ title, phones, isLoading }) => {
@@ -42,7 +42,7 @@ export const Featured: React.FC<Props> = ({ title, phones, isLoading }) => {
               }}
               modules={[Autoplay, Navigation]}
             >
-              {phones.map((phone) => (
+              {phones?.map((phone) => (
                 <SwiperSlide>
                   <ProductCard key={phone.slug} phone={phone} />
                 </SwiperSlide>

@@ -96,7 +96,7 @@ export const PhonesPage: React.FC = () => {
           <h1 className={styles.phonesPage__title}>Mobile phones</h1>
 
           <p className={styles.phonesPage__totalItems}>
-            {`${phones.length} models`}
+            {`${total} models`}
           </p>
 
           <div className={styles.phonesPage__sort_container}>

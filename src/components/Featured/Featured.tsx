@@ -43,7 +43,7 @@ export const Featured: React.FC<Props> = ({ title, phones, isLoading }) => {
               modules={[Autoplay, Navigation]}
             >
               {phones?.map((phone) => (
-                <SwiperSlide>
+                <SwiperSlide key={phone.slug}>
                   <ProductCard key={phone.slug} phone={phone} />
                 </SwiperSlide>
               ))}

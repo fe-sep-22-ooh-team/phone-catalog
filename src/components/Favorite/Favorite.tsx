@@ -3,6 +3,7 @@
 import classNames from 'classnames';
 import React, { useContext, useEffect, useState } from 'react';
 // import { Phone } from '../../types/Phone';
+// import { Phone } from '../../types/Phone';
 import { ContextFavCart } from '../ContextFavCart';
 import styles from './Favorite.module.scss';
 

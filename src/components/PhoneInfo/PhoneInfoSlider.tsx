@@ -29,7 +29,7 @@ export const PhoneInfoSlider: React.FC<Props> = ({ images }) => {
         }}
       >
         {images?.map((image) => (
-          <SwiperSlide>
+          <SwiperSlide key={image}>
             <img
               src={`${BASE_URL}/${image}`}
               alt={image}
@@ -48,7 +48,7 @@ export const PhoneInfoSlider: React.FC<Props> = ({ images }) => {
         slidesPerView={4}
       >
         {images?.map((image) => (
-          <SwiperSlide className={styles.product__slider_thumb}>
+          <SwiperSlide className={styles.product__slider_thumb} key={image}>
             <img
               src={`${BASE_URL}/${image}`}
               alt={image}

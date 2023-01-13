@@ -18,12 +18,13 @@ interface Props {
 }
 
 export const PhoneInfo: React.FC<Props> = ({ phoneId }) => {
+  const [currentId, setCurrentId] = useState(phoneId);
   const [currPhoneInfo, setCurrPhoneInfo] = useState<RarePhone>();
   const [recommendedPhones, setRecommendedPhones] = useState<Phone[]>();
 
   const loadPhone = async () => {
     try {
-      const response = await getById(`${phoneId}`);
+      const response = await getById(currentId);
 
       setCurrPhoneInfo(await response.phoneInfo);
       setRecommendedPhones(await response.phones);
@@ -41,9 +42,6 @@ export const PhoneInfo: React.FC<Props> = ({ phoneId }) => {
       price,
       discountPrice,
       year,
-      // screen
-      // memory,
-      // ram,
       image,
     } = currPhoneInfo;
 
@@ -62,7 +60,7 @@ export const PhoneInfo: React.FC<Props> = ({ phoneId }) => {
 
   useEffect(() => {
     loadPhone();
-  }, []);
+  }, [currentId]);
 
   return (
     <div className="page__container">
@@ -88,6 +86,8 @@ export const PhoneInfo: React.FC<Props> = ({ phoneId }) => {
             <ProductControls
               colors={currPhoneInfo?.colorsAvailable}
               capacity={currPhoneInfo?.capacityAvailable}
+              phoneId={currentId}
+              setCurrentId={setCurrentId}
             />
             <div className={styles.product__price}>
               {currPhoneInfo?.discountPrice

@@ -7,9 +7,16 @@ import styles from './ProductControls.module.scss';
 interface Props {
   colors?: string[],
   capacity?: string[],
+  phoneId: string,
+  setCurrentId: (id: string) => void;
 }
 
-export const ProductControls: React.FC<Props> = ({ colors, capacity }) => {
+export const ProductControls: React.FC<Props> = ({
+  colors,
+  capacity,
+  phoneId,
+  setCurrentId,
+}) => {
   const transformColor = (color: string) => {
     switch (color) {
       case 'green': return '#BCE7D4';
@@ -31,6 +38,16 @@ export const ProductControls: React.FC<Props> = ({ colors, capacity }) => {
     }
   };
 
+  const transformedLink = phoneId.split('-');
+
+  const changeColor = (param: string) => {
+    return `${transformedLink.slice(0, -1).join('-')}-${param}`;
+  };
+
+  const changeCapacity = (param: string) => {
+    return `${transformedLink.slice(0, -2).join('-')}-${param.toLowerCase()}-${transformedLink.slice(-1)}`;
+  };
+
   return (
     <div className={styles.controls}>
       <div className={styles.controls__item}>
@@ -46,8 +63,9 @@ export const ProductControls: React.FC<Props> = ({ colors, capacity }) => {
             return (
               <li key={currentColor} className={styles.controls__params_item}>
                 <Link
-                  to="/phones/apple-iphone-14-pro-512gb-gold"
+                  to={`/phones/${changeColor(currentColor)}`}
                   className={styles.controls__params_item_wrap}
+                  onClick={() => setCurrentId(`${changeColor(currentColor)}`)}
                 >
                   <div
                     className={styles.controls__params_item_inner}
@@ -66,8 +84,12 @@ export const ProductControls: React.FC<Props> = ({ colors, capacity }) => {
         <ul className={styles.controls__params}>
           {capacity?.map((currentCapacity) => (
             <li key={currentCapacity} className={styles.controls__params_item}>
-              <Link to="/phones/1" className={styles.controls__params_capacity}>
-                {`${currentCapacity} GB`}
+              <Link
+                to={`/phones/${changeCapacity(currentCapacity)}`}
+                className={styles.controls__params_capacity}
+                onClick={() => setCurrentId(`${changeCapacity(currentCapacity)}`)}
+              >
+                {currentCapacity}
               </Link>
             </li>
           ))}

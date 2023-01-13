@@ -9,26 +9,21 @@ import { Button } from '../Button';
 import { Featured } from '../Featured';
 import { ToBackButton } from '../ToBackButton';
 import { getById } from '../../api/goods';
-import { RarePhone } from '../../types/RareDataPhone';
-
 import { Favorite } from '../Favorite';
 import { Phone } from '../../types/Phone';
+import { RarePhone } from '../../types/RareDataPhone';
 
 interface Props {
-  slug: string;
+  phoneId: string;
 }
 
-export const PhoneInfo: React.FC<Props> = ({ slug }) => {
-  // const [currentSlug] = useState(slug);
+export const PhoneInfo: React.FC<Props> = ({ phoneId }) => {
   const [currPhoneInfo, setCurrPhoneInfo] = useState<RarePhone>();
-
-  const [phoneId] = useState(slug);
-
   const [recommendedPhones, setRecommendedPhones] = useState<Phone[]>();
 
   const loadPhone = async () => {
     try {
-      const response = await getById(phoneId);
+      const response = await getById(`${phoneId}`);
 
       setCurrPhoneInfo(await response.phoneInfo);
       setRecommendedPhones(await response.phones);
@@ -37,9 +32,37 @@ export const PhoneInfo: React.FC<Props> = ({ slug }) => {
     }
   };
 
+  let phone: any = {};
+
+  if (currPhoneInfo) {
+    const {
+      slug,
+      name,
+      price,
+      discountPrice,
+      year,
+      // screen
+      // memory,
+      // ram,
+      image,
+    } = currPhoneInfo;
+
+    phone = {
+      slug,
+      name,
+      price,
+      discountPrice,
+      year,
+      screen: currPhoneInfo.specs.screen,
+      memory: currPhoneInfo.specs.memory,
+      ram: currPhoneInfo.specs.ram,
+      image,
+    };
+  }
+
   useEffect(() => {
     loadPhone();
-  }, [slug]);
+  }, []);
 
   return (
     <div className="page__container">
@@ -79,7 +102,7 @@ export const PhoneInfo: React.FC<Props> = ({ slug }) => {
 
             <div className={styles.product__action}>
               <Button text="Add to cart" phone={currPhoneInfo} />
-              <Favorite phone={currPhoneInfo} />
+              <Favorite phone={phone} />
             </div>
 
             <ul className={styles.product__params}>

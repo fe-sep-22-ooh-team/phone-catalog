@@ -10,22 +10,25 @@ import { Featured } from '../Featured';
 import { ToBackButton } from '../ToBackButton';
 import { getById } from '../../api/goods';
 import { RarePhone } from '../../types/RareDataPhone';
-import { Phone } from '../../types/Phone';
 
-// import { Favorite } from '../Favorite';
+import { Favorite } from '../Favorite';
+import { Phone } from '../../types/Phone';
 
 interface Props {
   slug: string;
 }
 
 export const PhoneInfo: React.FC<Props> = ({ slug }) => {
-  const [currentSlug] = useState(slug);
+  // const [currentSlug] = useState(slug);
   const [currPhoneInfo, setCurrPhoneInfo] = useState<RarePhone>();
+
+  const [phoneId] = useState(slug);
+
   const [recommendedPhones, setRecommendedPhones] = useState<Phone[]>();
 
   const loadPhone = async () => {
     try {
-      const response = await getById(slug);
+      const response = await getById(phoneId);
 
       setCurrPhoneInfo(await response.phoneInfo);
       setRecommendedPhones(await response.phones);
@@ -36,36 +39,47 @@ export const PhoneInfo: React.FC<Props> = ({ slug }) => {
 
   useEffect(() => {
     loadPhone();
-  }, [currentSlug]);
+  }, [slug]);
 
   return (
     <div className="page__container">
       <div className={styles.product}>
-        <Breadcrumbs location={['/', '/phones', `${slug}`]} />
+        <Breadcrumbs location={['/', '/phones', `/${currPhoneInfo?.name}`]} />
         <div className={styles.product__back}>
           <ToBackButton />
         </div>
 
         <h1 className={styles.product__title}>
           {currPhoneInfo?.name}
+          {' '}
           iMT9G2FS/A
         </h1>
         <div className={styles.product__info}>
           <div className={styles.product__gallery}>
-            <PhoneInfoSlider images={currPhoneInfo?.additionalImages} />
+            <PhoneInfoSlider
+              images={currPhoneInfo?.additionalImages}
+            />
           </div>
 
           <div className={styles.product__promo}>
-            <ProductControls />
-
+            <ProductControls
+              colors={currPhoneInfo?.colorsAvailable}
+              capacity={currPhoneInfo?.capacityAvailable}
+            />
             <div className={styles.product__price}>
-              {`$${currPhoneInfo?.discountPrice}`}
-              <span className={styles.product__price_old}>{`$${currPhoneInfo?.price}`}</span>
+              {currPhoneInfo?.discountPrice
+                ? (`$${currPhoneInfo?.discountPrice}`)
+                : ('')}
+              <span className={styles.product__price_old}>
+                {currPhoneInfo?.price
+                  ? (`$${currPhoneInfo?.price}`)
+                  : ('')}
+              </span>
             </div>
 
             <div className={styles.product__action}>
-              <Button text="Add to cart" />
-              {/* <Favorite /> */}
+              <Button text="Add to cart" phone={currPhoneInfo} />
+              <Favorite phone={currPhoneInfo} />
             </div>
 
             <ul className={styles.product__params}>

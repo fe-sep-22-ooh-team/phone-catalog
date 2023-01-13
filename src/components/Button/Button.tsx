@@ -3,12 +3,11 @@ import React, { useContext, useEffect, useState } from 'react';
 
 import classnames from 'classnames';
 import styles from './Button.module.scss';
-import { Phone } from '../../types/Phone';
 import { ContextFavCart } from '../ContextFavCart';
 
 type Props = {
   text: string;
-  phone?: Phone,
+  phone?: any,
   textAfterClick?: string;
 };
 
@@ -22,10 +21,10 @@ export const Button: React.FC<Props> = ({
   const isSelected = isActiveCart ? textAfterClick : text;
   const textToRender = textAfterClick ? isSelected : text;
 
-  const indexCart = cartList.find((el) => el.phone.slug === phone?.slug);
+  const indexCart = cartList.find((el) => el.phone?.slug === phone?.slug);
 
   useEffect(() => {
-    if (indexCart) {
+    if (indexCart && phone) {
       setIsActiveCart(true);
     }
   }, []);
@@ -36,9 +35,9 @@ export const Button: React.FC<Props> = ({
       setCartList([...cartList, { phone, count: 1 }]);
     }
 
-    if (indexCart) {
+    if (indexCart && phone) {
       setIsActiveCart(false);
-      setCartList(cartList.filter((el) => el.phone.slug !== phone?.slug));
+      setCartList(cartList.filter((el) => el.phone?.slug !== phone?.slug));
     }
   };
 

@@ -1,4 +1,5 @@
 import { Phone } from './Phone';
+import { RarePhone } from './RareDataPhone';
 
 export interface Next {
   page: number;
@@ -13,8 +14,6 @@ export interface ResponseFromAPIAll {
 }
 
 export interface ResponseFromAPIOne {
-  next: Next;
-  results: Phone[];
-  totalPages: number;
-  currentPage: number;
+  phoneInfo: RarePhone;
+  phones: Phone[];
 }

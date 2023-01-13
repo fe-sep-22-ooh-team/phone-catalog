@@ -8,18 +8,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/scss/thumbs';
 
-const images = [
-  // eslint-disable-next-line max-len
-  'https://stately-meerkat-f84066.netlify.app/img/phones/apple-iphone-11-pro-max/midnightgreen/00.jpg',
-  // eslint-disable-next-line max-len
-  'https://stately-meerkat-f84066.netlify.app/img/phones/apple-iphone-11-pro-max/midnightgreen/01.jpg',
-  // eslint-disable-next-line max-len
-  'https://stately-meerkat-f84066.netlify.app/img/phones/apple-iphone-11-pro-max/midnightgreen/02.jpg',
-  // eslint-disable-next-line max-len
-  'https://stately-meerkat-f84066.netlify.app/img/phones/apple-iphone-11-pro-max/midnightgreen/03.jpg',
-];
+const BASE_URL = 'https://stately-meerkat-f84066.netlify.app';
 
-export const PhoneInfoSlider: React.FC = () => {
+type Props = {
+  images: string[] | undefined;
+};
+
+export const PhoneInfoSlider: React.FC<Props> = ({ images }) => {
   const [activeThumb, setActiveThumb] = useState<SwiperCore>();
 
   return (
@@ -36,7 +31,7 @@ export const PhoneInfoSlider: React.FC = () => {
         {images?.map((image) => (
           <SwiperSlide>
             <img
-              src={image}
+              src={`${BASE_URL}/${image}`}
               alt={image}
               className={styles.product__image_img}
             />
@@ -55,7 +50,7 @@ export const PhoneInfoSlider: React.FC = () => {
         {images?.map((image) => (
           <SwiperSlide className={styles.product__slider_thumb}>
             <img
-              src={image}
+              src={`${BASE_URL}/${image}`}
               alt={image}
               style={{
                 height: '100%',

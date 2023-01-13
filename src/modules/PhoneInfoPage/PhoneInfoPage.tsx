@@ -1,9 +1,11 @@
-// import { useParams } from 'react-router-dom';
+import React from 'react';
+
+import { useParams } from 'react-router-dom';
 
 import { PhoneInfo } from '../../components/PhoneInfo';
 
 export const PhoneInfoPage: React.FC = () => {
-  // const { slug } = useParams();
+  const { slug }: any = useParams();
 
-  return <PhoneInfo />;
+  return <PhoneInfo slug={slug} />;
 };

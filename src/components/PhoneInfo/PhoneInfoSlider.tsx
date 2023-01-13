@@ -10,15 +10,13 @@ import 'swiper/scss/thumbs';
 
 const images = [
   // eslint-disable-next-line max-len
-  'https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg',
+  'https://stately-meerkat-f84066.netlify.app/img/phones/apple-iphone-11-pro-max/midnightgreen/00.jpg',
   // eslint-disable-next-line max-len
-  'https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg',
+  'https://stately-meerkat-f84066.netlify.app/img/phones/apple-iphone-11-pro-max/midnightgreen/01.jpg',
   // eslint-disable-next-line max-len
-  'https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg',
+  'https://stately-meerkat-f84066.netlify.app/img/phones/apple-iphone-11-pro-max/midnightgreen/02.jpg',
   // eslint-disable-next-line max-len
-  'https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg',
-  // eslint-disable-next-line max-len
-  'https://www.apple.com/v/iphone/home/bj/images/overview/compare/compare_iphone_14_pro__cjmfbiggqhpy_large.jpg',
+  'https://stately-meerkat-f84066.netlify.app/img/phones/apple-iphone-11-pro-max/midnightgreen/03.jpg',
 ];
 
 export const PhoneInfoSlider: React.FC = () => {
@@ -52,7 +50,7 @@ export const PhoneInfoSlider: React.FC = () => {
         className={styles.product__image_slider_thumbs}
         modules={[Thumbs]}
         spaceBetween={10}
-        slidesPerView={5}
+        slidesPerView={4}
       >
         {images?.map((image) => (
           <SwiperSlide className={styles.product__slider_thumb}>

@@ -17,6 +17,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="https://www.linkedin.com/in/oleksandr-harkavyi-21333a25b/"
             className="contacts-page__linkedin"
+            target="_blank"
+            rel="noreferrer"
           >
             LinkedIn
           </a>
@@ -26,6 +28,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="https://github.com/mitattt"
             className="contacts-page__linkedin"
+            target="_blank"
+            rel="noreferrer"
           >
             GitHub
           </a>
@@ -35,6 +39,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="mailto:sashaharkavyi@gmail.com"
             className="contacts-page__email"
+            target="_blank"
+            rel="noreferrer"
           >
             sashaharkavyi@gmail.com
           </a>
@@ -47,6 +53,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="https://www.linkedin.com/in/vadim-krvts03/"
             className="contacts-page__linkedin"
+            target="_blank"
+            rel="noreferrer"
           >
             LinkedIn
           </a>
@@ -56,6 +64,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="https://github.com/kryvets-vadym"
             className="contacts-page__linkedin"
+            target="_blank"
+            rel="noreferrer"
           >
             GitHub
           </a>
@@ -65,6 +75,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="mailto:kryvets.vadym@gmail.com"
             className="contacts-page__email"
+            target="_blank"
+            rel="noreferrer"
           >
             kryvets.vadym@gmail.com
           </a>
@@ -77,6 +89,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="https://www.linkedin.com/in/roman-maksymuk/"
             className="contacts-page__linkedin"
+            target="_blank"
+            rel="noreferrer"
           >
             LinkedIn
           </a>
@@ -86,6 +100,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="https://github.com/MXMUK"
             className="contacts-page__linkedin"
+            target="_blank"
+            rel="noreferrer"
           >
             GitHub
           </a>
@@ -95,6 +111,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="mailto:romanmaksymuk@gmail.com"
             className="contacts-page__email"
+            target="_blank"
+            rel="noreferrer"
           >
             romanmaksymuk@gmail.com
           </a>
@@ -107,6 +125,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="https://www.linkedin.com/in/hannashapovalova/"
             className="contacts-page__linkedin"
+            target="_blank"
+            rel="noreferrer"
           >
             LinkedIn
           </a>
@@ -116,6 +136,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="https://github.com/Anna-Shapovalova"
             className="contacts-page__linkedin"
+            target="_blank"
+            rel="noreferrer"
           >
             GitHub
           </a>
@@ -125,6 +147,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="mailto:annashapovalova.dev@gmail.com"
             className="contacts-page__email"
+            target="_blank"
+            rel="noreferrer"
           >
             annashapovalova.dev@gmail.com
           </a>
@@ -137,6 +161,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="http://www.linkedin.com/in/yaroslav-tatarko"
             className="contacts-page__linkedin"
+            target="_blank"
+            rel="noreferrer"
           >
             LinkedIn
           </a>
@@ -146,6 +172,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="https://github.com/yaro-bey"
             className="contacts-page__linkedin"
+            target="_blank"
+            rel="noreferrer"
           >
             GitHub
           </a>
@@ -155,6 +183,8 @@ export const ContactsPage: React.FC = () => (
           <a
             href="mailto:yaroslav.tatarko@gmail.com"
             className="contacts-page__email"
+            target="_blank"
+            rel="noreferrer"
           >
             yaroslav.tatarko@gmail.com
           </a>

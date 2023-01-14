@@ -2,6 +2,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-param-reassign */
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import styles from './CartItem.module.scss';
 
@@ -74,9 +75,13 @@ export const CartItem: React.FC<Props> = ({ item, setTotalCost }) => {
             <img src={button} alt="button delete" />
           </button>
 
-          <img className={styles.cartItem__image} src={img} alt="PhoneName" />
+          <Link to={`/phones/${item.phone.slug}`}>
+            <img className={styles.cartItem__image} src={img} alt="PhoneName" />
+          </Link>
 
-          <h3 className={styles.cartItem__title}>{name}</h3>
+          <Link to={`/phones/${item.phone.slug}`}>
+            <h3 className={styles.cartItem__title}>{name}</h3>
+          </Link>
         </div>
 
         <div className={styles.cartItem__wrapper}>

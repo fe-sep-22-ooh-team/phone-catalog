@@ -1,5 +1,6 @@
 @import '../../styles/vars';
 @import '../../styles/mixins';
+@import '../../styles/extends';
 
 .cart {
   &__container {
@@ -80,6 +81,31 @@
     &_btn {
       width: 100%;
       margin-top: 16px;
+    }
+
+    &_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: max-content;
+      flex-grow: 1;
+      width: 100%;
+      min-height: 40px;
+      padding: 7.5px;
+
+      color: $white-color;
+      background-color: $primary-color;
+
+      @extend %button-text;
+      text-align: center;
+
+      border: 1px solid transparent;
+
+      transition: box-shadow 0.2s ease;
+
+      &:hover {
+        box-shadow: 0px 3px 13px rgba(23, 32, 49, 0.4);
+      }
     }
   }
 }

@@ -68,12 +68,13 @@
   &__wrapper {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     width: 256px;
 
     @include onTablet {
-      gap: 53px;
+      justify-content: flex-end;
+      gap: 51px;
       width: 200px;
     }
 

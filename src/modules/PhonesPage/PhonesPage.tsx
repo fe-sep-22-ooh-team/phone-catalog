@@ -14,10 +14,11 @@ import {
   getPhones,
 } from '../../api/goods';
 import { Phone } from '../../types/Phone';
+import { optionsSortBy } from '../../utils/selectOptions';
 
 export const PhonesPage: React.FC = () => {
   const [perPage, setPerPage] = useState(32);
-  const [sortBy, setSortBy] = useState('default');
+  const [sortBy, setSortBy] = useState('descAge');
   const [currentPage, setCurrentPage] = useState(1);
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -28,16 +29,6 @@ export const PhonesPage: React.FC = () => {
     { value: '16', label: '16' },
     { value: '32', label: '32' },
     { value: `${total}`, label: 'All' },
-  ];
-
-  const optionsSortBy = [
-    { value: 'descAge', label: 'Newest' },
-    { value: 'ascAge', label: 'Oldest' },
-    { value: 'descPrice', label: 'Price: High to Low' },
-    { value: 'ascPrice', label: 'Price: Low to High' },
-    { value: 'ascName', label: 'Name: A - Z' },
-    { value: 'descName', label: 'Name: Z - A' },
-    { value: 'default', label: 'Show all' },
   ];
 
   const getSortBy = () => {

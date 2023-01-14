@@ -4,11 +4,12 @@ import styles from './CartPage.module.scss';
 import { ContextFavCart } from '../../components/ContextFavCart';
 import { CartItem } from '../../components/CartItem';
 import { EmptyCart } from '../../components/EmptyCart';
-import { Button } from '../../components/Button';
 import { ToBackButton } from '../../components/ToBackButton';
+import { ModalWindow } from '../../components/ModalWindow';
 
 export const CartPage: React.FC = () => {
   const { cartList } = useContext(ContextFavCart);
+  const [isOpen, setIsOpen] = useState(false);
   const [totalCost, setTotalCost] = useState(
     cartList.reduce(
       (acc, item) => acc + +item.phone.discountPrice * +item.count,
@@ -18,10 +19,9 @@ export const CartPage: React.FC = () => {
 
   const totalAmount = cartList.reduce((acc, el) => acc + el.count, 0);
 
-  // const handleCheckout = () => {
-  //   setCartList([]);
-  //   localStorage.setItem('cart', JSON.stringify([]));
-  // };
+  const handleCheckout = () => {
+    setIsOpen(true);
+  };
 
   return (
     <div className="page__container">
@@ -55,6 +55,7 @@ export const CartPage: React.FC = () => {
                   grid__item--desktop--17-24"
               >
                 <div className={styles.cart__total}>
+                  <ModalWindow isOpen={isOpen} setIsOpen={setIsOpen} />
                   <div className={styles.cart__total_cost}>
                     <p className={styles.cart__total_price}>
                       {`$${totalCost}`}
@@ -65,7 +66,13 @@ export const CartPage: React.FC = () => {
                   </div>
 
                   <div className={styles.cart__total_btn}>
-                    <Button text="Checkout" />
+                    <button
+                      type="button"
+                      onClick={handleCheckout}
+                      className={styles.cart__total_button}
+                    >
+                      Checkout
+                    </button>
                   </div>
                 </div>
               </div>

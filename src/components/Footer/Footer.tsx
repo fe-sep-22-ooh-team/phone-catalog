@@ -21,6 +21,8 @@ export const Footer: React.FC = () => {
             <a
               href="https://github.com/fe-sep-22-ooh-team"
               className={styles.footer__nav_link}
+              target="_blank"
+              rel="noreferrer"
             >
               github
             </a>

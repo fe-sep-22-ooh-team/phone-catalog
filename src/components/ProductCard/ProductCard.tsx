@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone } from '../../types/Phone';
 import { Button } from '../Button';
+import { ContextFavCart } from '../ContextFavCart';
 import { Favorite } from '../Favorite';
 
 import styles from './ProductCard.module.scss';
@@ -11,11 +12,16 @@ type Props = {
 };
 
 export const ProductCard: React.FC<Props> = ({ phone }) => {
+  const { setCurrentId } = useContext(ContextFavCart);
   const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
 
   return (
     <article className={styles.productCard}>
-      <Link to={`/phones/${phone.slug}`} className={styles.productCard__link}>
+      <Link
+        to={`/phones/${phone.slug}`}
+        className={styles.productCard__link}
+        onClick={() => setCurrentId(phone.slug)}
+      >
         <img
           src={serverLocation + phone.image}
           alt="appleProduct"
@@ -24,7 +30,11 @@ export const ProductCard: React.FC<Props> = ({ phone }) => {
       </Link>
 
       <h3 className={styles.productCard__title} title={`${phone.name}`}>
-        <Link to={`/phones/${phone.slug}`} className={`${styles.productCard__link} ${styles.productCard__link_text}`}>
+        <Link
+          to={`/phones/${phone.slug}`}
+          className={`${styles.productCard__link} ${styles.productCard__link_text}`}
+          onClick={() => setCurrentId(phone.slug)}
+        >
           {phone.name}
         </Link>
       </h3>

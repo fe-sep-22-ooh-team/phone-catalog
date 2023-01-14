@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Modal from 'react-modal';
 import styles from './ModalWindow.module.scss';
+
 import { ContextFavCart } from '../ContextFavCart';
 import Delete from '../../assets/img/DeleteLight.svg';
 

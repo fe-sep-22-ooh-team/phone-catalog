@@ -1,3 +1,8 @@
+import styles from './RightsPage.module.scss';
+
 export const RightsPage: React.FC = () => (
-  <h1 className="page__title">Rights page</h1>
+  <div className={styles.rights__container}>
+    <h1 className="page__title">Glory to Ukraine!</h1>
+    <p className="page__title">Glory to the Heroes!</p>
+  </div>
 );

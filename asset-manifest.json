@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/phone-catalog/static/css/main.8c861c20.css",
-    "main.js": "/phone-catalog/static/js/main.64f27377.js",
+    "main.js": "/phone-catalog/static/js/main.a63522dd.js",
     "static/media/swiper5.jpg": "/phone-catalog/static/media/swiper5.79790583c5266ece6613.jpg",
     "static/media/swiper1.jpg": "/phone-catalog/static/media/swiper1.5ee429b1dda9e78a56f6.jpg",
     "static/media/slider-mobile-03.png": "/phone-catalog/static/media/slider-mobile-03.39e638167292a5973e6e.png",
@@ -39,10 +39,10 @@
     "static/media/Minus.svg": "/phone-catalog/static/media/Minus.cecb4be39afa7b933ec169dd495a73ff.svg",
     "static/media/MinusDisabled.svg": "/phone-catalog/static/media/MinusDisabled.df86c77d05f3d4a96cb76eb2c0d4a816.svg",
     "main.8c861c20.css.map": "/phone-catalog/static/css/main.8c861c20.css.map",
-    "main.64f27377.js.map": "/phone-catalog/static/js/main.64f27377.js.map"
+    "main.a63522dd.js.map": "/phone-catalog/static/js/main.a63522dd.js.map"
   },
   "entrypoints": [
     "static/css/main.8c861c20.css",
-    "static/js/main.64f27377.js"
+    "static/js/main.a63522dd.js"
   ]
 }

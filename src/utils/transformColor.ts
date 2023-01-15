@@ -12,8 +12,8 @@ export const transformColor = (color: string) => {
     case 'white': return '#F7F7F7';
     case 'coral': return '#F9614C';
     case 'starlight': return '#F8F9EC';
-    case 'deep-purple': return '#570861';
-    case 'space-black': return '#333334';
+    case 'deeppurple': return '#570861';
+    case 'spaceblack': return '#333334';
     case 'midnight': return '#000E34';
     case 'blue': return '#8DB6CD';
     case 'rosegold': return '#E0BFB8';

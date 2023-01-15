@@ -18,7 +18,7 @@ import { optionsSortBy } from '../../utils/selectOptions';
 
 export const PhonesPage: React.FC = () => {
   const [perPage, setPerPage] = useState(32);
-  const [sortBy, setSortBy] = useState('ascPrice');
+  const [sortBy, setSortBy] = useState('descAge');
   const [currentPage, setCurrentPage] = useState(1);
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(false);

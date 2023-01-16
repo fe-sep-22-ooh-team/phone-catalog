@@ -13,7 +13,7 @@ type Props = {
 
 export const ProductCard: React.FC<Props> = ({ phone }) => {
   const { setCurrentId } = useContext(ContextFavCart);
-  const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
+  const serverLocation = 'https://ooh-team.netlify.app/';
 
   return (
     <article className={styles.productCard}>

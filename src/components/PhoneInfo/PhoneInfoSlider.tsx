@@ -8,7 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/scss/thumbs';
 
-const BASE_URL = 'https://stately-meerkat-f84066.netlify.app';
+const BASE_URL = 'https://ooh-team.netlify.app/';
 
 type Props = {
   images: string[] | undefined;

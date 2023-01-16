@@ -1,4 +1,5 @@
 # [Phone catalog "👌 Nice Gadgets"](https://fe-sep-22-ooh-team.github.io/phone-catalog/#/)
+# [Figma layout "👌 Nice Gadgets"](https://www.figma.com/file/T5ttF21UnT6RRmCQQaZc6L/Phone-catalog-(V2)-Original?node-id=0%3A1&t=nRehzFAXmvZUh6d1-0)
 
 # Getting Started with Create React App
 

@@ -1,7 +1,9 @@
 // eslint-disable-next-line max-len
 const BASE_URL
-  = 'https://stately-meerkat-f84066.netlify.app/'
+  = 'https://ooh-team.netlify.app/'
   + '.netlify/functions/server/products/';
+
+// https://ooh-team.netlify.app/.netlify/functions/server/products
 
 // To have autocompletion and avoid mistypes
 type RequestMethod = 'GET' | 'POST' | 'PATCH' | 'DELETE';

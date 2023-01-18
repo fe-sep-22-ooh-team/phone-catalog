@@ -24,7 +24,7 @@ export const CartItem: React.FC<Props> = ({ item, setTotalCost }) => {
   } = item.phone;
 
   const { cartList, setCartList } = useContext(ContextFavCart);
-  const serverLocation = 'https://idyllic-lamington-19c8d3.netlify.app/';
+  const serverLocation = 'https://ooh-team.netlify.app/';
   const img = serverLocation + image;
   const isVisible = item.count > 1;
 
